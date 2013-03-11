@@ -10,3 +10,5 @@ Note:
 - gh-pages is only contanins the /dist directory. Deploy to pages with `$ git subtree push --prefix dist origin gh-pages`
 
 Just stay on master the whole time.
+
+Subtree/dist deployment from here: https://github.com/yeoman/yeoman/wiki/Deployment
