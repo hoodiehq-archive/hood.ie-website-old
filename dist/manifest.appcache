@@ -1,0 +1,47 @@
+CACHE MANIFEST
+
+# Time: Mon Mar 11 2013 13:19:41 GMT+0100 (CET)
+# This manifest was created by confess.js, http://github.com/jamesgpearce/confess
+#
+# Retrieved URL: http://localhost:3501/
+# User-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#
+# Config:
+#  task: appcache
+#  userAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11
+#  wait: 0
+#  consolePrefix: #
+#  verbose: true
+#  appcache:
+#   urlsFromDocument: true
+#   urlsFromRequests: false
+#   cacheFilter: .*
+#   networkFilter: null
+#  url: http://localhost:3501
+#  configFile: /usr/local/lib/node_modules/yeoman/lib/support/confess.json
+
+CACHE:
+http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js
+http://localhost:3501/app/images/glyphicons-halflings-white.png?1363002440
+http://localhost:3501/app/images/glyphicons-halflings.png?1363002440
+http://www.google-analytics.com/ga.js
+images/5c6a355c.hoodie_logo.png
+scripts/9eecb7db.plugins.js
+scripts/vendor/bootstrap/0dfe7678.bootstrap-transition.js
+scripts/vendor/bootstrap/39af607e.bootstrap-affix.js
+scripts/vendor/bootstrap/437cd036.bootstrap-scrollspy.js
+scripts/vendor/bootstrap/4a691926.bootstrap-carousel.js
+scripts/vendor/bootstrap/6e43b0d0.bootstrap-dropdown.js
+scripts/vendor/bootstrap/810e2170.bootstrap-collapse.js
+scripts/vendor/bootstrap/81453238.bootstrap-button.js
+scripts/vendor/bootstrap/a1d23a70.bootstrap-modal.js
+scripts/vendor/bootstrap/c6285e1a.bootstrap-tooltip.js
+scripts/vendor/bootstrap/d23b5f74.bootstrap-typeahead.js
+scripts/vendor/bootstrap/dab95585.bootstrap-tab.js
+scripts/vendor/bootstrap/e9a9c103.bootstrap-popover.js
+scripts/vendor/bootstrap/f64cf7f2.bootstrap-alert.js
+scripts/vendor/cf69c6f2.modernizr.min.js
+styles/fb1764de.main.css
+
+NETWORK:
+*

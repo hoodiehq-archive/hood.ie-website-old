@@ -1,0 +1,44 @@
+@import "compass_twitter_bootstrap";
+@import "normalize.css";
+
+$hoodie-blue: #302182;
+
+$headline-color: $hoodie-blue;
+
+@font-face {
+    font-family: 'QuicksandBold';
+    src: url('../assets/Quicksand_Bold-webfont.eot');
+    src: url('../assets/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/Quicksand_Bold-webfont.woff') format('woff'),
+         url('../assets/Quicksand_Bold-webfont.ttf') format('truetype'),
+         url('../assets/Quicksand_Bold-webfont.svg#QuicksandBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+  font-size: 16px;
+  line-height: 22px;
+}
+
+h1{
+  font-family: 'QuicksandBold', Arial, sans-serif;
+  color: $headline-color;
+  text-transform: uppercase;
+}
+
+p.intro{
+  color: $headline-color;
+}
+
+.container{
+  width: auto;
+  .centeredHeader{
+    margin: 200px auto 0 auto;
+    width: 90%;
+    max-width: 526px;
+    h1{
+      margin-bottom: 50px;
+    }
+  }
+}
