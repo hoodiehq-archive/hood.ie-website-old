@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# Time: Mon Mar 11 2013 14:15:32 GMT+0100 (CET)
+# Time: Tue Mar 12 2013 14:42:11 GMT+0100 (CET)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -26,22 +26,10 @@ http://localhost:3501/app/images/glyphicons-halflings-white.png?1363002440
 http://localhost:3501/app/images/glyphicons-halflings.png?1363002440
 http://www.google-analytics.com/ga.js
 images/5c6a355c.hoodie_logo.png
-scripts/9eecb7db.plugins.js
-scripts/vendor/bootstrap/0dfe7678.bootstrap-transition.js
-scripts/vendor/bootstrap/39af607e.bootstrap-affix.js
-scripts/vendor/bootstrap/437cd036.bootstrap-scrollspy.js
-scripts/vendor/bootstrap/4a691926.bootstrap-carousel.js
-scripts/vendor/bootstrap/6e43b0d0.bootstrap-dropdown.js
-scripts/vendor/bootstrap/810e2170.bootstrap-collapse.js
-scripts/vendor/bootstrap/81453238.bootstrap-button.js
-scripts/vendor/bootstrap/a1d23a70.bootstrap-modal.js
-scripts/vendor/bootstrap/c6285e1a.bootstrap-tooltip.js
-scripts/vendor/bootstrap/d23b5f74.bootstrap-typeahead.js
-scripts/vendor/bootstrap/dab95585.bootstrap-tab.js
-scripts/vendor/bootstrap/e9a9c103.bootstrap-popover.js
-scripts/vendor/bootstrap/f64cf7f2.bootstrap-alert.js
+scripts/6091935b.plugins.js
 scripts/vendor/cf69c6f2.modernizr.min.js
-styles/fb1764de.main.css
+styles/0ec472a6.main.css
+styles/3bb22589.prism.css
 
 NETWORK:
 *
