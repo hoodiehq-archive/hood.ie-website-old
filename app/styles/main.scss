@@ -35,7 +35,8 @@ a{
 ul{
   margin: 0 0 0px 21px;
   li{
-    margin-bottom: .5em;
+    margin-bottom: .25em;
+    line-height: 1.75em;
   }
 }
 
@@ -48,7 +49,8 @@ h1{
 h2{
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
+  line-height: 1.25rem;
 }
 
 h3{
@@ -58,7 +60,7 @@ h3{
 }
 
 code{
-  font-size: 1.25em;
+  font-size: 1rem;
 }
 
 .fixedNav{
@@ -66,6 +68,8 @@ code{
   top: 8em;
   left: 2em;
   ul{
+    width: 35rem;
+    max-width: 100%;
     margin-left: 0;
     li{
       font-family: 'QuicksandBold', Arial, sans-serif;
@@ -86,7 +90,6 @@ code{
 }
 
 .container{
-  width: auto;
   max-width: 750px;
   width: 90%;
   margin-bottom: 8em;
@@ -102,9 +105,56 @@ code{
     }
   }
   section{
-    margin-top: 2em;
+    padding-top: 1em;
     &.indented {
       margin: 0 0 1em 2em;
     }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .container{
+    margin-left: 246px;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+  .container{
+    margin-left: auto;
+    .header{
+      margin-top: 2em;
+    }
+  }
+  .fixedNav{
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 750px;
+    width: 90%;
+    margin: 1em auto 0;
+    ul{
+      margin-left: -.5em;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body{
+    font-size: 14px;
+  }
+  .fixedNav{
+    font-size: 1.5rem;
+  }
+  h1{
+    font-size: 1.5rem;
+  }
+  h2, h3{
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body{
+    font-size: 12px;
   }
 }
