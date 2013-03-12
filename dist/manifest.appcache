@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# Time: Tue Mar 12 2013 15:33:40 GMT+0100 (CET)
+# Time: Tue Mar 12 2013 16:11:13 GMT+0100 (CET)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -27,9 +27,7 @@ http://localhost:3501/app/images/glyphicons-halflings.png?1363002440
 http://www.google-analytics.com/ga.js
 images/5c6a355c.hoodie_logo.png
 scripts/6091935b.plugins.js
-scripts/vendor/cf69c6f2.modernizr.min.js
-styles/3bb22589.prism.css
-styles/5a32cdf4.main.css
+styles/535d5a10.hoodie.css
 
 NETWORK:
 *

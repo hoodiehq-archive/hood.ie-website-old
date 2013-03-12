@@ -11,9 +11,11 @@
         <meta name="viewport" content="width=device-width">
         <link rel="icon" href="images/favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+        <!-- build:css styles/hoodie.css -->
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/prism.css" />
-        <script src="scripts/vendor/modernizr.min.js"></script>
+        <!-- endbuild -->
+        <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
     <div id="mainNav" class="fixedNav">
@@ -30,7 +32,7 @@
       <div class="header">
         <img class="logo" src="images/hoodie_logo.png" alt="">
         <h1>Very fast web app development</h1>
-        <p>We want you to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple to use as jQuery.</p>
+        <p>We want you to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple as jQuery.</p>
         <p>That's why we're making Hoodie.</p>
         <p>Hoodie is an architecture for frontend-only web apps.</p>
       </div>
@@ -327,16 +329,11 @@ hoodie.share('shareId').unsubscribe()</code></pre>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
 
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            var _gaq=[['_setAccount','UA-39229415-1'],['_gat._anonymizeIp'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
