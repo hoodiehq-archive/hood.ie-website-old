@@ -336,6 +336,16 @@ hoodie.share('shareId').unsubscribe()</code></pre>
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+		<script>
+			// Smooth Scrolling
+			$('#mainNav a').click(function(){
+				var anchor = $(this);
+				$('html, body').stop().animate({
+		            scrollTop: $(anchor.attr('href')).offset().top
+		        }, 'slow');
+				return false;
+			});
+		</script>
     <script src="scripts/6091935b.plugins.js"></script>
     <!--
       <script src="scripts/vendor/bootstrap/0dfe7678.bootstrap-transition.js"></script>
