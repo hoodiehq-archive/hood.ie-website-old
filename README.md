@@ -3,6 +3,19 @@ hood.ie
 
 This is the Hoodie website. It is built with yeoman 0.9.6.
 
+Development
+-----------
+
+To start the dev server:
+
+    $ yeoman server
+
+To prepare a new `dist` directory for publishing:
+
+    $ yeoman build
+
+>>>>>>> add build instructions
+
 Note: 
 -----
 
