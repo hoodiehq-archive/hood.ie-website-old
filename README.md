@@ -14,8 +14,6 @@ To prepare a new `dist` directory for publishing:
 
     $ yeoman build
 
->>>>>>> add build instructions
-
 Note: 
 -----
 
