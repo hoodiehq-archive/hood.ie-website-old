@@ -1,4 +1,5 @@
 @import "compass_twitter_bootstrap";
+@import "compass/css3/border-radius";
 
 $hoodie-blue: #302182;
 $hoodie-red:  #BE1522;
@@ -109,6 +110,23 @@ code{
     padding-top: 1em;
     &.indented {
       margin: 0 0 1em 2em;
+    }
+  }
+}
+
+ul.roundedImages{
+  @include clearfix();
+  margin: 1.5em 0 2em;
+  li{
+    margin-left: 5%;
+    list-style: none;
+    float:left;
+    max-width: 30%;
+    &:first-child{
+      margin-left: 0;
+    }
+    img{
+      @include border-radius(50%);
     }
   }
 }
