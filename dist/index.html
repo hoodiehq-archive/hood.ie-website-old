@@ -109,7 +109,13 @@ $ brew install couchdb</code></pre>
 $ hoodie start</code></pre>
         <p> Your browser should now automatically open <a href="#">http://myappname.dev</a> and show you Hoodie's default app. </p>
         <p>Once your app is running, you can access your app's couch at <a href="#">http://couch.myappname.dev</a> (Futon, CouchDB's web-based administration at <a href="#">http://couch.myappname.dev/_utils</a>) and your app's admin backend at <a href="#">http://admin.myappname.dev</a></p>
-        <p> That's all! Go nuts. </p>
+        <p class="alert"><strong>Important:</strong> local-tld, which provides these convenient .dev-domains, currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
+        <h2>Disable local-tld</h2>
+        <pre><code class="language-markup">$ sudo ipfw flush</code></pre>
+        <h2>Enable local-tld (by re-installing it)</h2>
+        <pre><code class="language-markup">$ npm install -g local-tld</code></pre>
+        <p>We're working on making this a nicer experience, but it seems as if you won't be able to have both at once for the forseeable future. We hope that's ok with you. </p>
+        <p>That's all. Go nuts!</p>
       </section>
       <section id="docs">
         <h1>Documentation</h1>
