@@ -3,26 +3,33 @@ hood.ie
 
 This is the Hoodie website. It is built with yeoman 0.9.6.
 
-Development
------------
+Workflow
+--------
 
-To start the dev server:
+On branch master:
+````
+$ git pull
+$ yeoman server
+// do your thing
+$ yeoman build
+$ git add .
+$ git commit -m "message"
+$ git push 
+// delete the remote gh-pages branch, because pulling it is painful, pointless and, in fact, usually impossible
+$ git push origin --delete gh-pages
+// push the "/dist" directory to the "gh-pages" branch
+$ git subtree push --prefix dist origin gh-pages
+// done 
+````
 
-    $ yeoman server
+I combine those last two in an alias called *deployDistToPages* for convenience.
 
-To prepare a new `dist` directory for publishing:
-
-    $ yeoman build
-
-Note: 
------
+Important 
+---------
 
 **Please don't work directly in the gh-pages branch**
 
-- Master is the whole dev environment. Build with `$ yeoman build` and update normally with `$ git push`
-- gh-pages is for deployment only and only contanins the /dist directory. Deploy to pages with `$ git subtree push --prefix dist origin gh-pages`
-- If this fails completely, just delete the gh-pages branch in github (https://github.com/hoodiehq/hood.ie/branches) and then run the subtree command again
+- Master contains the whole dev environment. Please always stay in master.
+- The "gh-pages" branch is for deployment only and only contains the "/dist" directory. 
 
-You should just stay on master the whole time.
-
-Subtree/dist deployment from here: https://github.com/yeoman/yeoman/wiki/Deployment
+Subtree/dist deployment taken from here: https://github.com/yeoman/yeoman/wiki/Deployment
