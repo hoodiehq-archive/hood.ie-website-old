@@ -9,13 +9,10 @@
         <title>Hoodie</title>
         <meta name="description" content="Hoodie - Very fast web app development">
         <meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/favicon_128.png">
-        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-        <!-- build:css styles/hoodie.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/prism.css" />
-        <!-- endbuild -->
-        <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
+        <link rel="icon" href="images/a8d6f2d0.favicon_128.png">
+        <!--[if IE]><link rel="shortcut icon" href="images/e5172678.favicon.ico"><![endif]-->
+        <link rel="stylesheet" href="styles/33462670.hoodie.css"/>
+        <!-- <script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script> -->
         <style type="text/css">
 
 
@@ -38,7 +35,7 @@
 
     <div class="container">
       <div class="header">
-        <img class="logo" src="images/hoodie_logo.png" alt="">
+        <img class="logo" src="images/5c6a355c.hoodie_logo.png" alt="">
         <h1>Introducing Hoodie</h1>
         <p>We love building web apps.</p>
       </div>
@@ -151,38 +148,38 @@
         <p>Let’s see how Hoodie works behind the scenes.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-12.png" alt="" /></figure>
+        <img class="slide" src="images/b450b5c4.apps.berlin.js-28.02.2013-12.png" alt="" /></figure>
 
         <p>We start with this nice diagram that splits things up between the frontend and the backend. And there we will focus on the frontend first, as that is what you have seen earlier.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-13.png" alt="" /></figure>
+        <img class="slide" src="images/c78468db.apps.berlin.js-28.02.2013-13.png" alt="" /></figure>
 
         <p>Hoodie is based around <code>localStorage</code>. <code>localStorage</code> is a little database that is part of most available browsers, including mobile browsers.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-14.png" alt="" /></figure>
+        <img class="slide" src="images/fa1bd254.apps.berlin.js-28.02.2013-14.png" alt="" /></figure>
 
 
 
         <p>On top of <code>localStorage</code> sits a thin layer we call <code>hoodie.store</code>. It reads and writes data from and to <code>localStorage</code>.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-15.png" alt="" /></figure>
+        <img class="slide" src="images/6f6e7319.apps.berlin.js-28.02.2013-15.png" alt="" /></figure>
 
 
 
         <p>On top of <code>hoodie.store</code> sits your web application frontend code. Hoodie doesn’t care what tools and technologies you use to build your application. It only gives you a few lower-level interface points for your application to hook into. Hoodie can work with plain JS, jQuery, Backbone, Ember, you name it.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-16.png" alt="" /></figure>
+        <img class="slide" src="images/c28c5085.apps.berlin.js-28.02.2013-16.png" alt="" /></figure>
 
 
 
         <p><code>hoodie.store</code> defines a number of methods for you to interact with the data in it. You’ve seen a few of those earlier. Some are for reading data from <code>hoodie.store</code>, some are for writing.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-17.png" alt="" /></figure>
+        <img class="slide" src="images/09817dda.apps.berlin.js-28.02.2013-17.png" alt="" /></figure>
 
 
 
@@ -211,14 +208,14 @@
         <hr />
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-19.png" alt="" /></figure>
+        <img class="slide" src="images/8331f21f.apps.berlin.js-28.02.2013-19.png" alt="" /></figure>
 
 
 
         <p>Also on top of <code>localStorage</code> and <code>hoodie.store</code> sits the heart of Hoodie: a data synchronization engine that takes content from <code>localStorage</code> and synchronizes it with a REST backend. We call it “Thomas, the little Sync Engine”. It uses the same <code>.on()</code> event system that <code>hoodie.store</code> offers to your application to know when to sync new data to the server. The synchronization happens asynchronously, without your app ever noticing.</p>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-20.png" alt="" /></figure>
+        <img class="slide" src="images/4a406645.apps.berlin.js-28.02.2013-20.png" alt="" /></figure>
 
 
 
@@ -250,7 +247,7 @@
         <h3 id="modules">Modules</h3>
 
         <figure>
-        <img class="slide" src="images/apps.berlin.js-28.02.2013-21.png" alt="" /></figure>
+        <img class="slide" src="images/019c8170.apps.berlin.js-28.02.2013-21.png" alt="" /></figure>
 
 
 
@@ -280,7 +277,7 @@
         <p>Internally, Hoodie takes that JSON object and adds a bit of meta data. Most importantly for our purposes, it adds a <code>type: &quot;$email&quot;</code> field. That way Hoodie knows we intend to send an email. Now the normal flow of data commences. The objects goes through <code>hoodie.store</code> into <code>localStorage</code> and from there via the sync engine to CouchDB.</p>
 
         <figure>
-        <img class="slide" src="images/email.gif" alt="" /></figure>
+        <img class="slide" src="images/10604af1.email.gif" alt="" /></figure>
 
         <p>There, the “email worker” as part of the email module is listening on our current user’s database for objects of the type <code>&quot;email&quot;</code>. CouchDB, on arrival of our object, dutifully notifies the worker about its arrival. The worker then reads the object, constructs an actual email and sends it over SMTP towards the final destination. The worker then takes the SMTP result (ideally a confirmation that the email was successfully sent) and adds that to the object in a new field called <code>&quot;state&quot;</code> and writes it back to CouchDB.</p>
 
@@ -409,7 +406,7 @@ $ hoodie start</code></pre>
         <![endif]-->
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/8bc61845.jquery.min.js"><\/script>')</script>
         <script>
           // Smooth Scrolling
           $('#mainNav a').click(function(){
@@ -426,23 +423,20 @@ $ hoodie start</code></pre>
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    <!-- build:js scripts/plugins.js -->
-      <script src="scripts/vendor/bootstrap/bootstrap-scrollspy.js"></script>
-      <script src="scripts/vendor/prism.js"></script>
-    <!-- endbuild -->
+    <script src="scripts/6091935b.plugins.js"></script>
     <!--
-      <script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
+      <script src="scripts/vendor/bootstrap/0dfe7678.bootstrap-transition.js"></script>
+      <script src="scripts/vendor/bootstrap/39af607e.bootstrap-affix.js"></script>
+      <script src="scripts/vendor/bootstrap/f64cf7f2.bootstrap-alert.js"></script>
+      <script src="scripts/vendor/bootstrap/6e43b0d0.bootstrap-dropdown.js"></script>
+      <script src="scripts/vendor/bootstrap/c6285e1a.bootstrap-tooltip.js"></script>
+      <script src="scripts/vendor/bootstrap/a1d23a70.bootstrap-modal.js"></script>
+      <script src="scripts/vendor/bootstrap/81453238.bootstrap-button.js"></script>
+      <script src="scripts/vendor/bootstrap/e9a9c103.bootstrap-popover.js"></script>
+      <script src="scripts/vendor/bootstrap/d23b5f74.bootstrap-typeahead.js"></script>
+      <script src="scripts/vendor/bootstrap/4a691926.bootstrap-carousel.js"></script>
+      <script src="scripts/vendor/bootstrap/810e2170.bootstrap-collapse.js"></script>
+      <script src="scripts/vendor/bootstrap/dab95585.bootstrap-tab.js"></script>
     -->
 </body>
 </html>
