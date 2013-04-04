@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width">
         <link rel="icon" href="images/a8d6f2d0.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/e5172678.favicon.ico"><![endif]-->
-        <link rel="stylesheet" href="styles/319d9807.hoodie.css"/>
+        <link rel="stylesheet" href="styles/99b983cf.hoodie.css"/>
         <!-- <script src="scripts/vendor/cf69c6f2.modernizr.min.js"></script> -->
         <style type="text/css">
 
@@ -41,21 +41,21 @@
       </div>
       <section id="intro">
 
-        <p>The possibilities modern browsers give us to turn ideas into working projects are just plain amazing. We get to play with new capabilities on a weekly basis, things get faster and ported to more and more platforms.</p>
+        <p>The possibilities modern browsers give us to turn ideas into working projects are just plain amazing. We get to play with new capabilities on a weekly basis accross so many platforms.</p>
 
-        <p>On top of that a plethora of tools, libraries and frameworks exist to support every which programming model. Most of it high quality Open Source software. The web application development ecosystem is bustling with progress.</p>
+        <p>On top of that, there are a plethora of tools, libraries and frameworks supporting everyone's preferred programming models. The majority of this software is high quality and open source.</p>
 
-        <p>The dark side of this bright world is that for every moderately sophisticated application we need to worry about a backend service somewhere. That means system administration, server provisioning, EC2 configuration. All doable, but a pain in the neck. We want to build apps.</p>
+        <p>The dark side of this bright world is that for every moderately sophisticated application we need to worry about a backend service somewhere. That means system administration, server provisioning, cluster configuration. All doable, but a pain in the neck. We want to build apps.</p>
 
         <hr />
 
         <p>Wouldn’t it be great if we could just focus on the frontend, <strong>100%?</strong></p>
 
-        <p>What if we could <strong>build</strong> apps over the course of a weekend and start <strong>charging</strong> on monday?</p>
+        <p>What if we could <string>build</string> apps over the course of a weekend and enable <strong>billing</strong> on Monday?</p>
 
         <p>And can this all be easy to set up and be as simple as using <strong>jQuery</strong>?</p>
 
-        <p>Yes, it can.</p>
+        <p>It can be.</p>
 
         <p>Meet <strong>Hoodie</strong>.</p>
 
@@ -67,15 +67,15 @@
 
         <p>Instead of spending a lot of time describing, we’ll just show you Hoodie.</p>
 
-        <p>You can <a href="https://www.youtube.com/watch?v=X3Ttb0BD8pg&amp;feature=player_detailpage#t=239s">follow along with this live demo</a> (skip to minute 4:00 for the live demo):
+        <p>You can <a href="https://www.youtube.com/watch?v=X3Ttb0BD8pg&amp;feature=player_detailpage#t=239s">follow along with this live demo</a> (skip to minute 4:00):
         <iframe width="750" height="422" src="http://www.youtube.com/embed/X3Ttb0BD8pg" frameborder="0" allowfullscreen></iframe>
         </p>
 
-        <p>To show you just how little up front work you need to do to get your app running, we&#8217;re going to <a href="https://github.com/hoodiehq/demo/blob/master/www/index.html">take a static html page with no behaviour</a> in it and bring it to life with no more than the browser console. As you can see, we’ve got our jQuery for convenience and hoodie libraries, and that’s it.</p>
+        <p>To show you just how little up front work you need to do to get your app running, we&#8217;re going to <a href="https://github.com/hoodiehq/demo/blob/master/www/index.html">take a static html page with no behaviour</a> in it and bring it to life with no more than the browser console. All we're using is jQuery and the hoodie.js libraries.</p>
 
         <p>Let’s start by initialising hoodie:</p>
 
-        <pre><code>var hoodie = new Hoodie('http://api.appjs.dev');</code></pre>
+        <pre><code class="language-javascript">var hoodie = new Hoodie('http://api.appjs.dev');</code></pre>
 
         <p>We’ll explain where the domain comes from later.</p>
 
@@ -109,7 +109,7 @@
   $('.taskList').append('&lt;li&gt;' + task.desc + '&lt;/li&gt;');
 });</code></pre>
 
-        <p>Bit anticlimactic, really. It listens for an <code>add</code> event concerning objects of type <code>task</code>. The object is sent along with the event, and we just add it to the list. The form works, bam, There’s a task. And another one.</p>
+        <p>A bit anticlimactic, really. It listens for an <code>add</code> event concerning objects of type <code>task</code>. The object is sent along with the event, and we just add it to the list. The form works, bam, there’s a task. And another one.</p>
 
         <p>So what if we wanted to pre-populate the list when a logged-in user returns? Easy, I&#8217;ll show you:</p>
 
@@ -150,12 +150,12 @@
         <figure>
         <img class="slide" src="images/b450b5c4.apps.berlin.js-28.02.2013-12.png" alt="" /></figure>
 
-        <p>We start with this nice diagram that splits things up between the <strong>frontend</strong> and the <strong>backend</strong>. And there we will focus on the frontend first, as that is what you have seen earlier.</p>
+        <p>We start with this nice diagram that splits things up between the <strong>frontend</strong> and the <strong>backend</strong>. Let’s focus on the frontend first.</p>
 
         <figure>
         <img class="slide" src="images/c78468db.apps.berlin.js-28.02.2013-13.png" alt="" /></figure>
 
-        <p>Hoodie is based around <code>localStorage</code>. <code>localStorage</code> is a little database that is part of most available browsers, including mobile browsers.</p>
+        <p>Hoodie is based around <code>localStorage</code>. <code>localStorage</code> is a lightweight, client-side database that is part of most available browsers, including mobile browsers.</p>
 
         <figure>
         <img class="slide" src="images/fa1bd254.apps.berlin.js-28.02.2013-14.png" alt="" /></figure>
@@ -249,7 +249,7 @@
 
 
 
-        <p>The final piece of the Hoodie puzzle is modules. <strong>Modules</strong> is where the last bit of the magic happens. Modules also connect to CouchDB and use CouchDB’s so called “<code>_changes</code> feed” to listen for notifications about activity in specific databases inside CouchDB. Think of it as an <code>.on()</code> method for data events inside CouchDB.</p>
+        <p>The final piece of the Hoodie puzzle are modules. <strong>Modules</strong> are where the last bit of the magic happens. Modules also connect to CouchDB and use CouchDB’s so called “<code>_changes</code> feed” to listen for notifications about activity in specific databases inside CouchDB. Think of it as an <code>.on()</code> method for data events inside CouchDB.</p>
 
         <p>Modules are written in Node.js because Node.js fits the Hoodie ecosystem so well:</p>
 
@@ -420,7 +420,20 @@ $ hoodie start</code></pre>
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
     <script src="scripts/6091935b.plugins.js"></script>
-    <!--
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '515d9805108d7b3064000032');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+        <!--
       <script src="scripts/vendor/bootstrap/0dfe7678.bootstrap-transition.js"></script>
       <script src="scripts/vendor/bootstrap/39af607e.bootstrap-affix.js"></script>
       <script src="scripts/vendor/bootstrap/f64cf7f2.bootstrap-alert.js"></script>
