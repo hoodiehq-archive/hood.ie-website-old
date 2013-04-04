@@ -26,9 +26,9 @@
         <li><a href="#quick-start">Quick Start</a></li>
         <li><a href="#magic">Behind the Magic</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#design">The Design of Hoodie</a></li>
         <li><a href="#license">License</a></li>
         <li><a href="#state">State</a></li>
-        <li><a href="#design">The Design of Hoodie</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -150,7 +150,7 @@
         <figure>
         <img class="slide" src="images/b450b5c4.apps.berlin.js-28.02.2013-12.png" alt="" /></figure>
 
-        <p>We start with this nice diagram that splits things up between the frontend and the backend. And there we will focus on the frontend first, as that is what you have seen earlier.</p>
+        <p>We start with this nice diagram that splits things up between the <strong>frontend</strong> and the <strong>backend</strong>. And there we will focus on the frontend first, as that is what you have seen earlier.</p>
 
         <figure>
         <img class="slide" src="images/c78468db.apps.berlin.js-28.02.2013-13.png" alt="" /></figure>
@@ -183,9 +183,9 @@
 
 
 
-        <p><code>hoodie.store</code> also allows you to subscribe to events. An event can be a number of things, for example, whether a particular object, or an object of a specific type were added to the store. It uses the familiar <code>.on()</code> event registration method that you’ve seen in jQuery, Node.js or elsewhere.</p>
+        <p><code>hoodie.store</code> also allows you to <strong>subscribe to events</strong>. An event can be a number of things, for example, whether a particular object, or an object of a specific type were added to the store. It uses the familiar <code>.on()</code> event registration method that you’ve seen in jQuery, Node.js or elsewhere.</p>
 
-        <p>Together, the storage access and event notification methods allow you to build a nice, clean and decoupled interface code. You can update your HTML whenever the data changes in the store and your event handler gets called by Hoodie. You don’t have to entangle your data storage layer with view update code. We think this is really neat (although hardly a new idea).</p>
+        <p>Together, the storage access and event notification methods allow you to build a nice, <strong>clean and decoupled</strong> interface code. You can update your HTML whenever the data changes in the store and your event handler gets called by Hoodie. You don’t have to entangle your data storage layer with view update code. We think this is really neat (although hardly a new idea).</p>
 
         <hr />
 
@@ -193,7 +193,7 @@
 
         <p>The really cool bit though is to combine this with a backend in a Hoodie-specific magical way.</p>
 
-        <p>Before we get to explain the magic, we’d like to point out that even though at this point, the setup is very limited, it is the <em>default way</em> of doing things in Hoodie. Even when we learn about how Hoodie interacts with the backend, you never have to do that yourself. You always talk to <code>hoodie.store</code> (and other <code>hoodie.*</code> modules).</p>
+        <p>Before we get to explain the <strong>magic</strong>, we’d like to point out that even though at this point, the setup is very limited, it is the <em>default way</em> of doing things in Hoodie. Even when we learn about how Hoodie interacts with the backend, you never have to do that yourself. You always talk to <code>hoodie.store</code> (and other <code>hoodie.*</code> modules).</p>
 
         <p>Let’s walk through creating one of the task items from earlier:</p>
 
@@ -222,10 +222,10 @@
         <p>Our implementation of the backend is a CouchDB server. We use CouchDB for several reasons:</p>
 
         <ol>
-        <li>It is a rock solid database that takes data safety and security seriously.</li>
-        <li>It has Sync built in! — We don’t have to deal with inventing a new synchronization mechanism, when we can use a tried and trusted one that way smarter people than ourselves maintain and improve.</li>
-        <li>CouchDB is a document database, so we don’t have to worry about setting up database schemas or anything. We can just start storing JSON objects.</li>
-        <li>CouchDB has an HTTP API. Makes things so easy for us.</li>
+        <li>It is a <strong>rock solid database</strong> that takes data safety and security seriously.</li>
+        <li>It has <strong>Sync</strong> built in! — We don’t have to deal with inventing a new synchronization mechanism, when we can use a tried and trusted one that way smarter people than ourselves maintain and improve.</li>
+        <li>CouchDB is a <strong>document database</strong>, so we don’t have to worry about setting up database schemas or anything. We can just start storing JSON objects.</li>
+        <li>CouchDB has an <strong>HTTP API</strong>. Makes things so easy for us.</li>
         <li>Finally, one of the Hoodie developers is also a CouchDB developer and if ever the need arises that we need anything from CouchDB, we have a direct line to the development team. In fact, the upcoming CORS feature for CouchDB was heavily influenced by Hoodie’s development. And there are a few more features on the way already. Hooray for a healthy project ecosystem.</li>
         </ol>
 
@@ -235,11 +235,9 @@
         <li>The application calls the <code>.add()</code> method on <code>hoodie.store</code>.</li>
         <li><code>hoodie.store</code> hands the data over to localStorage.</li>
         <li><code>hoodie.store</code> notifies any event handlers that previously registered with <code>.on()</code>.</li>
-        </ol>
 
         <p>We continue (assuming a logged in user):</p>
 
-        <ol>
         <li><code>hoodie.store</code> notifies the sync engine to move our data to the REST API.</li>
         <li>CouchDB writes the data to the user’s database.</li>
         </ol>
@@ -251,14 +249,14 @@
 
 
 
-        <p>The final piece of the Hoodie puzzle is modules. Modules is where the last bit of the magic happens. Modules also connect to CouchDB and use CouchDB’s so called “<code>_changes</code> feed” to listen for notifications about activity in specific databases inside CouchDB. Think of it as an <code>.on()</code> method for data events inside CouchDB.</p>
+        <p>The final piece of the Hoodie puzzle is modules. <strong>Modules</strong> is where the last bit of the magic happens. Modules also connect to CouchDB and use CouchDB’s so called “<code>_changes</code> feed” to listen for notifications about activity in specific databases inside CouchDB. Think of it as an <code>.on()</code> method for data events inside CouchDB.</p>
 
         <p>Modules are written in Node.js because Node.js fits the Hoodie ecosystem so well:</p>
 
         <ol>
-        <li>Full Stack Javascript: No thinking in different languages any more.</li>
-        <li>All data is always JSON, no conversions, no mapping.</li>
-        <li>NPM, the Node Package Manager, makes our life building and your life developing with Hoodie really easy.</li>
+        <li><strong>Full Stack JavaScript</strong>: No thinking in different languages any more.</li>
+        <li>All data is <strong>always JSON</strong>, no conversions, no mapping.</li>
+        <li>NPM, the Node Package Manager, makes our life building and your life developing with Hoodie really <strong>easy</strong>.</li>
         </ol>
 
         <p>Now lets take the example of sending that task list via email. To recap application calls:</p>
@@ -284,20 +282,20 @@
         <p>There the sync engine gets notified of the change the worker made and it goes to sync the object from the REST API into <code>localStorage</code>. From there <code>hoodie.store</code> notifies our application about the change and we can display a success message.</p>
 
 
-        <p>Note that all of this happens asynchronously, so the user will never have to wait for all this to happen. They can interact with your app as usual right after hitting the “Send” button. In case of an error, the app can notify the user about that, when that error state got synced back to the frontend side.</p>
+        <p>Note that all of this happens <strong>asynchronously</strong>, so the user will never have to wait for all this to happen. They can interact with your app as usual right after hitting the “Send” button. In case of an error, the app can notify the user about that, when that error state got synced back to the frontend side.</p>
 
         <hr />
 
-        <p>Now we’ve walked through the whole Hoodie stack. All other features of Hoodie are built after the same principle: the frontend, or your app even, creates new objects that the sync engine syncs to the server, where workers can pick them up, if they represent an action. Results of actions are synced back to the frontend.</p>
+        <p>Now we’ve walked through the whole Hoodie stack. All other features of Hoodie are built after the same principle: the frontend, your app, creates new objects that the sync engine syncs to the server, where workers can pick them up, if they represent an action. Results of actions are synced back to the frontend.</p>
 
-        <p>Also, all future features of Hoodie use this as well. Writing new modules only requires a minimal amount of Javascript for the frontend and optionally a worker on the backend. Adding your own features to Hoodie is really easy. Modules are managed as NPM modules, so when you build something useful, you can share it with the world easily, if you want (and you should! :)</p>
+        <p>Also, all future features of Hoodie use this as well. Writing new modules only requires a minimal amount of JavaScript for the frontend and optionally a worker on the backend. Adding your own features to Hoodie is really easy. Modules are managed as NPM modules, so when you build something useful, you can share it with the world easily, if you want (and you should! :)</p>
 
       </section>
       <section id="installation">
 
         <h2 id="installinghoodie">Installing Hoodie</h2>
 
-        <p>We put extra emphasis to make the Hoodie first run experience especially nice. We focus on Mac OS X here, but we already have contributions to bring it to Linux. Windows is not supported at the moment, but all of that only affects the installation routines. Hoodie’s architecture is generally platform agnostic.</p>
+        <p>We put extra emphasis to make the Hoodie <strong>first run experience</strong> especially nice. We focus on Mac OS X here, but we already have contributions to bring it to Linux. Windows is not supported at the moment, but all of that only affects the installation routines. Hoodie’s architecture is generally platform agnostic.</p>
 
         <p>To get started we use install Hoodie via <a href="http://mxcl.github.com/homebrew">Homebrew</a>:</p>
 
@@ -317,8 +315,6 @@ $ hoodie start</code></pre>
 
         <p>starts our application. You’ll see some debug output, but after a second or two, Hoodie should open your default browser and display your new app. With a few commands only you get the full Hoodie application setup, including CouchDB, workers a file server and everything working on your system. </p>
 
-        <hr />
-
         <p>Finally, in order to be able to publish your app to a live website, we support easy publishing to Nodejitsu.</p>
 
         <p>Get started at <a href="https://github.com/hoodiehq/my-first-hoodie">https://github.com/hoodiehq/my-first-hoodie</a>.</p>
@@ -328,31 +324,31 @@ $ hoodie start</code></pre>
       </section>
       <section id="design">
 
-        <h2 id="thedesignofhoodie">The Design of Hoodie</h2>
+        <h1 id="thedesignofhoodie">The Design of Hoodie</h1>
 
         <p>Now, we’d like to share a few of the design decisions that guided us throughout the development of Hoodie.</p>
 
-        <p>Our <em>target audience</em> are user experience designers that picked up a bit of <em>jQuery</em> on the side. We want Hoodie to empower them to build compelling applications without the need for a backend programmer.</p>
+        <p>Our <strong>target audience</strong> are user experience designers that picked up a bit of <strong>jQuery</strong> on the side. We want Hoodie to empower them to build compelling applications without the need for a backend programmer.</p>
 
-        <p>On the way to that target audience we also made Hoodie a great tool for frontend web developers. While they probably know enough to set up a backend they need, they’d rather not, (in fact, we’d rather not) and just focus on building great apps and provide a good user experience.</p>
-
-        <hr />
-
-        <p>One of our design techniques for Hoodie is something we call <em>Dreamcode</em>, or if you are into acronyms “Dreamcode Driven Development (DDD)”. Dreamcode doesn’t actually need to be source code, it can be the user experience as well, for example, how it is to install Hoodie.</p>
-
-        <p>Dreamcode always starts with the question “Wouldn’t it be cool, if…”, this can be a frontend API, a backend functionality, anything really that gets us excited to brainstorm. Then we discuss whatever is at hand as a group and usually what started as an intriguing idea develops into something that is really compelling, like “wouldn’t it be nice if Hoodie could send <em>and receive</em> emails from and to the browser?” and eventually, we get so excited about the particular shape of a particular feature that we can’t help but to find a technical solution for it.</p>
-
-        <p>Dreamcode: if an idea gets us excited, we’ll implement it.</p>
+        <p>On the way to that target audience we also made Hoodie a great tool for frontend web developers. While they probably know enough to set up a backend they need, they’d rather not, (in fact, we’d rather not) and just focus on <strong>building great apps</strong> and provide a good user experience.</p>
 
         <hr />
 
-        <p>Dreamcode goes hand in hand with another aspect of our design philosophy. Hoodie aims to delight. <em>Hoodie should be fun to use</em>, lightweight and not in the way of you developing your best application. We care about a nice setup procedure, we care about nice APIs (the <code>hoodie.store</code> API for example went through over forty iterations and we still want to make it better).</p>
+        <p>One of our design techniques for Hoodie is something we call <strong>Dreamcode</strong>, or if you are into acronyms <strong>“Dreamcode Driven Development (DDD)”</strong>. Dreamcode doesn’t actually need to be source code, it can be the user experience as well, for example, how it is to install Hoodie.</p>
 
-        <p>Hoodie should be easy to set up, easy to program with and easy to deploy to your servers or the cloud and you shouldn’t have to worry about operations, if you choose not to. Hoodie wants to enable your 100% focus on the frontend.</p>
+        <p>Dreamcode always starts with the question <strong>“Wouldn’t it be cool, if…”</strong>, this can be a frontend API, a backend functionality, anything really that gets us excited to brainstorm. Then we discuss whatever is at hand as a group and usually what started as an intriguing idea develops into something that is really compelling, like “wouldn’t it be nice if Hoodie could send <strong>and receive</strong> emails from and to the browser?” and eventually, we get so excited about the particular shape of a particular feature that we can’t help but to find a technical solution for it.</p>
+
+        <p><strong>Dreamcode: if an idea gets us excited, we’ll implement it.</strong></p>
 
         <hr />
 
-        <p>We also are strong believers in the “Make it work, then make it fast, then make it pretty” mantra. We currently consider Hoodie a sketch of on a idea, a pencil drawing that communicates the idea of lightweight frontend application development. We wrote all the code that supports showing off that idea, but we restrained ourselves from making it fast, and pretty for now.</p>
+        <p>Dreamcode goes hand in hand with another aspect of our design philosophy. Hoodie aims to delight. <strong>Hoodie should be fun to use</strong>, lightweight and not in the way of you developing your best application. We care about a nice setup procedure, we care about nice APIs (the <code>hoodie.store</code> API for example went through over forty iterations and we still want to make it better).</p>
+
+        <p>Hoodie should be easy to set up, easy to program with and easy to deploy to your servers or the cloud and you shouldn’t have to worry about operations, if you choose not to. Hoodie wants to enable your <strong>100% focus</strong> on the frontend.</p>
+
+        <hr />
+
+        <p>We also are strong believers in the “Make it work, then make it fast, then make it pretty” mantra. We currently consider Hoodie a <strong>sketch</strong> of on a idea, a pencil drawing that communicates the idea of lightweight frontend application development. We wrote all the code that supports showing off that idea, but we restrained ourselves from making it fast, and pretty for now.</p>
 
         <p>Similarly, we don’t try to solve problems that don’t arise while we try to communicate the idea of Hoodie. We are aware of some limitations of Hoodie and we will be working towards resolving them, but generally, we follow “It is a problem when it is a problem” to make sure we don’t get stuck in fixing some theoretical issue.</p>
 
@@ -363,7 +359,7 @@ $ hoodie start</code></pre>
 
         <h2 id="license">License</h2>
 
-        <p>All of Hoodie is available as Open Source Software under the Apache 2.0 License. All code is on GitHub, fork away: <a href="https://github.com/hoodiehq">https://github.com/hoodiehq</a>.</p>
+        <p>All of Hoodie is available as Open Source Software under the <strong>Apache 2.0 License</strong>. All code is on GitHub, fork away: <a href="https://github.com/hoodiehq">https://github.com/hoodiehq</a>.</p>
 
         <p>Open Source FTW!</p>
 
@@ -372,7 +368,7 @@ $ hoodie start</code></pre>
 
         <h2 id="state">State</h2>
 
-        <p>At the point of writing this (early March 2013) Hoodie is considered a <em>Developer Preview</em>. That means that the foundation of Hoodie stands, a few features exist and we are inviting you to check it out and build applications with it. We do not recommend using Hoodie for production deployments just yet, but we are working hard on finishing off the last bits.</p>
+        <p>At the point of writing this (early March 2013) Hoodie is considered a <strong>Developer Preview</strong>. That means that the foundation of Hoodie stands, a few features exist and we are inviting you to check it out and build applications with it. We do not recommend using Hoodie for production deployments just yet, but we are working hard on finishing off the last bits.</p>
 
         <p>Hoodie’s roots lie in an application called “minutes.io” (<a href="http://minutes.io">http://minutes.io</a>) and like Rails got extracted from Basecamp, Hoodie was extracted from minutes. We are in the process of porting minutes back to Hoodie proper and finish the remaining pieces for minutes to go into production in the next couple of weeks.</p>
 
