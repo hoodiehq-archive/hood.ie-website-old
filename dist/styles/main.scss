@@ -19,8 +19,8 @@ $link-color:      $hoodie-blue;
 }
 
 body{
-  font-size: 16px;
-  line-height: 1.45em;
+  font-size: 21px;
+  line-height: 1.8em;
   color: $headline-color;
 }
 
@@ -36,15 +36,17 @@ a{
 ul{
   margin: 0 0 0px 21px;
   li{
-    margin-bottom: .25em;
-    line-height: 1.75em;
+      line-height: 1.8em;
+      margin-bottom: 1.3em;
   }
 }
+
 
 h1{
   font-family: 'QuicksandBold', Arial, sans-serif;
   color: $headline-color;
   text-transform: uppercase;
+  margin-bottom: 1em;
 }
 
 h2{
@@ -65,7 +67,16 @@ code{
   font-size: 1rem;
 }
 
+hr{
+  border: 1px dashed;
+  margin-bottom: 4em;
+}
+img.slide {
+  border: 1px solid #302182;
+}
+
 .fixedNav{
+  font-size: 16px;
   position: fixed;
   top: 8em;
   left: 2em;
@@ -103,7 +114,8 @@ code{
     p{
       font-size: 1.25em;
       line-height: 1.5em;
-      max-width: 550px
+      max-width: 550px;
+      margin-bottom: 1.8em;
     }
   }
   section{
