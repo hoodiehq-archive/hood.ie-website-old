@@ -71,6 +71,7 @@ hr{
   border: 1px dashed;
   margin-bottom: 4em;
 }
+
 img.slide {
   border: 1px solid #302182;
 }
@@ -113,15 +114,17 @@ img.slide {
     }
     p{
       font-size: 1.25em;
-      line-height: 1.5em;
+      line-height: 1.8em;
       max-width: 550px;
-      margin-bottom: 1.8em;
     }
   }
   section{
     padding-top: 1em;
     &.indented {
       margin: 0 0 1em 2em;
+    }
+    p{
+      margin-bottom: 1.8em;
     }
   }
 }
