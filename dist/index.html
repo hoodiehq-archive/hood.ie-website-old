@@ -259,7 +259,7 @@ hoodie.user("joe").findAll("couch").done( function(couches) { ... })</code></pre
         <pre><code class="language-javascript">// find all public songs from all users
 hoodie.global.findAll("song").done( function(songs) { ... })</code></pre>
         <h2>Sharing</h2>
-        <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
+        <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differentiated between read and write.</p>
         <pre><code class="language-javascript">// add a new share
 hoodie.share.add().done( function(share) {} )
 
@@ -269,7 +269,7 @@ share.grantWriteAccess()
 share.revokeReadAccess()
 share.revokeWriteAccess()
 share.grantReadAccess('joe@example.com')
-share.revomeWriteAccess(['joe@example.com','lisa@example.com'])
+share.revokeWriteAccess(['joe@example.com','lisa@example.com'])
 
 // add all todo objects to the share
 hoodie.store.findAll('todo').shareAt(share.id)
