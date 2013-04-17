@@ -43,35 +43,46 @@
         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
         #mc-embedded-subscribe-form {
-          width:700px; 
+          width:700px;
           margin:0;
           padding:0;
         }
         #mc_embed_signup form {
-          padding:0;
+          padding: 20px;
+          background: #EEE;
+          border-radius: 10px;
+        }
+        #mc_embed_signup label,
+        #mc_embed_signup input.email,
+        #mc_embed_signup input.button {
+          line-height: 32px;
+          display: inline-block;
+          font-size:16px;
+          height: 32px;
         }
         #mc_embed_signup label {
-          display: inline;
-          line-height: 20px;
-          font-size:16px;
+            position: relative;
+            top: 2px;
         }
 
         #mc_embed_signup input.email {
-          font-size:16px;
-          line-height: 20px;
           margin:0;
-          display:inline;
           width:200px;
-          padding:3px;
+          padding:0 3px;
         }
 
         #mc_embed_signup input.button {
-          font-size:16px;
-          line-height: 20px;
           margin:0;
           width:50px;
-          display:inline;
+          background: #302182;
+          color: #fff;
+          height: 34px;
         }
+        #mc_embed_signup input.button:focus,
+        #mc_embed_signup input.button:hover {
+            background: #302182;
+        }
+
       </style>
       <div id="mc_embed_signup">
       <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
