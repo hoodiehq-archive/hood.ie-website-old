@@ -1,6 +1,8 @@
 @import "compass_twitter_bootstrap";
 @import "compass/css3/border-radius";
 
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
 $hoodie-blue: #302182;
 $hoodie-red:  #BE1522;
 
@@ -19,8 +21,8 @@ $link-color:      $hoodie-blue;
 }
 
 body{
-  font-size: 21px;
-  line-height: 1.8em;
+  font-size: 1rem;
+  line-height: 1.8rem;
   color: $headline-color;
 }
 
@@ -37,7 +39,7 @@ ul{
   margin: 0 0 0px 21px;
   li{
       line-height: 1.8em;
-      margin-bottom: 1.3em;
+      margin-bottom: .5em;
   }
 }
 
@@ -45,7 +47,7 @@ ol{
   margin: 0 0 0px 21px;
   li{
       line-height: 1.8em;
-      margin-bottom: 1.3em;
+      margin-bottom: .5em;
   }
 }
 
@@ -86,7 +88,7 @@ img.slide {
 .fixedNav{
   font-size: 16px;
   position: fixed;
-  top: 6em;
+  top: 6rem;
   left: 2em;
   ul{
     width: 200px;
@@ -115,7 +117,7 @@ img.slide {
   width: 90%;
   margin-bottom: 8em;
   .header{
-    margin: 6em auto 0 auto;
+    margin: 6rem auto 0 auto;
     h1{
       margin-bottom: 1em;
     }
@@ -156,6 +158,58 @@ ul.roundedImages{
   }
 }
 
+// Mailchimp embed
+
+#mc_embed_signup{
+  background:#fff;
+  clear:left;
+  font:14px Helvetica,Arial,sans-serif;
+  margin: 2em 0 1em;
+}
+#mc-embedded-subscribe-form {
+  width:700px;
+  margin:0;
+  padding:0;
+}
+#mc_embed_signup form {
+  padding: 20px;
+  background: #EEE;
+  border-radius: 10px;
+  width: 100%;
+}
+#mc_embed_signup label,
+#mc_embed_signup input.email,
+#mc_embed_signup input.button {
+  line-height: 32px;
+  display: inline-block;
+  font-size:16px;
+  height: 32px;
+}
+#mc_embed_signup label {
+    position: relative;
+    top: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+#mc_embed_signup input.email {
+  margin:0;
+  width:200px;
+  padding:0 3px;
+}
+
+#mc_embed_signup input.button {
+  margin:0;
+  width:50px;
+  background: #302182;
+  color: #fff;
+  height: 34px;
+}
+#mc_embed_signup input.button:focus,
+#mc_embed_signup input.button:hover {
+    background: #302182;
+}
+
 @media only screen and (max-width: 1240px) {
   .container{
     margin-left: 246px;
@@ -179,6 +233,21 @@ ul.roundedImages{
     ul{
       margin-left: -.5em;
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #mc_embed_signup {
+    form {
+      padding: 8px 20px 20px;
+    }
+    input.button{
+      margin-top: 8px;
+      width: 100%;
+    }
+  }
+  #mc_embed_signup input.email{
+    width: 100%;
   }
 }
 
