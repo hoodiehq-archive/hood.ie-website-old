@@ -1,7 +1,7 @@
 hood.ie
 =======
 
-This is the Hoodie website. It is built with yeoman 0.9.6.
+This is the Hoodie website. It is built with yeoman 1.0.0-beta.4
 
 Workflow
 --------
@@ -9,9 +9,9 @@ Workflow
 On branch master:
 ````
 $ git pull
-$ yeoman server
+$ grunt server
 // do your thing
-$ yeoman build
+$ grunt
 $ git add .
 $ git commit -m "message"
 $ git push
