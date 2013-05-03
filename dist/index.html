@@ -12,7 +12,7 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/7ee8d8ee.hoodie.css">
+        <link rel="stylesheet" href="styles/8c82402d.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
@@ -77,7 +77,7 @@
           <p>Yes, that's all. signOut, signIn and the other account management functions are similarly short and sweet.</p>
 
           <h2>3. Storing data</h2>
-          <p>This will store a task in this new user's store</p>
+          <p>This will store a task in this new user's store ()</p>
           <pre><code class="language-javascript">var type = 'task';
 var attributes = {title: 'Try out hoodie today'};
 hoodie.store.add(type, attributes)
@@ -85,13 +85,14 @@ hoodie.store.add(type, attributes)
     // Data was saved!
   });</code></pre>
           <p>As you can see, the documents you store need a type and some JSON data. Both are arbitrary and don't need to be set up anywhere previously. As long as you give Hoodie valid JSON, it will eat anything.</p>
+          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retreived is best dealt with in a more decoupled manner, with database events: </p>
 
           <h2>4. Event listeners</h2>
-          <p>We should update the view whenever a task is added, so let's listen to the data store directly for when that happens:</p>
+          <p>The view should update whenever a task is added, so let's listen to the data store directly for when that happens:</p>
           <pre><code class="language-javascript">hoodie.store.on('add:task', function (event, changedObject) {
   // Update the view with the changedObject
 });</code></pre>
-
+          <p>This way, you have nicely reactive views. Users can now add tasks on one device, and the new task will automatically appear on the running page on any other device they may be using simultaneously.</p>
           <h2>5. Loading data</h2>
           <p>Let's load all of the user's 'task' documents:</p>
           <pre><code class="language-javascript">var type = 'task';
@@ -140,7 +141,9 @@ $ hoodie start</code></pre>
         <h2>Include the Hoodie library</h2>
         <pre><code class="language-markup">&lt;script src="hoodie.js"&gt;&lt;/script&gt;</code></pre>
         <h2>Initialize your Hoodie App</h2>
-        <pre><code class="language-javascript">hoodie = new Hoodie('http://api.yourappname.dev');</code></pre>
+        <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
+        <p>You also have the option of defining the Hoodie API endpoint yourself, too. This is useful if you're using a dev environment that runs its own server, like <a href="http://yeoman.io">yeoman.io</a>:</p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://hoodieappname.dev/_api');</code></pre>
         <h2>Account</h2>
         <pre><code class="language-javascript">// sign up
 hoodie.account.signUp('joe@example.com', 'secret');
@@ -161,20 +164,17 @@ hoodie.account.changeUsername('currentpassword', 'newusername');
 hoodie.account.resetPassword('joe@example.com');
 
 // destroy account and all its data
-hoodie.account.destroy();</code></pre>
+hoodie.account.destroy();
+
+// find out who the currently logged in user is (returns undefined if none)
+hoodie.account.username;</code></pre>
         <h2>Store</h2>
+        <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
         <pre><code class="language-javascript">// add a new object
 var type = 'note';
 var attributes = {color: 'red'};
 hoodie.store.add(type, attributes)
   .done(function (newObject) {});
-
-// save an object
-var type = 'note';
-var id = 'abc4567';
-var attributes = {color: 'red', name: 'relax'};
-hoodie.store.save(type, id, attributes)
-  .done(function (object) {});
 
 // update an existing object
 var type = 'note';

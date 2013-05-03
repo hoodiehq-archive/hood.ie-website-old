@@ -1,5 +1,6 @@
 @import "compass_twitter_bootstrap";
 @import "compass/css3/border-radius";
+@import "prism";
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -133,7 +134,7 @@ img.slide {
       margin: 0 0 1em 2em;
     }
     p{
-      margin-bottom: 1.8em;
+      margin-bottom: 1.6em;
     }
     pre{
       margin-bottom: 1.8em;
