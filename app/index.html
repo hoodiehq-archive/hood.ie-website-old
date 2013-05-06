@@ -278,6 +278,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
         <h2>Sharing</h2>
         <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
+        <p class="alert"><strong>Important:</strong> The shares module isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
         <pre><code class="language-javascript">// add a new share
 hoodie.share.add().done(function (share) {});
 
