@@ -12,7 +12,7 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/8c82402d.hoodie.css">
+        <link rel="stylesheet" href="styles/42b17aa7.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
@@ -276,6 +276,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
         <h2>Sharing</h2>
         <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
+        <p class="alert"><strong>Important:</strong> The shares module isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
         <pre><code class="language-javascript">// add a new share
 hoodie.share.add().done(function (share) {});
 
@@ -343,11 +344,13 @@ hoodie.share('shareId').unsubscribe();</code></pre>
           <li><img src="images/195a8f52.janl.png"></li>
           <li><img src="images/26d40479.gregor.jpeg"></li>
           <li><img src="images/0ae07421.espy.jpg"></li>
+          <li><img src="images/23e00040.caolan.png"></li>
+          <li><img src="images/953b6fd0.lena.jpeg"></li>
         </ul>
-        <p>Hoodie is a project by <strong>Jan Lehnardt</strong> (<a href="https://twitter.com/janl">@janl</a>), <strong>Gregor Martynus</strong> (<a href="https://twitter.com/gr2m">@gr2m</a>) and <strong>Alex Feyerke</strong> (<a href="https://twitter.com/espylaub">@espylaub</a>). We are based in Berlin and Zurich and run mostly on Coffee and Cheesecake.</p>
+        <p>Hoodie is a project by <strong>Jan Lehnardt</strong> (<a href="https://twitter.com/janl">@janl</a>), <strong>Gregor Martynus</strong> (<a href="https://twitter.com/gr2m">@gr2m</a>), <strong>Alex Feyerke</strong> (<a href="https://twitter.com/espylaub">@espylaub</a>), <strong>Caolan McMahon</strong> (<a href="https://twitter.com/caolanm">@caolanm</a>) and <strong>Lena Reinhard</strong> (<a href="https://twitter.com/ffffux">@ffffux</a>). We are based in Berlin, Zurich and Nottingham and run mostly on Coffee and Cheesecake.</p>
 
-        <p>All Hoodie code is on GitHub, collected under <a href="https://github.com/hoodiehq">github.com/hoodiehq</a>
-        Follow the Hoodie team on twitter: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>. If you have any question, find us on IRC: <a href="irc://irc.freenode.net/#hoodie">irc.freenode.net/#hoodie</a>.</p>
+        <p>All Hoodie code is on GitHub, collected under <a href="https://github.com/hoodiehq">github.com/hoodiehq</a>.
+        Follow the Hoodie team on twitter: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>. If you have any questions, find us on IRC: <a href="irc://irc.freenode.net/#hoodie">irc.freenode.net/#hoodie</a>.</p>
       </section>
     </div>
 

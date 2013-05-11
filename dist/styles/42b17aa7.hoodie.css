@@ -6440,7 +6440,7 @@ img.slide {
 /* line 145, ../../app/styles/main.scss */
 ul.roundedImages {
   *zoom: 1;
-  margin: 1.5em 0 2em;
+  margin-left: 0;
 }
 /* line 15, ../../app/styles/compass_twitter_bootstrap/_mixins.scss */
 ul.roundedImages:before, ul.roundedImages:after {
@@ -6454,16 +6454,17 @@ ul.roundedImages:after {
 }
 /* line 148, ../../app/styles/main.scss */
 ul.roundedImages li {
-  margin-left: 5%;
+  margin-right: 3%;
   list-style: none;
   float: left;
   max-width: 30%;
+  margin-bottom: 1em;
 }
-/* line 153, ../../app/styles/main.scss */
-ul.roundedImages li:first-child {
-  margin-left: 0;
+/* line 154, ../../app/styles/main.scss */
+ul.roundedImages li:last-child {
+  margin-right: 0;
 }
-/* line 156, ../../app/styles/main.scss */
+/* line 157, ../../app/styles/main.scss */
 ul.roundedImages li img {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -6471,8 +6472,12 @@ ul.roundedImages li img {
   -o-border-radius: 50%;
   border-radius: 50%;
 }
+/* line 161, ../../app/styles/main.scss */
+ul.roundedImages:last-child {
+  margin-left: 3%;
+}
 
-/* line 164, ../../app/styles/main.scss */
+/* line 168, ../../app/styles/main.scss */
 #mc_embed_signup {
   background: #fff;
   clear: left;
@@ -6480,14 +6485,14 @@ ul.roundedImages li img {
   margin: 2em 0 1em;
 }
 
-/* line 170, ../../app/styles/main.scss */
+/* line 174, ../../app/styles/main.scss */
 #mc-embedded-subscribe-form {
   width: 700px;
   margin: 0;
   padding: 0;
 }
 
-/* line 175, ../../app/styles/main.scss */
+/* line 179, ../../app/styles/main.scss */
 #mc_embed_signup form {
   padding: 20px;
   background: #EEE;
@@ -6495,7 +6500,7 @@ ul.roundedImages li img {
   width: 100%;
 }
 
-/* line 183, ../../app/styles/main.scss */
+/* line 187, ../../app/styles/main.scss */
 #mc_embed_signup label,
 #mc_embed_signup input.email,
 #mc_embed_signup input.button {
@@ -6505,7 +6510,7 @@ ul.roundedImages li img {
   height: 32px;
 }
 
-/* line 189, ../../app/styles/main.scss */
+/* line 193, ../../app/styles/main.scss */
 #mc_embed_signup label {
   position: relative;
   top: 2px;
@@ -6513,14 +6518,14 @@ ul.roundedImages li img {
   padding: 0;
 }
 
-/* line 196, ../../app/styles/main.scss */
+/* line 200, ../../app/styles/main.scss */
 #mc_embed_signup input.email {
   margin: 0;
   width: 200px;
   padding: 0 3px;
 }
 
-/* line 202, ../../app/styles/main.scss */
+/* line 206, ../../app/styles/main.scss */
 #mc_embed_signup input.button {
   margin: 0;
   width: 50px;
@@ -6529,29 +6534,29 @@ ul.roundedImages li img {
   height: 34px;
 }
 
-/* line 210, ../../app/styles/main.scss */
+/* line 214, ../../app/styles/main.scss */
 #mc_embed_signup input.button:focus,
 #mc_embed_signup input.button:hover {
   background: #302182;
 }
 
 @media only screen and (max-width: 1240px) {
-  /* line 215, ../../app/styles/main.scss */
+  /* line 219, ../../app/styles/main.scss */
   .container {
     margin-left: 246px;
   }
 }
 @media only screen and (max-width: 1020px) {
-  /* line 221, ../../app/styles/main.scss */
+  /* line 225, ../../app/styles/main.scss */
   .container {
     margin-left: auto;
   }
-  /* line 223, ../../app/styles/main.scss */
+  /* line 227, ../../app/styles/main.scss */
   .container .header {
     margin-top: 2em;
   }
 
-  /* line 227, ../../app/styles/main.scss */
+  /* line 231, ../../app/styles/main.scss */
   .fixedNav {
     position: relative;
     top: 0;
@@ -6560,60 +6565,60 @@ ul.roundedImages li img {
     width: 90%;
     margin: 1em auto 0;
   }
-  /* line 234, ../../app/styles/main.scss */
+  /* line 238, ../../app/styles/main.scss */
   .fixedNav ul {
     margin-left: -0.5em;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 242, ../../app/styles/main.scss */
+  /* line 246, ../../app/styles/main.scss */
   #mc_embed_signup form {
     padding: 8px 20px 20px;
   }
-  /* line 245, ../../app/styles/main.scss */
+  /* line 249, ../../app/styles/main.scss */
   #mc_embed_signup input.button {
     margin-top: 8px;
     width: 100%;
   }
 
-  /* line 250, ../../app/styles/main.scss */
+  /* line 254, ../../app/styles/main.scss */
   #mc_embed_signup input.email {
     width: 100%;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 256, ../../app/styles/main.scss */
+  /* line 260, ../../app/styles/main.scss */
   body {
     font-size: 14px;
   }
 
-  /* line 259, ../../app/styles/main.scss */
+  /* line 263, ../../app/styles/main.scss */
   .fixedNav {
     font-size: 1.5rem;
   }
-  /* line 261, ../../app/styles/main.scss */
+  /* line 265, ../../app/styles/main.scss */
   .fixedNav ul {
     width: 35rem;
     max-width: 100%;
   }
 
-  /* line 266, ../../app/styles/main.scss */
+  /* line 270, ../../app/styles/main.scss */
   code {
     font-size: .75rem;
   }
 
-  /* line 269, ../../app/styles/main.scss */
+  /* line 273, ../../app/styles/main.scss */
   h1 {
     font-size: 1.5rem;
   }
 
-  /* line 272, ../../app/styles/main.scss */
+  /* line 276, ../../app/styles/main.scss */
   h2, h3 {
     font-size: 1rem;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 278, ../../app/styles/main.scss */
+  /* line 282, ../../app/styles/main.scss */
   body {
     font-size: 12px;
   }
