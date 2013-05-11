@@ -144,18 +144,22 @@ img.slide {
 
 ul.roundedImages{
   @include clearfix();
-  margin: 1.5em 0 2em;
+  margin-left: 0;
   li{
-    margin-left: 5%;
+    margin-right: 3%;
     list-style: none;
     float:left;
     max-width: 30%;
-    &:first-child{
-      margin-left: 0;
+    margin-bottom: 1em;
+    &:last-child{
+      margin-right: 0;
     }
     img{
       @include border-radius(50%);
     }
+  }
+  &:last-child{
+    margin-left: 3%;
   }
 }
 
