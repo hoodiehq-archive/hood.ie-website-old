@@ -30,7 +30,7 @@
       <div class="header">
         <img class="logo" src="images/8adb898e.hoodie_logo.png" alt="">
         <h1>Very fast web app development</h1>
-        <p>We want to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple as jQuery.</p>
+        <p>We want to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple to use as jQuery.</p>
         <p>That's why we're making Hoodie.</p>
         <p>Hoodie is an architecture for frontend-only web apps.</p>
       </div>
@@ -62,15 +62,12 @@
       <section id="intro">
 
         <h1>Quick intro</h1>
-          <p>
-            (or read the <a href="intro.html">long Intro</a>)
-          </p>
+          <p class="alert">If you've got the time: there's also a slightly older <a href="intro.html">long intro</a>, with more technical background info.</p>
           <p>So how simple is Hoodie? Here are some simple code fragments from a hypothetical task list app:</p>
 
           <h2>1. Instantiating your Hoodie</h2>
-          <pre><code class="language-javascript">hoodie = new Hoodie('http://api.myappname.dev');</code></pre>
+          <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
           <p>Just one line of JS to get started with Hoodie.</p>
-          <p>All this requires is the API endpoint, which is simply your app's local dev url with the "api" subdomain.</p>
 
           <h2>2. User signup</h2>
           <pre><code class="language-javascript">hoodie.account.signUp(username, password);</code></pre>
@@ -112,7 +109,8 @@ hoodie.store.findAll(type)
         <h2>Installing Hoodie and its dependencies</h2>
         <p>Hoodie has support for OS X, Windows and Linux. This guide only covers macs, and there's <a href="https://gist.github.com/Acconut/5383324">external information about installing Hoodie on Windows and Linux</a>.</p>
         <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install node.js and CouchDB, since the core of Hoodie is built with these:</p>
-        <pre><code class="language-none">$ brew update # make sure your Homebrew is up to date
+        <pre><code class="language-none"># make sure your Homebrew is up to date first
+$ brew update
 $ brew install node
 $ brew install couchdb</code></pre>
         <p>Now install local-tld, which handles the dev domains:</p>
@@ -133,7 +131,7 @@ $ hoodie start</code></pre>
         <pre><code class="language-markup">$ sudo ipfw flush</code></pre>
         <h2>Enable local-tld (by re-installing it)</h2>
         <pre><code class="language-markup">$ npm install -g local-tld</code></pre>
-        <p>We're working on making this a nicer experience, but it seems as if you won't be able to have both at once for the forseeable future. We hope that's ok with you. </p>
+        <p>We're working on making this a nicer experience, but it seems as if you won't be able to have both at once for the forseeable future. We hope that's ok with you. If you have any trouble with local-tld, please let us know in the <a href="https://github.com/hoodiehq/local-tld/issues">local-tld issues</a>.</p>
         <p>That's all. Go nuts!</p>
       </section>
       <section id="docs">
@@ -256,6 +254,7 @@ hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
 hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
 hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
         <h2>Public Shares (Public User Stores)</h2>
+        <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
         <pre><code class="language-javascript">// make note object with id 'abc4567' public
 hoodie.store.find('note', 'abc4567').publish()
