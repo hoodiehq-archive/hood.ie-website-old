@@ -112,7 +112,8 @@ hoodie.store.findAll(type)
         <h1>Getting started</h1>
         <p class="alert">Hoodie is currently a developer preview. Some features are missing, some things might change, there's a lot of optimization to be done. Don't use this for production.</p>
         <h2>Installing Hoodie and its dependencies</h2>
-        <p>Hoodie currently only runs on OS X and requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install node.js and CouchDB, since the core of Hoodie is built with these:</p>
+        <p>Hoodie has support for OS X, Windows and Linux. This guide only covers macs, and there's <a href="https://gist.github.com/Acconut/5383324">external information about installing Hoodie on Windows and Linux</a>.</p>
+        <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install node.js and CouchDB, since the core of Hoodie is built with these:</p>
         <pre><code class="language-none">$ brew update # make sure your Homebrew is up to date
 $ brew install node
 $ brew install couchdb</code></pre>
@@ -208,8 +209,6 @@ hoodie.store.remove(type, id)
         <h2>Store events</h2>
         <pre><code class="language-javascript">
 // listen to store events
-hoodie.store.on('add', function (newObject) {});
-
 // new doc created
 hoodie.store.on('add', function (newObject) {});
 
