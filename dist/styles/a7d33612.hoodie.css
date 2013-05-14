@@ -6422,7 +6422,7 @@ img.slide {
 }
 /* line 131, ../../app/styles/main.scss */
 .container section {
-  padding-top: 1em;
+  padding-top: 5.5em;
 }
 /* line 133, ../../app/styles/main.scss */
 .container section.indented {
@@ -6555,8 +6555,12 @@ ul.roundedImages:last-child {
   .container .header {
     margin-top: 2em;
   }
+  /* line 230, ../../app/styles/main.scss */
+  .container section {
+    padding-top: 1em;
+  }
 
-  /* line 231, ../../app/styles/main.scss */
+  /* line 234, ../../app/styles/main.scss */
   .fixedNav {
     position: relative;
     top: 0;
@@ -6565,60 +6569,60 @@ ul.roundedImages:last-child {
     width: 90%;
     margin: 1em auto 0;
   }
-  /* line 238, ../../app/styles/main.scss */
+  /* line 241, ../../app/styles/main.scss */
   .fixedNav ul {
     margin-left: -0.5em;
   }
 }
 @media only screen and (max-width: 500px) {
-  /* line 246, ../../app/styles/main.scss */
+  /* line 249, ../../app/styles/main.scss */
   #mc_embed_signup form {
     padding: 8px 20px 20px;
   }
-  /* line 249, ../../app/styles/main.scss */
+  /* line 252, ../../app/styles/main.scss */
   #mc_embed_signup input.button {
     margin-top: 8px;
     width: 100%;
   }
 
-  /* line 254, ../../app/styles/main.scss */
+  /* line 257, ../../app/styles/main.scss */
   #mc_embed_signup input.email {
     width: 100%;
   }
 }
 @media only screen and (max-width: 480px) {
-  /* line 260, ../../app/styles/main.scss */
+  /* line 263, ../../app/styles/main.scss */
   body {
     font-size: 14px;
   }
 
-  /* line 263, ../../app/styles/main.scss */
+  /* line 266, ../../app/styles/main.scss */
   .fixedNav {
     font-size: 1.5rem;
   }
-  /* line 265, ../../app/styles/main.scss */
+  /* line 268, ../../app/styles/main.scss */
   .fixedNav ul {
     width: 35rem;
     max-width: 100%;
   }
 
-  /* line 270, ../../app/styles/main.scss */
+  /* line 273, ../../app/styles/main.scss */
   code {
     font-size: .75rem;
   }
 
-  /* line 273, ../../app/styles/main.scss */
+  /* line 276, ../../app/styles/main.scss */
   h1 {
     font-size: 1.5rem;
   }
 
-  /* line 276, ../../app/styles/main.scss */
+  /* line 279, ../../app/styles/main.scss */
   h2, h3 {
     font-size: 1rem;
   }
 }
 @media only screen and (max-width: 320px) {
-  /* line 282, ../../app/styles/main.scss */
+  /* line 285, ../../app/styles/main.scss */
   body {
     font-size: 12px;
   }
