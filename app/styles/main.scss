@@ -129,7 +129,7 @@ img.slide {
     }
   }
   section{
-    padding-top: 1em;
+    padding-top: 5.5em;
     &.indented {
       margin: 0 0 1em 2em;
     }
@@ -226,6 +226,9 @@ ul.roundedImages{
     margin-left: auto;
     .header{
       margin-top: 2em;
+    }
+    section{
+      padding-top: 1em;
     }
   }
   .fixedNav{

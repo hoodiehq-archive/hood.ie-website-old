@@ -12,7 +12,7 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/42b17aa7.hoodie.css">
+        <link rel="stylesheet" href="styles/a7d33612.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
@@ -359,22 +359,27 @@ hoodie.share('shareId').unsubscribe();</code></pre>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
         <script>
-          // Smooth Scrolling
-          $('#mainNav a').click(function () {
-            var anchor = $(this);
-            $('html, body').stop().animate({
-              scrollTop: $(anchor.attr('href')).offset().top
-            }, 'slow');
-            return false;
-          });
-        </script>
-        <script>
             var _gaq=[['_setAccount','UA-39229415-1'],['_gat._anonymizeIp'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    <script src="scripts/4804f775.plugins.js"></script>
+    <script src="scripts/6a8b8b3e.plugins.js"></script>
+    <script>
+      // Smooth Scrolling
+      (function(window,undefined){
+        var History = window.History;
+        $('#mainNav a').click(function (event) {
+          event.preventDefault();
+          var anchor = $(this);
+          History.pushState(null,null,anchor.attr('href'));
+          $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+          }, 'slow');
+          return false;
+        });
+      })(window);
+    </script>
     <script type="text/javascript">
       var _gauges = _gauges || [];
       (function() {
