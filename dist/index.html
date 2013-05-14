@@ -369,13 +369,23 @@ hoodie.share('shareId').unsubscribe();</code></pre>
       // Smooth Scrolling
       (function(window,undefined){
         var History = window.History;
+        var blockHashChange = false;
+        $(window).scroll(function(event){
+          var href = $('#mainNav li.active a').attr('href');
+          if(!blockHashChange && href && href != "#"+History.getHash()){
+            History.pushState(null, null, href);
+          }
+        });
         $('#mainNav a').click(function (event) {
           event.preventDefault();
           var anchor = $(this);
-          History.pushState(null,null,anchor.attr('href'));
+          History.pushState(null, null, anchor.attr('href'));
+          blockHashChange = true;
           $('html, body').stop().animate({
             scrollTop: $(anchor.attr('href')).offset().top
-          }, 'slow');
+          }, 'slow', 'swing', function(){
+            blockHashChange = false;
+          });
           return false;
         });
       })(window);
