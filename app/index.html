@@ -170,11 +170,20 @@ hoodie.account.destroy();
 // find out who the currently logged in user is (returns undefined if none)
 hoodie.account.username;</code></pre>
         <h2>Account events</h2>
-        <pre><code class="language-javascript">// listen to account events
-// user has signed in
+        <pre><code class="language-javascript">// listen for account events
+// user has signed up (this also triggers the authenticated event, see below)
+hoodie.account.on('signup', function (user) {});
+
+// user has signed in (this also triggers the authenticated event, see below)
+hoodie.account.on('signin', function (user) {});
+
+// user has signed out
+hoodie.account.on('signout', function (user) {});
+
+// user has re-authenticated after their session timed out (this does _not_ trigger the signin event)
 hoodie.account.on('authenticated', function (user) {});
 
-// user's session has timed out, so the user is still signed in locally, but Hoodie cannot sync
+// user's session has timed out. This means the user is still signed in locally, but Hoodie cannot sync remotely, so the user must sign in again
 hoodie.account.on('unauthenticated', function (user) {});</code></pre>
         <h2>Store</h2>
         <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
@@ -212,7 +221,7 @@ var id = 'abc4567';
 hoodie.store.remove(type, id)
   .done(function (removedObject) {});</code></pre>
         <h2>Store events</h2>
-        <pre><code class="language-javascript">// listen to store events
+        <pre><code class="language-javascript">// listen for store events
 // new doc created
 hoodie.store.on('add', function (newObject) {});
 
