@@ -301,7 +301,7 @@ share.grantWriteAccess();
 share.revokeReadAccess();
 share.revokeWriteAccess();
 share.grantReadAccess('joe@example.com');
-share.revomeWriteAccess(['joe@example.com', 'lisa@example.com']);
+share.revokeWriteAccess(['joe@example.com', 'lisa@example.com']);
 
 // add all todo objects to the share
 hoodie.store.findAll('todo').shareAt(share.id);
