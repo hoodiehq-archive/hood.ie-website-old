@@ -11,8 +11,9 @@ The workflow has changed completely:
 There is now only a gh-pages branch. In that, there is `/build`, do all your work and run grunt from there.
 
 To deploy:
-1. From inside `/build` copy `/dist` back to root: `cp -r dist/* ../`
-2. Push
+
+  1. From inside `/build` copy `/dist` back to root: `cp -r dist/* ../`
+  2. Push
 
 In short: 
 
