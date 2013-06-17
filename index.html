@@ -107,18 +107,38 @@ hoodie.store.findAll(type)
         <h1>Getting started</h1>
         <p class="alert">Hoodie is currently a developer preview. Some features are missing, some things might change, there's a lot of optimization to be done. Don't use this for production.</p>
         <h2>Installing Hoodie and its dependencies</h2>
-        <p>Hoodie has support for OS X, Windows and Linux. This guide only covers macs, and there's <a href="https://gist.github.com/Acconut/5383324">external information about installing Hoodie on Windows and Linux</a>.</p>
-        <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install node.js and CouchDB, since the core of Hoodie is built with these:</p>
+        <p>Hoodie has support for OS X, Windows and Linux.</p>
+
+        <h3>OS X</h3>
+        <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
         <pre><code class="language-none"># make sure your Homebrew is up to date first
 $ brew update
 $ brew install node
 $ brew install couchdb</code></pre>
-        <p>Now install local-tld, which handles the dev domains:</p>
+        <p>Now, install Hoodie using Node's package manager:</p>
+<pre><code class="language-none">$ npm install -g hoodie-cli</code></pre>
+        <p>Mac users can also install <code>local-tld</code> to get pretty <code>*.dev</code> domains! (optional)</p>
         <pre><code class="language-none">$ npm install -g local-tld</code></pre>
-        <p>And finally, install Hoodie itself (we'll put this on homebrew proper soon):</p>
-        <pre><code class="language-none">$ brew tap hoodiehq/homebrew-hoodie</code></pre>
-        <pre><code class="language-none">$ brew install hoodie</code></pre>
         <p>Installation done! Time to build apps.</p>
+
+        <h3>Linux</h3>
+        <p>First, install <a href="http://couchdb.org">CouchDB</a> (1.2.x or newer). On Ubuntu/Debian:</p>
+        <pre><code class="language-none">$ sudo apt-get update
+$ sudo apt-get install couchdb</code></pre>
+        <p>Then, download the <a href="http://nodejs.org">Node.js</a> (stable) source code. Extract, compile and install:</p>
+        <pre><code class="language-none">$ tar -xvf node-v0.10.10.tar.gz
+$ cd node-v0.10.10
+$ ./configure
+$ make &amp;&amp; sudo make install</code></pre>
+        <p>Now you can install Hoodie using Node's package manager:</p>
+        <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
+        <p>Installation done! Time to build apps.</p>
+
+        <h3>Windows</h3>
+        <p>Install <a href="http://nodejs.org/download/">Node.js</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
+        <pre><code class="language-none">&gt; npm install -g hoodie-cli</code></pre>
+        <p>Installation done! Time to build apps.</p>
+
         <h2>Creating a Hoodie app</h2>
         <pre><code class="language-none">$ hoodie new myappname</code></pre>
         <p>This created the folder 'myappname'. Go in there and start the default app:</p>
