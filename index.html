@@ -12,7 +12,7 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/a7d33612.hoodie.css">
+        <link rel="stylesheet" href="styles/42686c59.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
@@ -117,7 +117,7 @@ $ brew install node
 $ brew install couchdb</code></pre>
         <p>Now, install Hoodie using Node's package manager:</p>
 <pre><code class="language-none">$ npm install -g hoodie-cli</code></pre>
-        <p>Mac users can also install <code>local-tld</code> to get pretty <code>*.dev</code> domains! (optional)</p>
+        <p>Mac users can also optionally install <code>local-tld</code> to automatically get pretty <code>*.dev</code> domains everytime you start a Hoodie app.</p>
         <pre><code class="language-none">$ npm install -g local-tld</code></pre>
         <p>Installation done! Time to build apps.</p>
 
@@ -144,9 +144,11 @@ $ make &amp;&amp; sudo make install</code></pre>
         <p>This created the folder 'myappname'. Go in there and start the default app:</p>
         <pre><code class="language-none">$ cd myappname
 $ hoodie start</code></pre>
-        <p> Your browser should now automatically open <a href="#">http://myappname.dev</a> and show you Hoodie's default app. </p>
-        <p>Once your app is running, you can access your app's CouchDB at <a href="#">http://couch.myappname.dev</a> (Futon, CouchDB's web-based administration at <a href="#">http://couch.myappname.dev/_utils</a>) and your app's admin backend at <a href="#">http://admin.myappname.dev</a></p>
-        <p class="alert"><strong>Important:</strong> local-tld, which provides these convenient .dev-domains, currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
+        <p> Your browser should now automatically open <a href="#">http://127.0.0.1:6007</a> and show you Hoodie's default app. </p>
+        <p>Once your app is running, you can usually access your app's CouchDB at <a href="#">http://127.0.0.1:6009</a> (Futon, CouchDB's web-based administration at <a href="#">http://127.0.0.1:6009/_utils</a>) and Pocket, your app's admin backend at <a href="#">http://127.0.0.1:6008</a>. If these change, Hoodie will tell you in the terminal.</p>
+        <h2>Local-TLD</h2>
+        <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
+        <p class="alert"><strong>Important:</strong> local-tld currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
         <h2>Disable local-tld</h2>
         <pre><code class="language-markup">$ sudo ipfw flush</code></pre>
         <h2>Enable local-tld (by re-installing it)</h2>
@@ -161,7 +163,9 @@ $ hoodie start</code></pre>
         <pre><code class="language-markup">&lt;script src="hoodie.js"&gt;&lt;/script&gt;</code></pre>
         <h2>Initialize your Hoodie App</h2>
         <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
-        <p>You also have the option of defining the Hoodie API endpoint yourself, too. This is useful if you're using a dev environment that runs its own server, like <a href="http://yeoman.io">yeoman.io</a>:</p>
+        <p>You also have the option of defining the Hoodie API endpoint yourself, too. This is useful if you're using a dev environment that runs its own server, like <a href="http://yeoman.io">yeoman.io</a>. You'd have Grunt running your frontend at <code>http://localhost:9000</code>, and your Hoodie instance at <code>http://localhost:6007</code>:</p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://localhost:6007/_api');</code></pre>
+        <p>or, with local-tld:</p>
         <pre><code class="language-javascript">hoodie = new Hoodie('http://hoodieappname.dev/_api');</code></pre>
         <h2>Account</h2>
         <pre><code class="language-javascript">// sign up
