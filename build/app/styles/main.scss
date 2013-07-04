@@ -21,6 +21,17 @@ $link-color:      $hoodie-blue;
     font-style: normal;
 }
 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.centeredBlock{
+  display: block;
+  text-align: center;
+}
+
 body{
   font-size: 1rem;
   line-height: 1.8rem;
@@ -33,6 +44,10 @@ a{
   font-weight: bold;
   &:hover{
     color: $link-color;
+  }
+  &.anchor{
+    height: 1px;
+    display: block;
   }
 }
 
@@ -198,22 +213,48 @@ ul.roundedImages{
 }
 
 #mc_embed_signup input.email {
-  margin:0;
+  margin:0 5px;
   width:200px;
   padding:0 3px;
 }
 
 #mc_embed_signup input.button {
-  margin:0;
+  margin: 1px 0 0 0;
   width:50px;
   background: #302182;
   color: #fff;
-  height: 34px;
+  height: 32px;
 }
 #mc_embed_signup input.button:focus,
 #mc_embed_signup input.button:hover {
     background: #302182;
 }
+
+.ohCoolTheyLikeUs {
+  margin: 60px 0;
+  h2{
+    margin-bottom: 30px;
+  }
+  ul{
+    margin: 0 0 10px 0;
+    list-style: none;
+    li {
+      width: 49%;
+      margin: 0 0 20px 0;
+      padding: 0 10px;
+      display: inline-block;
+      vertical-align: top;
+      blockquote{
+        margin: 0 0 10px 0;
+      }
+      .source {
+        display: block;
+        text-align: right;
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 1240px) {
   .container{
@@ -242,6 +283,13 @@ ul.roundedImages{
       margin-left: -.5em;
     }
   }
+  .ohCoolTheyLikeUs {
+    ul{
+      li {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -256,6 +304,7 @@ ul.roundedImages{
   }
   #mc_embed_signup input.email{
     width: 100%;
+    margin: 0;
   }
 }
 

@@ -12,7 +12,7 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/42686c59.hoodie.css">
+        <link rel="stylesheet" href="styles/e66f1f56.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
@@ -32,7 +32,37 @@
         <h1>Very fast web app development</h1>
         <p>We want to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple to use as jQuery.</p>
         <p>That's why we're making Hoodie.</p>
-        <p>Hoodie is an architecture for frontend-only web apps.</p>
+        <p>Hoodie is a <a href="http://nobackend.org">noBackend</a> architecture for frontend-only web apps.</p>
+      </div>
+      <div class="ohCoolTheyLikeUs">
+        <h2>People really seem to like it:</h2>
+        <ul>
+          <li>
+            <blockquote>
+              It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
+            </blockquote>
+            <span class="source">— <em><a href="http://www.roberthorvick.com/">Robert Horvick</a></em>, in a <a href="http://www.roberthorvick.com/2013/06/30/todomvc-angularjs-hood-ie-60-minutes-to-awesome/">blog post about Hoodie and angular.js</a></span>
+          </li>
+          <li>
+            <blockquote>
+              ❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
+            </blockquote>
+            <span class="source">— <em><a href="http://addyosmani.com/">Addy Osmani</a></em>, <a href="https://twitter.com/addyosmani/statuses/340094925997735936">via Twitter</a></span>
+          </li>
+          <li>
+            <blockquote>
+              Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
+            </blockquote>
+            <span class="source">— <em><a href="http://async.ly/">Paolo Fragomeni</a></em>, <a href="https://twitter.com/hij1nx/statuses/340516201342058496">via Twitter</a></span>
+          </li>
+          <li>
+            <blockquote>
+              I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
+            </blockquote>
+            <span class="source">— <em><a href="http://adam.yt/">Adam Yeats</a></em>, <a href="https://twitter.com/adamyeats/statuses/336504300241039360">via Twitter</a></span>
+          </li>
+        </ul>
+        <p>See <a href="https://twitter.com/search?q=hood.ie">what others are tweeting about Hoodie</a> or browse through our personal <a href="http://blog.hood.ie/category/talking-about-hoodie/">favourite user quotes</a>.</p>
       </div>
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
@@ -209,39 +239,59 @@ hoodie.account.on('authenticated', function (user) {});
 hoodie.account.on('unauthenticated', function (user) {});</code></pre>
         <h2>Store</h2>
         <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
+        <p>Since Hoodie treats all data as user data, and all data is private by default, the following functions can only ever access the data of the currently signed in user. Exceptions to this is data shared via <a href="#publicShares" class="scrollTo">global public shares</a> or <a href="#userShares" class="scrollTo">private user sharing</a>.</p>
         <pre><code class="language-javascript">// add a new object
-var type = 'note';
-var attributes = {color: 'red'};
+var type = 'task';
+var attributes = {status: 'open'};
 hoodie.store.add(type, attributes)
   .done(function (newObject) {});
 
 // update an existing object
-var type = 'note';
+var type = 'task';
 var id = 'abc4567';
-var update = {size: 2};
+var update = {starred: true};
 hoodie.store.update(type, id, update)
   .done(function (updatedObject) {});
 
 // find one object
-var type = 'note';
+var type = 'task';
 var id = 'abc4567';
 hoodie.store.find(type, id)
   .done(function (object) {});
 
-// Load all objects
+// Load all objects that belong to the current user
 hoodie.store.findAll()
   .done(function (objects) {});
 
-// Load all objects from one type
-var type = 'note';
+// Load all objects of one type, also belonging to the current user
+var type = 'task';
 hoodie.store.findAll(type)
   .done(function (objects) {});
 
-// remove an existing object
-var type = 'note';
+// findAll also accepts a function as an argument. If that function returns true for an object in the store, it will be returned. This effectively lets you write complex queries for the store. In this simple example, assume all of our todo tasks have a key "status", and we want to find all unfinished tasks:
+hoodie.store.findAll(function(object){
+  if(object.type === "task" && object.status === "open"){
+    return true;
+  }
+}).done(function (objects) {});
+
+// remove an existing object belonging to the current user
+var type = 'task';
 var id = 'abc4567';
 hoodie.store.remove(type, id)
-  .done(function (removedObject) {});</code></pre>
+  .done(function (removedObject) {});
+
+// Remove all objects of one type, also belonging to the current user
+var type = 'task';
+hoodie.store.removeAll(type)
+  .done(function (objects) {});
+
+// removeAll, like findAll, also accepts a function as an argument. If that function returns true for an object in the store, it will be removed. Assuming all of our todo tasks have a key "status", and we want to remove all completed tasks:
+hoodie.store.removeAll(function(object){
+  if(object.type === "task" && object.status === "completed"){
+    return true;
+  }
+}).done(function (objects) {});</code></pre>
         <h2>Store events</h2>
         <pre><code class="language-javascript">// listen for store events
 // new doc created
@@ -292,6 +342,7 @@ hoodie.remote.on('add:note:uuid123',    function (newObject) {});
 hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
 hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
 hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
+        <a class="anchor" id="publicShares"></a>
         <h2>Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
@@ -311,6 +362,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
         <p>When enabled, all publicly shared objects by all users will be available through the hoodie.global API.</p>
         <pre><code class="language-javascript">// find all public songs from all users
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
+        <a class="anchor" id="userShares"></a>
         <h2>Sharing</h2>
         <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
         <p class="alert"><strong>Important:</strong> The shares module isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
@@ -415,7 +467,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
             History.pushState(null, null, href);
           }
         });
-        $('#mainNav a').click(function (event) {
+        $('#mainNav a, a.scrollTo').click(function (event) {
           event.preventDefault();
           var anchor = $(this);
           History.pushState(null, null, anchor.attr('href'));
