@@ -1,5 +1,6 @@
 @import "compass_twitter_bootstrap";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 @import "prism";
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -133,7 +134,7 @@ img.slide {
   width: 90%;
   margin-bottom: 8em;
   .header{
-    margin: 6rem auto 0 auto;
+    margin: 4.1rem auto 0 auto;
     h1{
       margin-bottom: 1em;
     }
@@ -252,6 +253,21 @@ ul.roundedImages{
         text-align: right;
       }
     }
+  }
+}
+
+.sponsoringTeaser{
+  min-height: 2em;
+  font-family: 'QuicksandBold', Arial, sans-serif;
+  color: $headline-color;
+  text-transform: uppercase;
+  padding: .2em 1em 0em;
+  @include box-shadow(#CCC 0px -5px 10px -5px inset);
+  background: #FAFAFA;
+  text-align: center;
+  a{
+    text-decoration: none;
+    border-bottom: 2px dotted;
   }
 }
 

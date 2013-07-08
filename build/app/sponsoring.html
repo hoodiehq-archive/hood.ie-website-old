@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Hoodie</title>
+        <title>Sponsor Hoodie</title>
         <meta name="description" content="Hoodie - Very fast web app development">
         <meta name="viewport" content="width=device-width">
         <link rel="icon" href="images/favicon_128.png">
@@ -18,11 +18,6 @@
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
-    <div class="sponsoringTeaser">
-      <span class="leadIn">This week of Hoodie development is sponsored by</span>
-      <a href="http://go.hood.ie/thehoodiefirm" class="sponsor">The Hoodie Firm</a> —
-      <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
-    </div>
     <div id="mainNav" class="fixedNav">
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#features">Features</a></li>
@@ -31,7 +26,6 @@
         <li><a href="#docs">Documentation</a></li>
         <li><a href="#modules">Modules</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="/sponsoring.html">Sponsoring</a></li>
       </ul>
     </div>
     <div class="container">
@@ -72,14 +66,14 @@
         </ul>
         <p>See <a href="https://twitter.com/search?q=hood.ie">what others are tweeting about Hoodie</a> or browse through our personal <a href="http://blog.hood.ie/category/talking-about-hoodie/">favourite user quotes</a>.</p>
       </div>
-      <!-- Begin MailChimp Signup Form
+      <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
       <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <label for="mce-EMAIL">Stay in Touch</label>
         <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
       </form>
-      </div>-->
+      </div>
 
       <!--End mc_embed_signup-->
       <section id="features">
@@ -480,8 +474,6 @@ hoodie.share('shareId').unsubscribe();</code></pre>
           }
         });
         $('#mainNav a, a.scrollTo').click(function (event) {
-          // Only smooth scroll anchor links
-          if($(this).attr('href').substr(0,1) != "#") return;
           event.preventDefault();
           var anchor = $(this);
           History.pushState(null, null, anchor.attr('href'));
