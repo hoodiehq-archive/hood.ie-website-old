@@ -1,4 +1,5 @@
 @import "compass_twitter_bootstrap";
+@import "compass/css3/transition";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 @import "prism";
@@ -299,12 +300,19 @@ ul.roundedImages{
       display: inline-block;
       color: $white;
       background: $hoodie-blue;
-      padding: .6em 1em;;
+      padding: .6em 1em;
       @include border-radius(5px);
       font-size: 2em;
       margin: 1em 0 0;
+      //@include background-image(linear-gradient(lighten($hoodie-blue, 10), $hoodie-blue));
       &:hover{
         background: darken($hoodie-blue, 10);
+        //@include background-image(linear-gradient(lighten($hoodie-blue, 30), $hoodie-blue));
+      }
+      &:active{
+        padding: .65em 1em .55em;
+        background: darken($hoodie-blue, 20);
+        //@include background-image(linear-gradient(darken($hoodie-blue, 5), lighten($hoodie-blue, 30) 20%, $hoodie-blue));
       }
     }
     &[href="#VAT"]{
@@ -314,10 +322,9 @@ ul.roundedImages{
   table{
     border-collapse: separate;
     border-spacing: 5px;
-    margin-bottom: 3em;
-    width: 100%;
+    margin: 0 0 3em -5px;
+    width: calc(100% + 10px);
     td{
-      background: red;
       @include border-radius(5px);
       padding: 1em;
       color: $white;
