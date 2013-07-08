@@ -134,7 +134,7 @@ img.slide {
   width: 90%;
   margin-bottom: 8em;
   .header{
-    margin: 4.1rem auto 0 auto;
+    margin: 4rem auto 0 auto;
     h1{
       margin-bottom: 1em;
     }
@@ -146,6 +146,9 @@ img.slide {
   }
   section{
     padding-top: 5.5em;
+    &.noPadding{
+      padding-top: 0;
+    }
     &.indented {
       margin: 0 0 1em 2em;
     }
@@ -271,6 +274,75 @@ ul.roundedImages{
   }
 }
 
+.sponsoring{
+  .container .header{
+    margin-top: 6em;
+  }
+  em.block {
+    max-width: 550px;
+    font-size: 1.25em;
+    margin-bottom: 1em;
+    display: block;
+  }
+  h2 a{
+    text-decoration: none;
+  }
+  p.noMargin{
+    margin-bottom: .6em;
+  }
+  section ul{
+    margin-left: 2em;
+  }
+  a{
+    text-decoration: none;
+    &.contact{
+      display: inline-block;
+      color: $white;
+      background: $hoodie-blue;
+      padding: .6em 1em;;
+      @include border-radius(5px);
+      font-size: 2em;
+      margin: 1em 0 0;
+      &:hover{
+        background: darken($hoodie-blue, 10);
+      }
+    }
+    &[href="#VAT"]{
+      padding: 0 2px;
+    }
+  }
+  table{
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin-bottom: 3em;
+    width: 100%;
+    td{
+      background: red;
+      @include border-radius(5px);
+      padding: 1em;
+      color: $white;
+      &:nth-child(odd){
+        background: #312783;
+      }
+      &:nth-child(even){
+        background: #0B8E36;
+      }
+      &.available{
+        cursor: pointer;
+        &:hover{
+          background: darken(#0B8E36, 10);
+        }
+      }
+      &.sold{
+        background: #E94E1B;
+      }
+      a[href="#VAT"]{
+        color: $white;
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 1240px) {
   .container{
@@ -287,6 +359,9 @@ ul.roundedImages{
     section{
       padding-top: 1em;
     }
+  }
+  .sponsoring .container .header {
+    margin-top: 2em;
   }
   .fixedNav{
     position: relative;
