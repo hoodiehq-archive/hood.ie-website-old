@@ -414,6 +414,9 @@ ul.roundedImages{
   h2 a{
     text-decoration: none;
   }
+  h2 + p.noMargin{
+    margin-top: -1.5em;
+  }
   p.noMargin{
     margin-bottom: .6em;
   }
