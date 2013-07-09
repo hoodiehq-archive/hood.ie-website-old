@@ -1,5 +1,7 @@
 @import "compass_twitter_bootstrap";
+@import "compass/css3/transition";
 @import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 @import "prism";
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
@@ -237,6 +239,9 @@ ul.progressList{
   }
   section{
     padding-top: 1.5em;
+    &.noPadding{
+      padding-top: 0;
+    }
     &.indented {
       margin: 0 0 1em 2em;
     }
@@ -378,6 +383,96 @@ ul.roundedImages{
   }
 }
 
+.sponsoringTeaser{
+  min-height: 2em;
+  font-family: 'bariol_boldbold', Arial, sans-serif;
+  color: $headline-color;
+  text-transform: uppercase;
+  padding: .2em 1em 0em;
+  @include box-shadow(#CCC 0px -5px 10px -5px inset);
+  background: #FAFAFA;
+  text-align: center;
+  a{
+    text-decoration: none;
+    border-bottom: 2px dotted;
+  }
+}
+
+.sponsoring{
+  .container .header{
+    margin-top: 6em;
+  }
+  em.block {
+    max-width: 550px;
+    font-size: 1.25em;
+    margin-bottom: 1em;
+    display: block;
+  }
+  h2 a{
+    text-decoration: none;
+  }
+  p.noMargin{
+    margin-bottom: .6em;
+  }
+  section ul{
+    margin-left: 2em;
+  }
+  a{
+    text-decoration: none;
+    &.contact{
+      display: inline-block;
+      color: $white;
+      background: $hoodie-blue;
+      padding: .6em 1em;
+      @include border-radius(5px);
+      font-size: 2em;
+      margin: 1em 0 0;
+      //@include background-image(linear-gradient(lighten($hoodie-blue, 10), $hoodie-blue));
+      &:hover{
+        background: darken($hoodie-blue, 10);
+        //@include background-image(linear-gradient(lighten($hoodie-blue, 30), $hoodie-blue));
+      }
+      &:active{
+        padding: .65em 1em .55em;
+        background: darken($hoodie-blue, 20);
+        //@include background-image(linear-gradient(darken($hoodie-blue, 5), lighten($hoodie-blue, 30) 20%, $hoodie-blue));
+      }
+    }
+    &[href="#VAT"]{
+      padding: 0 2px;
+    }
+  }
+  table{
+    border-collapse: separate;
+    border-spacing: 5px;
+    margin: 0 0 3em -5px;
+    width: calc(100% + 10px);
+    td{
+      @include border-radius(5px);
+      padding: 1em;
+      color: $white;
+      &:nth-child(odd){
+        background: #312783;
+      }
+      &:nth-child(even){
+        background: #0B8E36;
+      }
+      &.available{
+        cursor: pointer;
+        &:hover{
+          background: darken(#0B8E36, 10);
+        }
+      }
+      &.sold{
+        background: #E94E1B;
+      }
+      a[href="#VAT"]{
+        color: $white;
+      }
+    }
+  }
+}
+
 
 @media only screen and (max-width: 1240px) {
   .container{
@@ -397,6 +492,9 @@ ul.roundedImages{
     section{
       padding-top: 0;
     }
+  }
+  .sponsoring .container .header {
+    margin-top: 2em;
   }
   .fixedNav{
     position: relative;
