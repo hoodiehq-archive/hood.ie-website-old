@@ -40,26 +40,22 @@
         <h2>People really seem to like it:</h2>
         <ul>
           <li>
-            <blockquote>
-              It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
+            <blockquote>It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
             </blockquote>
             <span class="source">— <em><a href="http://www.roberthorvick.com/">Robert Horvick</a></em>, in a <a href="http://www.roberthorvick.com/2013/06/30/todomvc-angularjs-hood-ie-60-minutes-to-awesome/">blog post about Hoodie and angular.js</a></span>
           </li>
           <li>
-            <blockquote>
-              ❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
+            <blockquote>❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
             </blockquote>
             <span class="source">— <em><a href="http://addyosmani.com/">Addy Osmani</a></em>, <a href="https://twitter.com/addyosmani/statuses/340094925997735936">via Twitter</a></span>
           </li>
           <li>
-            <blockquote>
-              Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
+            <blockquote>Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
             </blockquote>
             <span class="source">— <em><a href="http://async.ly/">Paolo Fragomeni</a></em>, <a href="https://twitter.com/hij1nx/statuses/340516201342058496">via Twitter</a></span>
           </li>
           <li>
-            <blockquote>
-              I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
+            <blockquote>I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
             </blockquote>
             <span class="source">— <em><a href="http://adam.yt/">Adam Yeats</a></em>, <a href="https://twitter.com/adamyeats/statuses/336504300241039360">via Twitter</a></span>
           </li>
@@ -141,7 +137,7 @@ hoodie.store.findAll(type)
         <h2>Installing Hoodie and its dependencies</h2>
         <p>Hoodie has support for OS X, Windows and Linux.</p>
 
-        <h3>OS X</h3>
+        <h2>OS X</h2>
         <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
         <pre><code class="language-none"># make sure your Homebrew is up to date first
 $ brew update
@@ -153,7 +149,7 @@ $ brew install couchdb</code></pre>
         <pre><code class="language-none">$ npm install -g local-tld</code></pre>
         <p>Installation done! Time to build apps.</p>
 
-        <h3>Linux</h3>
+        <h2>Linux</h2>
         <p>First, install <a href="http://couchdb.org">CouchDB</a> (1.2.x or newer). On Ubuntu/Debian:</p>
         <pre><code class="language-none">$ sudo apt-get update
 $ sudo apt-get install couchdb</code></pre>
@@ -166,7 +162,7 @@ $ make &amp;&amp; sudo make install</code></pre>
         <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
         <p>Installation done! Time to build apps.</p>
 
-        <h3>Windows</h3>
+        <h2>Windows</h2>
         <p>Install <a href="http://nodejs.org/download/">Node.js</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
         <pre><code class="language-none">&gt; npm install -g hoodie-cli</code></pre>
         <p>Installation done! Time to build apps.</p>
@@ -196,9 +192,9 @@ $ hoodie start</code></pre>
         <h2>Initialize your Hoodie App</h2>
         <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
         <p>You also have the option of defining the Hoodie API endpoint yourself, too. This is useful if you're using a dev environment that runs its own server, like <a href="http://yeoman.io">yeoman.io</a>. You'd have Grunt running your frontend at <code>http://localhost:9000</code>, and your Hoodie instance at <code>http://localhost:6007</code>:</p>
-        <pre><code class="language-javascript">hoodie = new Hoodie('http://localhost:6007/_api');</code></pre></p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://localhost:6007/_api');</code></pre>
         <p>or, with local-tld:</p>
-        <pre><code class="language-javascript">hoodie = new Hoodie('http://hoodieappname.dev/_api');</code></pre></p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://hoodieappname.dev/_api');</code></pre>
         <h2>Account</h2>
         <pre><code class="language-javascript">// sign up
 hoodie.account.signUp('joe@example.com', 'secret');
@@ -344,8 +340,7 @@ hoodie.remote.on('add:note:uuid123',    function (newObject) {});
 hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
 hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
 hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
-        <a class="anchor" id="publicShares"></a>
-        <h2>Public Shares (Public User Stores)</h2>
+        <h2 id="publicShares">Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
         <pre><code class="language-javascript">// make note object with id 'abc4567' public
@@ -364,8 +359,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
         <p>When enabled, all publicly shared objects by all users will be available through the hoodie.global API.</p>
         <pre><code class="language-javascript">// find all public songs from all users
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
-        <a class="anchor" id="userShares"></a>
-        <h2>Sharing</h2>
+        <h2 id="userShares">Sharing</h2>
         <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
         <p class="alert"><strong>Important:</strong> The shares module isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
         <pre><code class="language-javascript">// add a new share
@@ -410,23 +404,21 @@ hoodie.share('shareId').unsubscribe();</code></pre>
         <pre>$ hoodie module install [moduleName]</pre>
 
         <h2>List of Hoodie Modules</h2>
-        <section class="indented">
-          <h3>Module: users (installed by default)</h3>
-          <ul>
-            <li>User sign up</li>
-            <li>User sign in</li>
-            <li>User sign out</li>
-            <li>Password forget</li>
-            <li>Change username</li>
-            <li>Change password</li>
-          </ul>
+        <h2>Module: users (installed by default)</h2>
+        <ul>
+          <li>User sign up</li>
+          <li>User sign in</li>
+          <li>User sign out</li>
+          <li>Password forget</li>
+          <li>Change username</li>
+          <li>Change password</li>
+        </ul>
 
-          <h3>Module: shares</h3>
-          <ul>
-            <li>Make private objects public</li>
-            <li>Share private objects with other users or groups</li>
-          </ul>
-        </section>
+        <h2>Module: shares</h2>
+        <ul>
+          <li>Make private objects public</li>
+          <li>Share private objects with other users or groups</li>
+        </ul>
         <p>For the fearless: find out how to build your own workers here (they're JS as well!): <a href="https://github.com/hoodiehq/hoodie-worker">github.com/hoodiehq/hoodie-worker</a></p>
       </section>
       <section id="about">
