@@ -86,6 +86,9 @@ a{
 
 p{
   margin: 0 0 1.5em;
+  &+ ul{
+    margin-top: -.666em;
+  }
 }
 
 ul{
@@ -225,7 +228,7 @@ ul.progressList{
   width: 90%;
   margin-bottom: 8em;
   .header{
-    margin: 90px auto 0 auto;
+    margin: 55px auto 0 auto;
     h1{
       margin-bottom: 28px;
       margin-top: 14px;
@@ -384,11 +387,10 @@ ul.roundedImages{
 }
 
 .sponsoringTeaser{
-  min-height: 2em;
   font-family: 'bariol_boldbold', Arial, sans-serif;
   color: $headline-color;
   text-transform: uppercase;
-  padding: .2em 1em 0em;
+  padding: 0.1em 1em 0.25em;
   @include box-shadow(#CCC 0px -5px 10px -5px inset);
   background: #FAFAFA;
   text-align: center;
@@ -400,13 +402,14 @@ ul.roundedImages{
 
 .sponsoring{
   .container .header{
-    margin-top: 6em;
+    margin-top: 90px;
   }
   em.block {
     max-width: 550px;
     font-size: 1.25em;
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
     display: block;
+    line-height: 1.2em;
   }
   h2 a{
     text-decoration: none;
@@ -423,10 +426,11 @@ ul.roundedImages{
       display: inline-block;
       color: $white;
       background: $hoodie-blue;
-      padding: .6em 1em;
+      padding: .635em 1em;
       @include border-radius(5px);
       font-size: 2em;
-      margin: 1em 0 0;
+      margin: .75em 0 0;
+      line-height: 1em;
       //@include background-image(linear-gradient(lighten($hoodie-blue, 10), $hoodie-blue));
       &:hover{
         background: darken($hoodie-blue, 10);
@@ -445,12 +449,13 @@ ul.roundedImages{
   table{
     border-collapse: separate;
     border-spacing: 5px;
-    margin: 0 0 3em -5px;
+    margin: -5px 0 3em -5px;
     width: calc(100% + 10px);
     td{
       @include border-radius(5px);
-      padding: 1em;
+      padding: .5em 1em;
       color: $white;
+      line-height: 1.75em;
       &:nth-child(odd){
         background: #312783;
       }
