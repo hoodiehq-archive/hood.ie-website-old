@@ -12,10 +12,15 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/e66f1f56.hoodie.css">
+        <link rel="stylesheet" href="styles/d5a603c2.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav">
+    <div class="sponsoringTeaser">
+      <span class="leadIn">This week of Hoodie development is sponsored by</span>
+      <a href="http://go.hood.ie/thehoodiefirm" class="sponsor">The Hoodie Firm</a> —
+      <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
+    </div>
     <div id="mainNav" class="fixedNav">
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#features">Features</a></li>
@@ -24,6 +29,7 @@
         <li><a href="#docs">Documentation</a></li>
         <li><a href="#modules">Modules</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="/sponsoring.html">Sponsoring</a></li>
       </ul>
     </div>
     <div class="container">
@@ -38,55 +44,61 @@
         <h2>People really seem to like it:</h2>
         <ul>
           <li>
-            <blockquote>
-              It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
+            <blockquote>It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
             </blockquote>
+            <img src="images/4422a79c.horvick.png" alt="">
             <span class="source">— <em><a href="http://www.roberthorvick.com/">Robert Horvick</a></em>, in a <a href="http://www.roberthorvick.com/2013/06/30/todomvc-angularjs-hood-ie-60-minutes-to-awesome/">blog post about Hoodie and angular.js</a></span>
           </li>
           <li>
-            <blockquote>
-              ❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
+            <blockquote>❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
             </blockquote>
+            <img src="images/ec081955.osmani.jpeg" alt="">
             <span class="source">— <em><a href="http://addyosmani.com/">Addy Osmani</a></em>, <a href="https://twitter.com/addyosmani/statuses/340094925997735936">via Twitter</a></span>
           </li>
           <li>
-            <blockquote>
-              Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
+            <blockquote>Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
             </blockquote>
+            <img src="images/bb2c729e.fragomeni.png" alt="">
             <span class="source">— <em><a href="http://async.ly/">Paolo Fragomeni</a></em>, <a href="https://twitter.com/hij1nx/statuses/340516201342058496">via Twitter</a></span>
           </li>
           <li>
-            <blockquote>
-              I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
+            <blockquote>I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
             </blockquote>
+            <img src="images/fe76eb6f.yeats.jpeg" alt="">
             <span class="source">— <em><a href="http://adam.yt/">Adam Yeats</a></em>, <a href="https://twitter.com/adamyeats/statuses/336504300241039360">via Twitter</a></span>
           </li>
         </ul>
         <p>See <a href="https://twitter.com/search?q=hood.ie">what others are tweeting about Hoodie</a> or browse through our personal <a href="http://blog.hood.ie/category/talking-about-hoodie/">favourite user quotes</a>.</p>
       </div>
-      <!-- Begin MailChimp Signup Form -->
+      <!-- Begin MailChimp Signup Form
       <div id="mc_embed_signup">
-      <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+      <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <label for="mce-EMAIL">Stay in Touch</label>
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
       </form>
-      </div>
+      </div>-->
 
       <!--End mc_embed_signup-->
       <section id="features">
         <h1>Features</h1>
-        <ul>
-          <li>Offline by default: Hoodie stores data locally first and syncs them in the background when possible. Great for mobile applications</li>
-          <li>One-line signup/signin/signout/resend password and other account management functions</li>
-          <li>Document-based storage with CouchDB: no building database schemas</li>
-          <li>Event system: easily listen for changes in the data to trigger view updates</li>
-          <li>Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
-          <li>Sends and receives emails</li>
-          <li>Flexible, npm-based module system in case you need more capability</li>
-          <li>JavaScript and JSON on every layer. Even the database queries are JS</li>
-          <li>Convenient, super simple local dev setup that even configures .dev-domains for you</li>
-          <li>Deploy to Nodejitsu with minimal effort</li>
+        <ul class="progressList">
+          <li class="completed">Offline by default: Hoodie stores data locally first and syncs them in the background when possible. Great for mobile applications</li>
+          <li class="completed">One-line signup/signin/signout/resend password and other account management functions</li>
+          <li class="completed">Document-based storage with CouchDB: no building database schemas</li>
+          <li class="completed">Event system: easily listen for changes in the data to trigger view updates</li>
+          <li class="completed">JavaScript and JSON on every layer. Even the database queries are JS</li>
+          <li class="completed">Convenient, super simple local dev setup that optionally even configures .dev-domains for you</li>
+          <li class="completed">Deploy to Nodejitsu with minimal effort</li>
+          <li class="inDevelopment">Flexible, npm-based plugin system in case you need more capability</li>
+          <li class="soon">Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
+          <li class="soon">Send multi-part emails with attachments from the client</li>
+        </ul>
+        <h1>Who is it for?</h1>
+        <ul class="progressList">
+          <li class="completed"><strong>Node.js developers:</strong> help us build this amazing thing and extend it with your plugins</li>
+          <li class="inDevelopment"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
+          <li class="soon"><strong>Designers with basic frontend-skills:</strong> Our long-term goal is to make Hoodie user friendly enough for non-developers (no terminal commands for you!)</li>
         </ul>
       </section>
       <section id="intro">
@@ -139,7 +151,7 @@ hoodie.store.findAll(type)
         <h2>Installing Hoodie and its dependencies</h2>
         <p>Hoodie has support for OS X, Windows and Linux.</p>
 
-        <h3>OS X</h3>
+        <h2>OS X</h2>
         <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
         <pre><code class="language-none"># make sure your Homebrew is up to date first
 $ brew update
@@ -151,7 +163,7 @@ $ brew install couchdb</code></pre>
         <pre><code class="language-none">$ npm install -g local-tld</code></pre>
         <p>Installation done! Time to build apps.</p>
 
-        <h3>Linux</h3>
+        <h2>Linux</h2>
         <p>First, install <a href="http://couchdb.org">CouchDB</a> (1.2.x or newer). On Ubuntu/Debian:</p>
         <pre><code class="language-none">$ sudo apt-get update
 $ sudo apt-get install couchdb</code></pre>
@@ -164,7 +176,7 @@ $ make &amp;&amp; sudo make install</code></pre>
         <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
         <p>Installation done! Time to build apps.</p>
 
-        <h3>Windows</h3>
+        <h2>Windows</h2>
         <p>Install <a href="http://nodejs.org/download/">Node.js</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
         <pre><code class="language-none">&gt; npm install -g hoodie-cli</code></pre>
         <p>Installation done! Time to build apps.</p>
@@ -342,8 +354,7 @@ hoodie.remote.on('add:note:uuid123',    function (newObject) {});
 hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
 hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
 hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
-        <a class="anchor" id="publicShares"></a>
-        <h2>Public Shares (Public User Stores)</h2>
+        <h2 id="publicShares">Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
         <pre><code class="language-javascript">// make note object with id 'abc4567' public
@@ -362,8 +373,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
         <p>When enabled, all publicly shared objects by all users will be available through the hoodie.global API.</p>
         <pre><code class="language-javascript">// find all public songs from all users
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
-        <a class="anchor" id="userShares"></a>
-        <h2>Sharing</h2>
+        <h2 id="userShares">Sharing</h2>
         <p>The hoodie.share module allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
         <p class="alert"><strong>Important:</strong> The shares module isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
         <pre><code class="language-javascript">// add a new share
@@ -408,23 +418,21 @@ hoodie.share('shareId').unsubscribe();</code></pre>
         <pre>$ hoodie module install [moduleName]</pre>
 
         <h2>List of Hoodie Modules</h2>
-        <section class="indented">
-          <h3>Module: users (installed by default)</h3>
-          <ul>
-            <li>User sign up</li>
-            <li>User sign in</li>
-            <li>User sign out</li>
-            <li>Password forget</li>
-            <li>Change username</li>
-            <li>Change password</li>
-          </ul>
+        <h2>Module: users (installed by default)</h2>
+        <ul>
+          <li>User sign up</li>
+          <li>User sign in</li>
+          <li>User sign out</li>
+          <li>Password forget</li>
+          <li>Change username</li>
+          <li>Change password</li>
+        </ul>
 
-          <h3>Module: shares</h3>
-          <ul>
-            <li>Make private objects public</li>
-            <li>Share private objects with other users or groups</li>
-          </ul>
-        </section>
+        <h2>Module: shares</h2>
+        <ul>
+          <li>Make private objects public</li>
+          <li>Share private objects with other users or groups</li>
+        </ul>
         <p>For the fearless: find out how to build your own workers here (they're JS as well!): <a href="https://github.com/hoodiehq/hoodie-worker">github.com/hoodiehq/hoodie-worker</a></p>
       </section>
       <section id="about">
@@ -468,6 +476,8 @@ hoodie.share('shareId').unsubscribe();</code></pre>
           }
         });
         $('#mainNav a, a.scrollTo').click(function (event) {
+          // Only smooth scroll anchor links
+          if($(this).attr('href').substr(0,1) != "#") return;
           event.preventDefault();
           var anchor = $(this);
           History.pushState(null, null, anchor.attr('href'));
