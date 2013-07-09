@@ -315,10 +315,19 @@ ul.roundedImages{
         margin: 0 0 $line-height 0;
         line-height: $line-height;
       }
+      img{
+        display: block;
+        float: right;
+        border-radius: 50%;
+        border: 5px solid #EEE;
+        margin-left: 1em;
+      }
       .source {
         display: block;
         text-align: right;
         line-height: $line-height;
+        width: 70%;
+        float: right;
       }
     }
   }
