@@ -146,6 +146,7 @@ img.slide {
   position: fixed;
   top: 91px;
   left: 2em;
+  letter-spacing: 1px;
   ul{
     width: 200px;
     max-width: 100%;
@@ -224,7 +225,7 @@ ul.roundedImages{
   @include clearfix();
   margin-left: 0;
   li{
-    margin-right: 2%;
+    margin-right: 3%;
     list-style: none;
     float:left;
     margin-bottom: 1em;
@@ -234,7 +235,7 @@ ul.roundedImages{
     }
     img{
       @include border-radius(50%);
-      border: 5px solid #EEE;
+      @include box-shadow(0 0 0 5px #EEE);
     }
   }
   &:last-child{
@@ -319,7 +320,7 @@ ul.roundedImages{
         display: block;
         float: right;
         @include border-radius(50%);
-        border: 5px solid #EEE;
+        @include box-shadow(0 0 0 5px #EEE);
         margin-left: 1em;
         width: 4.5em;
       }
