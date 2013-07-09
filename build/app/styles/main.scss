@@ -224,10 +224,9 @@ ul.roundedImages{
   @include clearfix();
   margin-left: 0;
   li{
-    margin-right: 3%;
+    margin-right: 2%;
     list-style: none;
     float:left;
-    max-width: 30%;
     margin-bottom: 1em;
     height: 6.5em;
     &:last-child{
@@ -235,6 +234,7 @@ ul.roundedImages{
     }
     img{
       @include border-radius(50%);
+      border: 5px solid #EEE;
     }
   }
   &:last-child{
@@ -318,7 +318,7 @@ ul.roundedImages{
       img{
         display: block;
         float: right;
-        border-radius: 50%;
+        @include border-radius(50%);
         border: 5px solid #EEE;
         margin-left: 1em;
       }
@@ -371,6 +371,9 @@ ul.roundedImages{
       }
     }
   }
+  ul.roundedImages li {
+    height: 7.5em;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -388,7 +391,8 @@ ul.roundedImages{
     margin: 0;
   }
   ul.roundedImages li {
-    height: 8em;
+    max-width: 30%;
+    height: 8.5em;
   }
 }
 
