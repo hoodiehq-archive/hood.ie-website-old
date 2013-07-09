@@ -321,6 +321,7 @@ ul.roundedImages{
         @include border-radius(50%);
         border: 5px solid #EEE;
         margin-left: 1em;
+        width: 4.5em;
       }
       .source {
         display: block;
