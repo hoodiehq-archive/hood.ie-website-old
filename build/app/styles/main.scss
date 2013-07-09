@@ -4,8 +4,12 @@
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-$hoodie-blue: #302182;
-$hoodie-red:  #BE1522;
+$hoodie-blue:   #302182;
+$hoodie-green:  #0B8E36;
+$hoodie-yellow: #F9B233;
+$hoodie-orange: #E94E1B;
+$hoodie-brown:  #693C10;
+$hoodie-red:    #BE1522;
 
 $headline-color:  $hoodie-blue;
 $link-color:      $hoodie-blue;
@@ -85,8 +89,7 @@ p{
 ul{
   margin: 0 0 0px 21px;
   li{
-      line-height: 1.5em;
-      //margin-bottom: .5em;
+    line-height: 1.5em;
   }
   & + p{
     margin-top: 1.5em;
@@ -172,6 +175,46 @@ img.slide {
   }
   .nav-pills > .active > a, .nav-pills > .active > a:hover {
     background-color: $hoodie-blue;
+  }
+}
+
+ul.progressList{
+  margin: 0;
+  li{
+    border-left: 5px solid #EEE;
+    list-style: none;
+    padding-left: 1em;
+    position: relative;
+    &:before{
+      content: " ";
+      display: block;
+      width: 5px;
+      height: 0px;
+      position: absolute;
+      left: 0px;
+      top: .45em;
+      border-left: 5px solid #EEE;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+    &.completed{
+      border-color: $hoodie-green;
+      &:before{
+        border-left-color: $hoodie-green;
+      }
+    }
+    &.inDevelopment{
+      border-color: $hoodie-yellow;
+      &:before{
+        border-left-color: $hoodie-yellow;
+      }
+    }
+    &.soon{
+      border-color: lighten($hoodie-yellow, 30);
+      &:before{
+        border-left-color: lighten($hoodie-yellow, 30);
+      }
+    }
   }
 }
 
@@ -309,7 +352,7 @@ ul.roundedImages{
     li {
       width: 49%;
       margin: 0 0 $line-height 0;
-      padding: 0 10px;
+      padding: 0 10px 0 0;
       display: inline-block;
       vertical-align: top;
       blockquote{
