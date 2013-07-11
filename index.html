@@ -12,10 +12,10 @@
         <link rel="icon" href="images/6cd770de.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/d5a603c2.hoodie.css">
+        <link rel="stylesheet" href="styles/831fcb2a.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
-    <body data-spy="scroll" data-target="#mainNav">
+    <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
       <span class="leadIn">This week of Hoodie development is sponsored by</span>
       <a href="http://go.hood.ie/thehoodiefirm" class="sponsor">The Hoodie Firm</a> —
@@ -70,18 +70,25 @@
         </ul>
         <p>See <a href="https://twitter.com/search?q=hood.ie">what others are tweeting about Hoodie</a> or browse through our personal <a href="http://blog.hood.ie/category/talking-about-hoodie/">favourite user quotes</a>.</p>
       </div>
-      <!-- Begin MailChimp Signup Form
+      <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
-      <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
         <label for="mce-EMAIL">Stay in Touch</label>
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
         <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
       </form>
-      </div>-->
+      </div>
 
       <!--End mc_embed_signup-->
       <section id="features">
-        <h1>Features</h1>
+        <h1 class="inline-block">Features</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">Complete!</li>
+            <li class="inDevelopment">We're on it</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
         <ul class="progressList">
           <li class="completed">Offline by default: Hoodie stores data locally first and syncs them in the background when possible. Great for mobile applications</li>
           <li class="completed">One-line signup/signin/signout/resend password and other account management functions</li>
@@ -94,7 +101,14 @@
           <li class="soon">Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
           <li class="soon">Send multi-part emails with attachments from the client</li>
         </ul>
-        <h1>Who is it for?</h1>
+        <h1 class="inline-block">Who is it for?</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">For you!</li>
+            <li class="inDevelopment">You're next</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
         <ul class="progressList">
           <li class="completed"><strong>Node.js developers:</strong> help us build this amazing thing and extend it with your plugins</li>
           <li class="inDevelopment"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
