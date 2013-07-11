@@ -66,6 +66,10 @@ $line-height: 1.5em;
   text-align: center;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
 body{
   font-size: $font-size;
   line-height: $baseline-factor;
@@ -183,6 +187,45 @@ img.slide {
   }
 }
 
+.progressLegend{
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1.5em;
+  ul.legend{
+    li{
+      display: inline-block;
+      position: relative;
+      margin-left: 2em;
+      &:before{
+        position: absolute;
+        content: " ";
+        width: 15px;
+        height: 15px;
+        display: block;
+        background: #EEE;
+        @include border-radius(50%);
+        top: .3em;
+        margin: 0 0 0 -1.5em;
+      }
+      &.completed{
+        &:before{
+          background-color: $hoodie-green;
+        }
+      }
+      &.inDevelopment{
+        &:before{
+          background-color: $hoodie-yellow;
+        }
+      }
+      &.soon{
+        &:before{
+          background-color: lighten($hoodie-yellow, 30);
+        }
+      }
+    }
+  }
+}
+
 ul.progressList{
   margin: 0;
   li{
@@ -241,6 +284,7 @@ ul.progressList{
     }
   }
   section{
+    position: relative;
     padding-top: 1.5em;
     &.noPadding{
       padding-top: 0;
@@ -524,6 +568,14 @@ ul.roundedImages{
   }
   ul.roundedImages li {
     height: 7.5em;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .progressLegend {
+    display: block;
+    padding-top: 0;
+    margin: 0 1em 1.5em -1.75em;
   }
 }
 

@@ -17,7 +17,7 @@
         <!-- endbuild -->
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
-    <body data-spy="scroll" data-target="#mainNav">
+    <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
       <span class="leadIn">This week of Hoodie development is sponsored by</span>
       <a href="http://go.hood.ie/thehoodiefirm" class="sponsor">The Hoodie Firm</a> —
@@ -83,7 +83,14 @@
 
       <!--End mc_embed_signup-->
       <section id="features">
-        <h1>Features</h1>
+        <h1 class="inline-block">Features</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">Complete!</li>
+            <li class="inDevelopment">We're on it</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
         <ul class="progressList">
           <li class="completed">Offline by default: Hoodie stores data locally first and syncs them in the background when possible. Great for mobile applications</li>
           <li class="completed">One-line signup/signin/signout/resend password and other account management functions</li>
@@ -96,7 +103,14 @@
           <li class="soon">Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
           <li class="soon">Send multi-part emails with attachments from the client</li>
         </ul>
-        <h1>Who is it for?</h1>
+        <h1 class="inline-block">Who is it for?</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">For you!</li>
+            <li class="inDevelopment">You're next</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
         <ul class="progressList">
           <li class="completed"><strong>Node.js developers:</strong> help us build this amazing thing and extend it with your plugins</li>
           <li class="inDevelopment"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
