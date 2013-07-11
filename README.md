@@ -15,13 +15,13 @@ To deploy:
   1. From inside `/build` copy `/dist` back to root: `cp -r dist/* ../`
   2. Push
 
-In short: 
+In short:
 
 ````
 cd build
 grunt build
 cp -r dist/* ../
-git add .
+git add ..
 git commit -m "…"
 git push
 ````
