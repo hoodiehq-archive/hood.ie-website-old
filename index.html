@@ -261,7 +261,7 @@ hoodie.account.on('signin', function (user) {});
 hoodie.account.on('signout', function (user) {});
 
 // user has re-authenticated after their session timed out (this does _not_ trigger the signin event)
-hoodie.account.on('authenticated', function (user) {});
+hoodie.account.on('reauthenticated', function (user) {});
 
 // user's session has timed out. This means the user is still signed in locally, but Hoodie cannot sync remotely, so the user must sign in again
 hoodie.account.on('unauthenticated', function (user) {});</code></pre>
