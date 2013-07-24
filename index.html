@@ -30,6 +30,7 @@
         <li><a href="#modules">Modules</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="/sponsoring.html">Sponsoring</a></li>
+        <li><a href="http://blog.hood.ie.html">Blog</a></li>
       </ul>
     </div>
     <div class="container">
@@ -252,19 +253,19 @@ hoodie.account.username;</code></pre>
         <h2>Account events</h2>
         <pre><code class="language-javascript">// listen for account events
 // user has signed up (this also triggers the authenticated event, see below)
-hoodie.account.on('signup', function (username) {});
+hoodie.account.on('signup', function (user) {});
 
 // user has signed in (this also triggers the authenticated event, see below)
-hoodie.account.on('signin', function (username) {});
+hoodie.account.on('signin', function (user) {});
 
 // user has signed out
-hoodie.account.on('signout', function () {});
+hoodie.account.on('signout', function (user) {});
 
 // user has re-authenticated after their session timed out (this does _not_ trigger the signin event)
-hoodie.account.on('reauthenticated', function (username) {});
+hoodie.account.on('authenticated', function (user) {});
 
 // user's session has timed out. This means the user is still signed in locally, but Hoodie cannot sync remotely, so the user must sign in again
-hoodie.account.on('error:unauthenticated', function (user) {});</code></pre>
+hoodie.account.on('unauthenticated', function (user) {});</code></pre>
         <h2>Store</h2>
         <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
         <p>Since Hoodie treats all data as user data, and all data is private by default, the following functions can only ever access the data of the currently signed in user. Exceptions to this is data shared via <a href="#publicShares" class="scrollTo">global public shares</a> or <a href="#userShares" class="scrollTo">private user sharing</a>.</p>
