@@ -9,9 +9,9 @@
         <title>Hoodie</title>
         <meta name="description" content="Hoodie - Very fast web app development">
         <meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/6cd770de.favicon_128.png">
+        <link rel="icon" href="images/8c6a1df5.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-        <link rel="stylesheet" href="styles/831fcb2a.hoodie.css">
+        <link rel="stylesheet" href="styles/eafadda7.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
         <style type="text/css">
 
@@ -35,7 +35,7 @@
 
     <div class="container">
       <div class="header">
-        <img class="logo" src="images/8adb898e.hoodie_logo.png" alt="">
+        <img class="logo" src="images/f5af4e56.hoodie_logo.png" alt="">
         <h1>Introducing Hoodie</h1>
         <p>We love building web apps.</p>
       </div>
@@ -275,7 +275,7 @@
         <p>Internally, Hoodie takes that JSON object and adds a bit of meta data. Most importantly for our purposes, it adds a <code>type: &quot;$email&quot;</code> field. That way Hoodie knows we intend to send an email. Now the normal flow of data commences. The objects goes through <code>hoodie.store</code> into <code>localStorage</code> and from there via the sync engine to CouchDB.</p>
 
         <figure>
-        <img class="slide" src="images/10604af1.email.gif" alt=""></figure>
+        <img class="slide" src="images/ecac4244.email.gif" alt=""></figure>
 
         <p>There, the “email worker” as part of the email module is listening on our current user’s database for objects of the type <code>&quot;email&quot;</code>. CouchDB, on arrival of our object, dutifully notifies the worker about its arrival. The worker then reads the object, constructs an actual email and sends it over SMTP towards the final destination. The worker then takes the SMTP result (ideally a confirmation that the email was successfully sent) and adds that to the object in a new field called <code>&quot;state&quot;</code> and writes it back to CouchDB.</p>
 
