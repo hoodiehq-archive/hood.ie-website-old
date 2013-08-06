@@ -528,25 +528,50 @@ ul.roundedImages{
 
 .container .nav-tabs{
   border-bottom:none;
-  margin-top: -.333em;
+  margin-top: -.25em;
   margin-bottom: 1.333em;
   li{
     &.active{
       a{
         background-color: $hoodie-blue;
         color: $white;
+        border: none;
+        position: relative;
+        &:before{
+          content: " ";
+          display: block;
+          width: 0px;
+          height: 5px;
+          position: absolute;
+          left: 45%;
+          bottom: -.55em;
+          border-top: 5px solid $hoodie-blue;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+        }
       }
     }
     a{
       text-decoration: none;
       background-color: $background-color;
       color: $hoodie-blue;
+      border: none;
       @include border-radius(4px);
       &:hover{
         background-color: $hoodie-blue;
         color: $white;
       }
     }
+  }
+}
+
+.tab-content.well {
+  margin-top: -.333em;
+  padding-bottom: 0;
+  padding: .25em .5em;
+  margin-bottom: 2.75em;
+  div p:last-child{
+    margin-bottom: 0;
   }
 }
 
@@ -603,6 +628,20 @@ ul.roundedImages{
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .container .nav-tabs{
+    li{
+      margin-bottom: 2px;
+      width: 100%;
+      &.active{
+        a:before{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 500px) {
   #mc_embed_signup {
     form {
@@ -645,14 +684,6 @@ ul.roundedImages{
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .container .nav-tabs{
-    li{
-      margin-bottom: 2px;
-      width: 100%;
-    }
-  }
-}
 
 @media only screen and (max-width: 320px) {
   body{
