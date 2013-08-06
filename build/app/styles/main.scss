@@ -13,8 +13,9 @@ $hoodie-orange: #E94E1B;
 $hoodie-brown:  #693C10;
 $hoodie-red:    #BE1522;
 
-$headline-color:  $hoodie-blue;
-$link-color:      $hoodie-blue;
+$background-color:  #EEE;
+$headline-color:    $hoodie-blue;
+$link-color:        $hoodie-blue;
 
 // Set your grid dimensions here
 $body-width: 960px;
@@ -525,6 +526,29 @@ ul.roundedImages{
   }
 }
 
+.container .nav-tabs{
+  border-bottom:none;
+  margin-top: -.333em;
+  margin-bottom: 1.333em;
+  li{
+    &.active{
+      a{
+        background-color: $hoodie-blue;
+        color: $white;
+      }
+    }
+    a{
+      text-decoration: none;
+      background-color: $background-color;
+      color: $hoodie-blue;
+      @include border-radius(4px);
+      &:hover{
+        background-color: $hoodie-blue;
+        color: $white;
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 1240px) {
   .container{
@@ -618,6 +642,15 @@ ul.roundedImages{
   }
   h2, h3{
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container .nav-tabs{
+    li{
+      margin-bottom: 2px;
+      width: 100%;
+    }
   }
 }
 
