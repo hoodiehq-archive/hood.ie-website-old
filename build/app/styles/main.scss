@@ -157,7 +157,7 @@ img.slide {
 .fixedNav{
   font-size: 16px;
   position: fixed;
-  top: 91px;
+  top: 110px;
   left: 2em;
   letter-spacing: 1px;
   ul{
@@ -442,6 +442,18 @@ ul.roundedImages{
   a{
     text-decoration: none;
     border-bottom: 2px dotted;
+    &.important{
+      color: $white;
+      background: $hoodie-blue;
+      border-radius: 5px;
+      padding: 0 4px;
+      font-weight: normal;
+      border-bottom: none;
+      &:hover{
+        color: $hoodie-blue;
+        background: transparent;
+      }
+    }
   }
 }
 
