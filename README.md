@@ -1,7 +1,7 @@
 hood.ie
 =======
 
-This is the Hoodie website. It is built with yeoman 1.0.0-beta.4
+This is the [Hoodie](http://hood.ie) website. It is built with yeoman 1.0.0-beta.4
 
 Workflow
 --------
