@@ -19,10 +19,9 @@
     </head>
     <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
-      <span class="leadIn">This week of Hoodie development is sponsored by</span>
-      <a class="important" href="http://go.hood.ie/local-ch">local.ch</a><br>They're looking for a full time <a href="http://go.hood.ie/local-ch-frontend-web-dev
-">frontend dev</a> and a <a href="http://go.hood.ie/local-ch-mobile-web-engineer">Mobile web engineer</a>
-      – <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
+        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/thehoodiefirm">The Hoodie Firm</a>
+          – <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
+        </span>
     </div>
     <div id="mainNav" class="fixedNav">
       <ul class="nav nav-pills nav-stacked">
@@ -230,8 +229,10 @@ $ sudo apt-get install nodejs</code></pre>
         <p>This created the folder 'myappname'. Go in there and start the default app:</p>
         <pre><code class="language-none">$ cd myappname
 $ hoodie start</code></pre>
-        <p> Your browser should now automatically open <a href="#">http://127.0.0.1:6007</a> and show you Hoodie's default app. </p>
-        <p>Once your app is running, you can usually access your app's CouchDB at <a href="#">http://127.0.0.1:6009</a> (Futon, CouchDB's web-based administration at <a href="#">http://127.0.0.1:6009/_utils</a>) and Pocket, your app's admin backend at <a href="#">http://127.0.0.1:6008</a>. If these change, Hoodie will tell you in the terminal.</p>
+        <p>Your browser should now automatically open and show you Hoodie's default app. If you don't want that, start the app with</p>
+        <pre><code class="language-none">$ hoodie start -n</code></pre>
+        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. </p>
+        <!--
         <h2>Local-TLD</h2>
         <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
         <p class="alert"><strong>Important:</strong> local-tld currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
@@ -240,6 +241,7 @@ $ hoodie start</code></pre>
         <h2>Enable local-tld (by re-installing it)</h2>
         <pre><code class="language-markup">$ npm install -g local-tld</code></pre>
         <p>We're working on making this a nicer experience, but it seems as if you won't be able to have both at once for the forseeable future. We hope that's ok with you. If you have any trouble with local-tld, please let us know in the <a href="https://github.com/hoodiehq/local-tld/issues">local-tld issues</a>.</p>
+        -->
         <p>That's all. Go nuts!</p>
       </section>
       <section id="docs">
@@ -295,7 +297,7 @@ hoodie.account.on('authenticated', function (user) {});
 hoodie.account.on('unauthenticated', function (user) {});</code></pre>
         <h2>Store</h2>
         <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
-        <p>Since Hoodie treats all data as user data, and all data is private by default, the following functions can only ever access the data of the currently signed in user. Exceptions to this is data shared via <a href="#publicShares" class="scrollTo">global public shares</a> or <a href="#userShares" class="scrollTo">private user sharing</a>.</p>
+        <p>Since Hoodie treats all data as user data, and all data is private by default, the following functions can only ever access the data of the currently signed in user. An exception to this is data shared via <a href="#publicShares" class="scrollTo">global public shares</a> or <a href="#userShares" class="scrollTo">private user sharing</a>.</p>
         <pre><code class="language-javascript">// add a new object
 var type = 'task';
 var attributes = {status: 'open'};
@@ -458,7 +460,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
       </section>
       <section id="plugins">
         <h1>Plugins</h1>
-        <p>Plugins provide and extend Hoodie's basic functionality. Currently, there are only two, users and shares. We're going to provide more plugins such as payments and oAuth in the future.</p>
+        <p>Plugins provide and extend Hoodie's basic functionality. We're just finishing up our work on the new plugins feature, and we're going to provide some plugins such as payments and oAuth ourselves soon.</p>
 
         <p>A Plugin can extend all three parts of Hoodie: the
           frontend JavaScript library, the admin interface and
@@ -468,7 +470,6 @@ hoodie.share('shareId').unsubscribe();</code></pre>
         <p>Plugins are just Node modules and can be published to NPM. Once published, users can install them with, e.g. <code>hoodie install email</code></p>
 
         <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
-
 
         <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
       </section>
@@ -482,7 +483,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
           <li><img src="images/lena.jpeg"/></li>
           <li><img src="images/sven.jpg"/></li>
         </ul>
-        <p>Hoodie is a project by <strong>Jan Lehnardt</strong> (<a href="https://twitter.com/janl">@janl</a>), <strong>Gregor Martynus</strong> (<a href="https://twitter.com/gr2m">@gr2m</a>), <strong>Alex Feyerke</strong> (<a href="https://twitter.com/espylaub">@espylaub</a>), <strong>Caolan McMahon</strong> (<a href="https://twitter.com/caolan">@caolan</a>), <strong>Lena Reinhard</strong> (<a href="https://twitter.com/ffffux">@ffffux</a>) and <strong>Sven Lito</strong> (<a href="https://twitter.com/svenlito">@svenlito</a>). We are based in Berlin, Zurich,  Sheffield and London and run mostly on Coffee and Cheesecake.</p>
+        <p>Hoodie is a project by <strong>Jan Lehnardt</strong> (<a href="https://twitter.com/janl">@janl</a>), <strong>Gregor Martynus</strong> (<a href="https://twitter.com/gr2m">@gr2m</a>), <strong>Alex Feyerke</strong> (<a href="https://twitter.com/espylaub">@espylaub</a>), <strong>Caolan McMahon</strong> (<a href="https://twitter.com/caolan">@caolan</a>), <strong>Lena Reinhard</strong> (<a href="https://twitter.com/ffffux">@ffffux</a>) and <strong>Sven Lito</strong> (<a href="https://twitter.com/svenlito">@svenlito</a>). We are based in Berlin, Zurich and Sheffield and run mostly on Coffee and Cheesecake.</p>
 
         <p>All Hoodie code is on GitHub, collected under <a href="https://github.com/hoodiehq">github.com/hoodiehq</a>.
         Follow the Hoodie team on twitter: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>. If you have any questions, find us on IRC: <a href="irc://irc.freenode.net/#hoodie">irc.freenode.net/#hoodie</a>.</p>
