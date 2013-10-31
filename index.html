@@ -12,12 +12,13 @@
         <link rel="icon" href="images/8c6a1df5.favicon_128.png">
         <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
         <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="styles/e40d211f.hoodie.css">
+        <link rel="stylesheet" href="styles/d41d8cd9.hoodie.css">
         <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
     </head>
     <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
-      <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/thehoodiefirm">The Hoodie Firm</a>
+      <span class="leadIn">This week of Hoodie development is sponsored by</span>
+      <a class="important" href="http://go.hood.ie/local-ch">local.ch</a><br>They're looking for a full time <a href="http://go.hood.ie/local-ch-frontend-web-dev">frontend dev</a> and a <a href="http://go.hood.ie/local-ch-mobile-web-engineer">Mobile web engineer</a>
       – <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
     </div>
     <div id="mainNav" class="fixedNav">
@@ -59,7 +60,7 @@
             <span class="source">— <em><a href="http://www.roberthorvick.com/">Robert Horvick</a></em>, in a <a href="http://www.roberthorvick.com/2013/06/30/todomvc-angularjs-hood-ie-60-minutes-to-awesome/">blog post about Hoodie and angular.js</a></span>
           </li>
           <li>
-            <blockquote>❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management & storage. Great for mobile.
+            <blockquote>❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management &amp; storage. Great for mobile.
             </blockquote>
             <img src="images/ec081955.osmani.jpeg" alt="">
             <span class="source">— <em><a href="http://addyosmani.com/">Addy Osmani</a></em>, <a href="https://twitter.com/addyosmani/statuses/340094925997735936">via Twitter</a></span>
@@ -96,9 +97,9 @@
           <li class="completed">JavaScript and JSON on every layer. Even the database queries are JS</li>
           <li class="completed">Convenient, super simple local dev setup that optionally even configures .dev-domains for you</li>
           <li class="completed">Deploy to Nodejitsu with minimal effort</li>
-          <li class="inDevelopment">Flexible, npm-based plugin system in case you need more capability</li>
+          <li class="completed">Flexible, npm-based plugin system in case you need more capability</li>
+          <li class="completed">Send multi-part emails with attachments from the client</li>
           <li class="soon">Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
-          <li class="soon">Send multi-part emails with attachments from the client</li>
           <li class="soon">Receive payments from your users</li>
           <li class="soon">Authenticate with other services (Twitter, GitHub, etc.)</li>
           <li class="soon">Hoodie hosting for even simpler deployment</li>
@@ -113,7 +114,7 @@
         </div>
         <ul class="progressList">
           <li class="completed"><strong>Node.js developers:</strong> help us build this amazing thing and extend it with your plugins</li>
-          <li class="inDevelopment"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
+          <li class="completed"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
           <li class="soon"><strong>Designers with basic frontend-skills:</strong> Our long-term goal is to make Hoodie user friendly enough for non-developers (no terminal commands for you!)</li>
         </ul>
       </section>
@@ -165,10 +166,10 @@ hoodie.store.findAll(type)
         <h1>Getting started</h1>
         <p class="alert">Hoodie is currently a developer preview. Some features are missing, some things might change, there's a lot of optimization to be done. Don't use this for production.</p>
         <h2>Installing Hoodie and its dependencies</h2>
-        <p>Hoodie has support for OS X, Windows and Linux.</p>
+        <p>Hoodie has support for Mac OS X, Windows and Linux.</p>
 
         <ul class="nav nav-tabs" id="linuxDistros">
-          <li class="active"><a href="#installation-os-x" data-toggle="tab">OS X</a></li>
+          <li class="active"><a href="#installation-os-x" data-toggle="tab">Mac OS X</a></li>
           <li><a href="#installation-linux-general" data-toggle="tab">Linux - General</a></li>
           <li><a href="#installation-linux-ubuntu" data-toggle="tab">Linux - Ubuntu</a></li>
           <li><a href="#installation-windows" data-toggle="tab">Windows</a></li>
@@ -177,9 +178,10 @@ hoodie.store.findAll(type)
         <div class="tab-content well">
 
           <div class="tab-pane active" id="installation-os-x">
-            <p>Installing Hoodie on OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
+            <p>Installing Hoodie on Mac OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a>, <a href="http://git-scm.com">git</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
             <pre><code class="language-none"># make sure your Homebrew is up to date first
     $ brew update
+    $ brew install git
     $ brew install node
     $ brew install couchdb</code></pre>
             <p>Now, install Hoodie using Node's package manager:</p>
@@ -191,7 +193,7 @@ hoodie.store.findAll(type)
           <div class="tab-pane" id="installation-linux-general">
             <p>First, install <a href="http://couchdb.org">CouchDB</a> (1.2.x or newer). On Ubuntu/Debian:</p>
             <pre><code class="language-none">$ sudo apt-get update
-$ sudo apt-get install couchdb</code></pre>
+$ sudo apt-get install couchdb git</code></pre>
             <p>Then, download the <a href="http://nodejs.org">Node.js</a> (stable) source code. Extract, compile and install:</p>
             <pre><code class="language-none">$ tar -xvf node-v0.10.10.tar.gz
 $ cd node-v0.10.10
@@ -204,7 +206,7 @@ $ make &amp;&amp; sudo make install</code></pre>
           <div class="tab-pane" id="installation-linux-ubuntu">
             <p>This is an Ubuntu-specific guide courtesy of <a href="https://github.com/stuartlangridge">Stuart Langridge</a>. Start by installing CouchDB:</p>
             <pre><code class="language-none">$ sudo apt-get update
-$ sudo apt-get install couchdb-bin</code></pre>
+$ sudo apt-get install couchdb-bin git</code></pre>
             <p>On Ubuntu, you don't have to build Node.js from source, you can install it as a package instead. Add Chris Lea's Node.js PPA and install from it:</p>
             <pre><code class="language-none">$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
@@ -214,7 +216,7 @@ $ sudo apt-get install nodejs</code></pre>
             <p>Installation done! Time to build apps.</p>
           </div>
           <div class="tab-pane" id="installation-windows">
-            <p>On Windows, install <a href="http://nodejs.org/download/">Node.js</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
+            <p>On Windows, install <a href="http://nodejs.org/download/">Node.js</a>, <a href="http://git-scm.com/downloads">git</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
             <pre><code class="language-none">&gt; npm install -g hoodie-cli</code></pre>
             <p>Installation done! Time to build apps.</p>
           </div>
@@ -414,7 +416,8 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
         <h2 id="userShares">Sharing</h2>
         <p>The hoodie.share plugin allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
-        <p class="alert"><strong>Important:</strong> The shares plugin isn't complete yet. For example, there is currently no way to internally notify a user that there are shares for them to subscribe to (the app that Hoodie is based on does these notifications via email and includes the shares-Id there). If something doesn't work here, it's probably not you, but us. </p>
+        <p class="alert"><strong>Important:</strong> The shares plugin still a work in progress. This is how things
+        are likely going to look soon.</p>
         <pre><code class="language-javascript">// add a new share
 hoodie.share.add().done(function (share) {});
 
@@ -453,7 +456,17 @@ hoodie.share('shareId').unsubscribe();</code></pre>
       <section id="plugins">
         <h1>Plugins</h1>
         <p>Plugins provide and extend Hoodie's basic functionality. Currently, there are only two, users and shares. We're going to provide more plugins such as payments and oAuth in the future.</p>
-        <p class="alert">We're currently in the process of rebuilding the plugin functionality from the ground up, complete with detailed tutorials and extensive documentation. This is our main focus at the moment, and it's going very well so far, but we still have a lot of work in front of us.</p>
+
+        <p>A Plugin can extend all three parts of Hoodie: the
+          frontend JavaScript library, the admin interface and
+          backend workers, or just one or two of them, if that
+          makes sense for the Plugin.</p>
+
+        <p>Plugins are just Node modules and can be published to NPM. Once published, users can install them with, e.g. <code>hoodie install email</code></p>
+
+        <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
+
+
         <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
       </section>
       <section id="about">
@@ -485,7 +498,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    <script src="scripts/33fc2e37.plugins.js"></script>
+    <script src="scripts/1e807750.plugins.js"></script>
     <script>
       // Smooth Scrolling
       (function(window,undefined){
