@@ -459,7 +459,17 @@ hoodie.share('shareId').unsubscribe();</code></pre>
       <section id="plugins">
         <h1>Plugins</h1>
         <p>Plugins provide and extend Hoodie's basic functionality. Currently, there are only two, users and shares. We're going to provide more plugins such as payments and oAuth in the future.</p>
-        <p class="alert">We're currently in the process of rebuilding the plugin functionality from the ground up, complete with detailed tutorials and extensive documentation. This is our main focus at the moment, and it's going very well so far, but we still have a lot of work in front of us.</p>
+
+        <p>A Plugin can extend all three parts of Hoodie: the
+          frontend JavaScript library, the admin interface and
+          backend workers, or just one or two of them, if that
+          makes sense for the Plugin.</p>
+
+        <p>Plugins are just Node modules and can be published to NPM. Once published, users can install them with, e.g. <code>hoodie install email</code></p>
+
+        <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
+
+
         <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
       </section>
       <section id="about">
