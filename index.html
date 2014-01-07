@@ -17,7 +17,7 @@
     </head>
     <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
-        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/human-javascript">human javascript</a>
+        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/thehoodiefirm">The Hoodie Firm</a>
           – <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
         </span>
     </div>
@@ -172,6 +172,7 @@ hoodie.store.findAll(type)
           <li class="active"><a href="#installation-os-x" data-toggle="tab">Mac OS X</a></li>
           <li><a href="#installation-linux-general" data-toggle="tab">Linux - General</a></li>
           <li><a href="#installation-linux-ubuntu" data-toggle="tab">Linux - Ubuntu</a></li>
+          <li><a href="#installation-linux-fedora" data-toggle="tab">Linux - Fedora</a></li>
           <li><a href="#installation-windows" data-toggle="tab">Windows</a></li>
         </ul>
 
@@ -211,6 +212,13 @@ $ sudo apt-get install couchdb-bin git</code></pre>
             <pre><code class="language-none">$ sudo add-apt-repository ppa:chris-lea/node.js
 $ sudo apt-get update
 $ sudo apt-get install nodejs</code></pre>
+            <p>Now you can install Hoodie using Node's package manager:</p>
+            <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+          <div class="tab-pane" id="installation-linux-fedora">
+            <p>This is an Fedora-specific guide. First, install CouchDB (1.2.x or newer), git and node.js. On Fedora 19+:</p>
+            <pre><code class="language-none">$ sudo yum install couchdb git nodejs npm</code></pre>
             <p>Now you can install Hoodie using Node's package manager:</p>
             <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
             <p>Installation done! Time to build apps.</p>
