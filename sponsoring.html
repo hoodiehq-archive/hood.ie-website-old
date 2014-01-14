@@ -21,9 +21,10 @@
         <li><a href="/#intro">Introduction</a></li>
         <li><a href="/#installation">Getting started</a></li>
         <li><a href="/#docs">Documentation</a></li>
-        <li><a href="/#modules">Modules</a></li>
+        <li><a href="/#plugins">Plugins</a></li>
         <li><a href="/#about">About</a></li>
         <li class="active"><a href="/sponsoring">Sponsoring</a></li>
+        <li><a href="http://blog.hood.ie">Blog</a></li>
       </ul>
     </div>
     <div class="container">
@@ -143,11 +144,7 @@
         $('table td.available').click(function (event) {
           console.log("event: ",event);
           event.preventDefault();
-          if($(event.target).hasClass('discounted')){
-            window.location = "mailto:sponsor@thehoodiefirm.com?subject=I'd like to sponsor a week of Hoodie development!&body=Hello team Hoodie,%0D%0A%0D%0AI'd like to sponsor the week of "+$(event.target).siblings('td').text()+" for the price of 1000€ (plus VAT if applicable).%0D%0A%0D%0A";
-          } else {
-            window.location = "mailto:sponsor@thehoodiefirm.com?subject=I'd like to sponsor a week of Hoodie development!&body=Hello team Hoodie,%0D%0A%0D%0AI'd like to sponsor a week of development for the price of 1000 (plus VAT if applicable).%0D%0A%0D%0A";
-          }
+          window.location = "mailto:sponsor@thehoodiefirm.com?subject=I'd like to sponsor a week of Hoodie development!&body=Hello team Hoodie,%0D%0A%0D%0AI'd like to sponsor a week of development for the price of 1000€ (plus VAT if applicable).%0D%0A%0D%0A";
         });
       })(window);
     </script>
