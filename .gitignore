@@ -1,5 +1,4 @@
-build/dist
-build/.tmp
-build/.sass-cache
-build/node_modules
-build/app/components
+build
+node_modules
+.tmp
+.grunt
