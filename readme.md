@@ -1,29 +1,19 @@
-hood.ie
-=======
+# hood.ie
 
-This is the [Hoodie](http://hood.ie) website. It is built with yeoman 1.0.0-beta.4
+#### This is the [Hoodie](http://hood.ie) website.
 
-Workflow
---------
+### Workflow
 
-The workflow has changed completely:
+Clone the repository and cd into the project directory:
 
-There is now only a gh-pages branch. In that, there is `/build`, do all your work and run grunt from there.
+    $ git clone git@github.com:hoodiehq/hood.ie.git && cd hood.ie
+    
+Install the development node modules:
 
-To deploy:
+    $ npm install
+    
+Once you've made the required changes you can run `grunt build` to test the changes, the build site will be available in the build folder.
 
-  1. From inside `/build` copy `/dist` back to root: `cp -r dist/* ../`
-  2. Push
+To deploy the project run:
 
-In short:
-
-````
-cd build
-grunt build
-cp -r dist/* ../
-git add ..
-git commit -m "…"
-git push
-````
-
-Jekyll then serves the index.html in root at hood.ie
+    $ grunt deploy
