@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hoodie</title>
+    <meta name="description" content="Hoodie - Very fast web app development">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/8c6a1df5.favicon_128.png">
+    <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->    
+    <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+    <!-- build:css styles/hoodie.min.css -->
+    <link rel="stylesheet" href="styles/hoodie.css">
+    <!-- endbuild -->
+  </head>
+  <body data-spy="scroll" data-target="#mainNav" class="">
+    <div class="sponsoringTeaser">
+        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/spotme_hires">SpotMe</a>
+          – <a href="/sponsoring.html" class="CTA">Sponsor us!</a>
+        </span>
+    </div>
+    <div id="mainNav" class="fixedNav">
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#installation">Getting started</a></li>
+        <li><a href="#docs">Documentation</a></li>
+        <li><a href="#plugins">Plugins</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="/sponsoring.html">Sponsoring</a></li>
+        <li><a href="http://blog.hood.ie">Blog</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="header">
+        <img class="logo" src="images/f5af4e56.hoodie_logo.png" alt="">
+        <h1>Very fast web app development</h1>
+        <p>We want to enable you to build complete web apps in days, without having to worry about backends, databases or servers, all with an open-source library that's as simple to use as jQuery.</p>
+        <p>That's why we're making Hoodie.</p>
+        <p>Hoodie is an <a href="http://offlinefirst.org" title="Offline First">Offline First</a> and <a href="http://nobackend.org" title="noBackend">noBackend</a> architecture for frontend-only web apps.</p>
+      </div>
+      <!-- Begin MailChimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="http://hood.us4.list-manage.com/subscribe/post?u=12d36bbe9418ed6a43127cd62&amp;id=664f4ce8cd" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+          <label for="mce-EMAIL">Stay in Touch</label>
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
+      <div class="ohCoolTheyLikeUs">
+        <h2>People really seem to like it:</h2>
+        <ul>
+          <li>
+            <blockquote>It took less than 15 minutes for a person with no experience in any part of the stack to take an existing single user app and make it a multi-user application with robust security and data storage. […] Bravo, hood.ie, brav-fucking-o.
+            </blockquote>
+            <img src="images/06ba9cb3.horvick.png" alt="">
+            <span class="source">— <em><a href="http://www.roberthorvick.com/">Robert Horvick</a></em>, in a <a href="http://www.roberthorvick.com/2013/06/30/todomvc-angularjs-hood-ie-60-minutes-to-awesome/">blog post about Hoodie and angular.js</a></span>
+          </li>
+          <li>
+            <blockquote>❤ Hood.ie - a fast offline-first architecture for webapps. Super-simple user management &amp; storage. Great for mobile.
+            </blockquote>
+            <img src="images/ec081955.osmani.jpeg" alt="">
+            <span class="source">— <em><a href="http://addyosmani.com/">Addy Osmani</a></em>, <a href="https://twitter.com/addyosmani/statuses/340094925997735936">via Twitter</a></span>
+          </li>
+          <li>
+            <blockquote>Hood.ie is looking absolutely KILLER. It's in the early stages; great time to experiment and give feedback.
+            </blockquote>
+            <img src="images/94290720.fragomeni.png" alt="">
+            <span class="source">— <em><a href="http://async.ly/">Paolo Fragomeni</a></em>, <a href="https://twitter.com/hij1nx/statuses/340516201342058496">via Twitter</a></span>
+          </li>
+          <li>
+            <blockquote>I had some pull requests merged into @hoodiehq this weekend. Web apps without the back-end. Go try it!
+            </blockquote>
+            <img src="images/fe76eb6f.yeats.jpeg" alt="">
+            <span class="source">— <em><a href="http://adam.yt/">Adam Yeats</a></em>, <a href="https://twitter.com/adamyeats/statuses/336504300241039360">via Twitter</a></span>
+          </li>
+        </ul>
+        <p>See <a href="https://twitter.com/search?q=hood.ie">what others are tweeting about Hoodie</a> or browse through our personal <a href="http://blog.hood.ie/category/talking-about-hoodie/">favourite user quotes</a>.</p>
+      </div>
+      <section id="features">
+        <h1 class="inline-block">Features</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">Complete!</li>
+            <li class="inDevelopment">We're on it</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
+        <ul class="progressList">
+          <li class="completed">Offline by default: Hoodie stores data locally first and syncs them in the background when possible. Great for mobile applications</li>
+          <li class="completed">One-line signup/signin/signout/resend password and other account management functions</li>
+          <li class="completed">Document-based storage with CouchDB: no building database schemas</li>
+          <li class="completed">Event system: easily listen for changes in the data to trigger view updates</li>
+          <li class="completed">JavaScript and JSON on every layer. Even the database queries are JS</li>
+          <li class="completed">Convenient, super simple local dev setup that optionally even configures .dev-domains for you</li>
+          <li class="completed">Deploy to Nodejitsu with minimal effort</li>
+          <li class="completed">Flexible, npm-based plugin system in case you need more capability</li>
+          <li class="completed">Send multi-part emails with attachments from the client</li>
+          <li class="soon">Powerful, fine-grained sharing settings for even the tiniest piece of data</li>
+          <li class="soon">Receive payments from your users</li>
+          <li class="soon">Authenticate with other services (Twitter, GitHub, etc.)</li>
+          <li class="soon">Hoodie hosting for even simpler deployment</li>
+        </ul>
+        <h1 class="inline-block">Who is it for?</h1>
+        <div class="progressLegend">
+          <ul class="legend">
+            <li class="completed">For you!</li>
+            <li class="inDevelopment">You're next</li>
+            <li class="soon">Planned</li>
+          </ul>
+        </div>
+        <ul class="progressList">
+          <li class="completed"><strong>Node.js developers:</strong> help us build this amazing thing and extend it with your plugins</li>
+          <li class="completed"><strong>Frontend developers:</strong> Soon, Hoodie will be solid and full-featured enough for you to build data-driven apps with it</li>
+          <li class="soon"><strong>Designers with basic frontend-skills:</strong> Our long-term goal is to make Hoodie user friendly enough for non-developers (no terminal commands for you!)</li>
+        </ul>
+      </section>
+      <section id="intro">
+
+        <h1>Quick intro</h1>
+          <p class="alert">If you've got the time: there's also a slightly older <a href="intro.html">long intro</a>, with more technical background info.</p>
+          <p>So how simple is Hoodie? Here are some simple code fragments from a hypothetical task list app:</p>
+
+          <h2>1. Instantiating your Hoodie</h2>
+          <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
+          <p>Just one line of JS to get started with Hoodie.</p>
+
+          <h2>2. User signup</h2>
+          <pre><code class="language-javascript">hoodie.account.signUp(username, password);</code></pre>
+          <p>Yes, that's all. signOut, signIn and the other account management functions are similarly short and sweet.</p>
+
+          <h2>3. Storing data</h2>
+          <p>This will store a task in this new user's store ()</p>
+          <pre><code class="language-javascript">var type = 'task';
+var attributes = {title: 'Try out hoodie today'};
+hoodie.store.add(type, attributes)
+  .done(function (newObject) {
+    // Data was saved!
+  });</code></pre>
+          <p>As you can see, the documents you store need a type and some JSON data. Both are arbitrary and don't need to be set up anywhere previously. Just pass Hoodie an object for your data, it will eat anything and save it as JSON.</p>
+          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retreived is best dealt with in a more decoupled manner, with database events: </p>
+
+          <h2>4. Event listeners</h2>
+          <p>The view should update whenever a task is added, so let's listen to the data store directly for when that happens:</p>
+          <pre><code class="language-javascript">hoodie.store.on('add:task', function (event, changedObject) {
+  // Update the view with the changedObject
+});</code></pre>
+          <p>This way, you have nicely reactive views. Users can now add tasks on one device, and the new task will automatically appear on the running page on any other device they may be using simultaneously.</p>
+          <h2>5. Loading data</h2>
+          <p>Let's load all of the user's 'task' documents:</p>
+          <pre><code class="language-javascript">var type = 'task';
+hoodie.store.findAll(type)
+  .done(function (tasks) {
+    // Do something with the tasks
+  });</code></pre>
+
+          <h2>Looks good?</h2>
+          <p>Find out more about sharing, making data public, listening to remote events and sending emails in the <a href="#docs">Hoodie Documentation</a></p>
+
+          <p>Or, if you want to dive in directly:</p>
+      </section>
+      <section id="installation">
+        <h1>Getting started</h1>
+        <p class="alert">Hoodie is currently a developer preview. Some features are missing, some things might change, there's a lot of optimization to be done. Don't use this for production.</p>
+        <h2>Installing Hoodie and its dependencies</h2>
+        <p>Hoodie has support for Mac OS X, Windows and Linux.</p>
+
+        <ul class="nav nav-tabs" id="linuxDistros">
+          <li class="active"><a href="#installation-os-x" data-toggle="tab">Mac OS X</a></li>
+          <li><a href="#installation-linux-general" data-toggle="tab">Linux - General</a></li>
+          <li><a href="#installation-linux-ubuntu" data-toggle="tab">Linux - Ubuntu</a></li>
+          <li><a href="#installation-linux-fedora" data-toggle="tab">Linux - Fedora</a></li>
+          <li><a href="#installation-windows" data-toggle="tab">Windows</a></li>
+        </ul>
+
+        <div class="tab-content well">
+
+          <div class="tab-pane active" id="installation-os-x">
+            <p>Installing Hoodie on Mac OS X requires <a href="http://mxcl.github.com/homebrew/">homebrew</a>. First, you need to install <a href="http://nodejs.org">Node.js</a>, <a href="http://git-scm.com">git</a> and <a href="http://couchdb.org">CouchDB</a>, since the core of Hoodie is built with these:</p>
+            <pre><code class="language-none"># make sure your Homebrew is up to date first
+    $ brew update
+    $ brew install git
+    $ brew install node
+    $ brew install couchdb</code></pre>
+            <p>Now, install Hoodie using Node's package manager:</p>
+            <pre><code class="language-none">$ npm install -g hoodie-cli</code></pre>
+            <p>Mac users can also optionally install <code>local-tld</code> to automatically get pretty <code>*.dev</code> domains everytime you start a Hoodie app.</p>
+            <pre><code class="language-none">$ npm install -g local-tld</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+          <div class="tab-pane" id="installation-linux-general">
+            <p>First, install <a href="http://couchdb.org">CouchDB</a> (1.2.x or newer). On Ubuntu/Debian:</p>
+            <pre><code class="language-none">$ sudo apt-get update
+$ sudo apt-get install couchdb git</code></pre>
+            <p>Then, download the <a href="http://nodejs.org">Node.js</a> (stable) source code. Extract, compile and install:</p>
+            <pre><code class="language-none">$ tar -xvf node-v0.10.10.tar.gz
+$ cd node-v0.10.10
+$ ./configure
+$ make &amp;&amp; sudo make install</code></pre>
+            <p>Now you can install Hoodie using Node's package manager:</p>
+            <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+          <div class="tab-pane" id="installation-linux-ubuntu">
+            <p>This is an Ubuntu-specific guide courtesy of <a href="https://github.com/stuartlangridge">Stuart Langridge</a>. Start by installing CouchDB:</p>
+            <pre><code class="language-none">$ sudo apt-get update
+$ sudo apt-get install couchdb-bin git</code></pre>
+            <p>On Ubuntu, you don't have to build Node.js from source, you can install it as a package instead. Add Chris Lea's Node.js PPA and install from it:</p>
+            <pre><code class="language-none">$ sudo add-apt-repository ppa:chris-lea/node.js
+$ sudo apt-get update
+$ sudo apt-get install nodejs</code></pre>
+            <p>Now you can install Hoodie using Node's package manager:</p>
+            <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+          <div class="tab-pane" id="installation-linux-fedora">
+            <p>This is an Fedora-specific guide. First, install CouchDB (1.2.x or newer), git and node.js. On Fedora 19+:</p>
+            <pre><code class="language-none">$ sudo yum install couchdb git nodejs npm</code></pre>
+            <p>Now you can install Hoodie using Node's package manager:</p>
+            <pre><code class="language-none">$ sudo npm install -g hoodie-cli</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+          <div class="tab-pane" id="installation-windows">
+            <p>On Windows, install <a href="http://nodejs.org/download/">Node.js</a>, <a href="http://git-scm.com/downloads">git</a> and <a href="https://couchdb.apache.org/#download">CouchDB</a> using the installers on each website. Then install Hoodie using the command prompt:</p>
+            <pre><code class="language-none">&gt; npm install -g hoodie-cli</code></pre>
+            <p>Installation done! Time to build apps.</p>
+          </div>
+        </div>
+
+        <h2>Creating a Hoodie app</h2>
+        <pre><code class="language-none">$ hoodie new myappname</code></pre>
+        <p>This created the folder 'myappname'. Go in there and start the default app:</p>
+        <pre><code class="language-none">$ cd myappname
+$ hoodie start</code></pre>
+        <p>Your browser should now automatically open and show you Hoodie's default app. If you don't want that, start the app with</p>
+        <pre><code class="language-none">$ hoodie start -n</code></pre>
+        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. </p>
+        <!--
+        <h2>Local-TLD</h2>
+        <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
+        <p class="alert"><strong>Important:</strong> local-tld currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
+        <h2>Disable local-tld</h2>
+        <pre><code class="language-markup">$ sudo ipfw flush</code></pre>
+        <h2>Enable local-tld (by re-installing it)</h2>
+        <pre><code class="language-markup">$ npm install -g local-tld</code></pre>
+        <p>We're working on making this a nicer experience, but it seems as if you won't be able to have both at once for the forseeable future. We hope that's ok with you. If you have any trouble with local-tld, please let us know in the <a href="https://github.com/hoodiehq/local-tld/issues">local-tld issues</a>.</p>
+        -->
+        <p>That's all. Go nuts!</p>
+      </section>
+      <section id="docs">
+        <h1>Documentation</h1>
+        <p class="alert">Hoodie is currently a developer preview. Some features are missing, some things might change, there's a lot of optimization to be done. Don't use this for production.</p>
+        <h2>Include the Hoodie library</h2>
+        <pre><code class="language-markup">&lt;script src="hoodie.js"&gt;&lt;/script&gt;</code></pre>
+        <h2>Initialize your Hoodie App</h2>
+        <pre><code class="language-javascript">hoodie = new Hoodie();</code></pre>
+        <p>You also have the option of defining the Hoodie API endpoint yourself, too. This is useful if you're using a dev environment that runs its own server, like <a href="http://yeoman.io">yeoman.io</a>. You'd have Grunt running your frontend at <code>http://localhost:9000</code>, and your Hoodie instance at <code>http://localhost:6007</code>:</p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://localhost:6007/_api');</code></pre>
+        <p>or, with local-tld:</p>
+        <pre><code class="language-javascript">hoodie = new Hoodie('http://hoodieappname.dev/_api');</code></pre>
+        <h2>Account</h2>
+        <pre><code class="language-javascript">// sign up
+hoodie.account.signUp('joe@example.com', 'secret');
+
+// sign in
+hoodie.account.signIn('joe@example.com', 'secret');
+
+// sign out
+hoodie.account.signOut();
+
+// change password
+hoodie.account.changePassword('currentpassword', 'newpassword');
+
+// change username
+hoodie.account.changeUsername('currentpassword', 'newusername');
+
+// reset password
+hoodie.account.resetPassword('joe@example.com');
+
+// destroy account and all its data
+hoodie.account.destroy();
+
+// find out who the currently logged in user is (returns undefined if none)
+hoodie.account.username;</code></pre>
+        <h2>Account events</h2>
+        <pre><code class="language-javascript">// listen for account events
+// user has signed up (this also triggers the authenticated event, see below)
+hoodie.account.on('signup', function (user) {});
+
+// user has signed in (this also triggers the authenticated event, see below)
+hoodie.account.on('signin', function (user) {});
+
+// user has signed out
+hoodie.account.on('signout', function (user) {});
+
+// user has re-authenticated after their session timed out (this does _not_ trigger the signin event)
+hoodie.account.on('authenticated', function (user) {});
+
+// user's session has timed out. This means the user is still signed in locally, but Hoodie cannot sync remotely, so the user must sign in again
+hoodie.account.on('unauthenticated', function (user) {});</code></pre>
+        <h2>Store</h2>
+        <p class="alert"><strong>Important:</strong> <em>Hoodie will only sync data to the database if it belongs to a user!</em> So you need to sign up/sign in a user using the methods above before the hoodie.store methods below will actually sync anything. If you don't have a user, hoodie.store will read/write using local browser storage only.</p>
+        <p>Since Hoodie treats all data as user data, and all data is private by default, the following functions can only ever access the data of the currently signed in user. An exception to this is data shared via <a href="#publicShares" class="scrollTo">global public shares</a> or <a href="#userShares" class="scrollTo">private user sharing</a>.</p>
+        <pre><code class="language-javascript">// add a new object
+var type = 'task';
+var attributes = {status: 'open'};
+hoodie.store.add(type, attributes)
+  .done(function (newObject) {});
+
+// update an existing object
+var type = 'task';
+var id = 'abc4567';
+var update = {starred: true};
+hoodie.store.update(type, id, update)
+  .done(function (updatedObject) {});
+
+// find one object
+var type = 'task';
+var id = 'abc4567';
+hoodie.store.find(type, id)
+  .done(function (object) {});
+
+// Load all objects that belong to the current user
+hoodie.store.findAll()
+  .done(function (objects) {});
+
+// Load all objects of one type, also belonging to the current user
+var type = 'task';
+hoodie.store.findAll(type)
+  .done(function (objects) {});
+
+// findAll also accepts a function as an argument. If that function returns true for an object in the store, it will be returned. This effectively lets you write complex queries for the store. In this simple example, assume all of our todo tasks have a key "status", and we want to find all unfinished tasks:
+hoodie.store.findAll(function(object){
+  if(object.type === "task" && object.status === "open"){
+    return true;
+  }
+}).done(function (objects) {});
+
+// remove an existing object belonging to the current user
+var type = 'task';
+var id = 'abc4567';
+hoodie.store.remove(type, id)
+  .done(function (removedObject) {});
+
+// Remove all objects of one type, also belonging to the current user
+var type = 'task';
+hoodie.store.removeAll(type)
+  .done(function (objects) {});
+
+// removeAll, like findAll, also accepts a function as an argument. If that function returns true for an object in the store, it will be removed. Assuming all of our todo tasks have a key "status", and we want to remove all completed tasks:
+hoodie.store.removeAll(function(object){
+  if(object.type === "task" && object.status === "completed"){
+    return true;
+  }
+}).done(function (objects) {});</code></pre>
+        <h2>Store events</h2>
+        <pre><code class="language-javascript">// listen for store events
+// new doc created
+hoodie.store.on('add', function (newObject) {});
+
+// existing doc updated
+hoodie.store.on('update', function (updatedObject) {});
+
+// doc removed
+hoodie.store.on('remove', function (removedObject) {});
+
+// any of the events above
+hoodie.store.on('change', function (event, changedObject) {});
+
+// all listeners can be filtered by type
+hoodie.store.on('add:note',    function (newObject) {});
+hoodie.store.on('update:note', function (updatedObject) {});
+hoodie.store.on('remove:note', function (removedObject) {});
+hoodie.store.on('change:note', function (event, changedObject) {});
+
+// ... and by type and id
+hoodie.store.on('add:note:uuid123',    function (newObject) {});
+hoodie.store.on('update:note:uuid123', function (updatedObject) {});
+hoodie.store.on('remove:note:uuid123', function (removedObject) {});
+hoodie.store.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
+        <h2>Synchronization</h2>
+        <p>When signed in, local changes do get synced automatically. You can explicitly subscribe to remote updates.</p>
+        <pre><code class="language-javascript">// new doc created
+hoodie.remote.on('add', function (newObject) {});
+
+// existing doc updated
+hoodie.remote.on('update', function (updatedObject) {});
+
+// doc removed
+hoodie.remote.on('remove', function (removedObject) {});
+
+// any of the events above
+hoodie.remote.on('change', function (event, changedObject) {});
+
+// all listeners can be filtered by type
+hoodie.remote.on('add:note',    function (newObject) {});
+hoodie.remote.on('update:note', function (updatedObject)  {});
+hoodie.remote.on('remove:note', function (removedObject) {});
+hoodie.remote.on('change:note', function (event, changedObject) {});
+
+// ... and by type and id
+hoodie.remote.on('add:note:uuid123',    function (newObject) {});
+hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
+hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
+hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
+        <h2 id="publicShares">Public Shares (Public User Stores)</h2>
+        <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
+        <p>Select data you want to share with others and control exactly what will be shared</p>
+        <pre><code class="language-javascript">// make note object with id 'abc4567' public
+hoodie.store.find('note', 'abc4567').publish()
+
+// make note with id 'abc4567' public, but do only show the color, hide
+// all other attributes
+hoodie.store.find('note', 'abc4567').publish(['color']);
+
+// make note with id 'abc4567' private again
+hoodie.store.find('note', 'abc4567').unpublish();
+
+// find all note objects from user 'joe'
+hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
+        <h2>Global Public Store</h2>
+        <p>When enabled, all publicly shared objects by all users will be available through the hoodie.global API.</p>
+        <pre><code class="language-javascript">// find all public songs from all users
+hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
+        <h2 id="userShares">Sharing</h2>
+        <p>The hoodie.share plugin allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
+        <p class="alert"><strong>Important:</strong> The shares plugin still a work in progress. This is how things
+        are likely going to look soon.</p>
+        <pre><code class="language-javascript">// add a new share
+hoodie.share.add().done(function (share) {});
+
+// grant / revoke access
+share.grantReadAccess();
+share.grantWriteAccess();
+share.revokeReadAccess();
+share.revokeWriteAccess();
+share.grantReadAccess('joe@example.com');
+share.revokeWriteAccess(['joe@example.com', 'lisa@example.com']);
+
+// add all todo objects to the share
+hoodie.store.findAll('todo').shareAt(share.id);
+
+// remove a specific todo from the share
+hoodie.store.find('todo', '123').unshareAt(share.id);
+
+// add a new share and add some of my objects to it in one step
+hoodie.store.findAll('todo').share()
+  .done(function (todos, share) { alert('shared at ' + share.id); } );
+
+// remove objects from all shares
+hoodie.store.findAll('todo').unshare();
+
+// remove share
+hoodie.share.remove(share.id);
+
+// open a share and load all its objects
+hoodie.share('shareIdHere').findAll()
+  .done(function (objects) {});
+
+// subscribe / unsubscribe
+hoodie.share('shareId').subscribe();
+hoodie.share('shareId').unsubscribe();</code></pre>
+      </section>
+      <section id="plugins">
+        <h1>Plugins</h1>
+        <p>Plugins provide and extend Hoodie's basic functionality.</p>
+
+        <p>A Plugin can extend all three parts of Hoodie: the
+          frontend JavaScript library, the admin interface and
+          backend workers, or just one or two of them, if that
+          makes sense for the Plugin.</p>
+
+        <p>Plugins are just Node modules and can be published to NPM. Once published, users can install them with, e.g. <code>hoodie install email</code>.</p>
+
+        <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
+
+        <p>Hoodie already ships with two core modules: Users and Email. And we are working ona few more, like Shares, Payments and the like. We are encouraging anyone though, to build Plugins and publish them to NPM so everyone can benefit from them.</p>
+
+        <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
+      </section>
+      <section id="about">
+        <h1>About</h1>
+        <ul class="roundedImages">
+          <li><img src="images/2a7b20a7.janl.png"></li>
+          <li><img src="images/26d40479.gregor.jpeg"></li>
+          <li><img src="images/0ae07421.espy.jpg"></li>
+          <li><img src="images/6f50c9db.caolan.png"></li>
+          <li><img src="images/953b6fd0.lena.jpeg"></li>
+          <li><img src="images/b84c88b6.sven.jpg"></li>
+          <li><img src="images/bdccae5c.ola.png"></li>
+        </ul>
+        <p>Hoodie is a project by <strong>Jan Lehnardt</strong> (<a href="https://twitter.com/janl">@janl</a>), <strong>Gregor Martynus</strong> (<a href="https://twitter.com/gr2m">@gr2m</a>), <strong>Alex Feyerke</strong> (<a href="https://twitter.com/espylaub">@espylaub</a>), <strong>Caolan McMahon</strong> (<a href="https://twitter.com/caolan">@caolan</a>), <strong>Lena Reinhard</strong> (<a href="https://twitter.com/ffffux">@ffffux</a>), <strong>Sven Lito</strong> (<a href="https://twitter.com/svenlito">@svenlito</a>) and <strong>Ola Gasidlo</strong> (<a href="https://twitter.com/misprintedtype">@misprintedtype</a>). We are based in Berlin, Zurich,  Sheffield and Dortmund and run mostly on Coffee and Cheesecake.</p>
+
+        <p>All Hoodie code is on GitHub, collected under <a href="https://github.com/hoodiehq">github.com/hoodiehq</a>.
+        Follow the Hoodie team on twitter: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>. If you have any questions, find us on IRC: <a href="irc://irc.freenode.net/#hoodie">irc.freenode.net/#hoodie</a>.</p>
+      </section>
+    </div>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+    <script>
+        var _gaq=[['_setAccount','UA-39229415-1'],['_gat._anonymizeIp'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <!-- build:js scripts/hoodie.min.js -->
+    <script src="scripts/plugins.js"></script>
+    <!-- endbuild -->
+    <script>
+      // Smooth Scrolling
+      (function(window,undefined){
+        var History = window.History;
+        var blockHashChange = false;
+        $(window).scroll(function(event){
+          var href = $('#mainNav li.active a').attr('href');
+          if(!blockHashChange && href && href != "#"+History.getHash()){
+            History.pushState(null, null, href);
+          }
+        });
+        $('#mainNav a, a.scrollTo').click(function (event) {
+          // Only smooth scroll anchor links
+          if($(this).attr('href').substr(0,1) != "#") return;
+          event.preventDefault();
+          var anchor = $(this);
+          History.pushState(null, null, anchor.attr('href'));
+          blockHashChange = true;
+          $('html, body').stop().animate({
+            scrollTop: $(anchor.attr('href')).offset().top
+          }, 'slow', 'swing', function(){
+            blockHashChange = false;
+          });
+          return false;
+        });
+      })(window);
+    </script>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '515d9805108d7b3064000032');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>
