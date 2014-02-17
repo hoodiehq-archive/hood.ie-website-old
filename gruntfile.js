@@ -69,8 +69,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('clean', ['shell:clean', 'shell:build'])
-  grunt.registerTask('build', ['useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
-  grunt.registerTask('deploy', ['clean', 'build', 'gh-pages']);
+  grunt.registerTask('build', ['clean', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'rev', 'usemin']);
+  grunt.registerTask('deploy', ['build', 'gh-pages']);
 
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
