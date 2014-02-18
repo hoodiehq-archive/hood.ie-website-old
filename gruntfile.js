@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         command: 'rm -rf build .tmp'
       },
       build: {
-        command: 'cp -r src build && cp CNAME build'
+        command: 'cp -r src build'
       }
     },
 
