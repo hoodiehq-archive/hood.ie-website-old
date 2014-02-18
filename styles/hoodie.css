@@ -6608,6 +6608,17 @@ ul.progressList li.soon:before {
   line-height: 0;
 }
 
+.container section > img{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
 /* line 320, ../../app/styles/main.scss */
 ul.roundedImages {
   *zoom: 1;
