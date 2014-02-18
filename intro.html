@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Hoodie</title>
-        <meta name="description" content="Hoodie - Very fast web app development">
-        <meta name="viewport" content="width=device-width">
-        <link rel="icon" href="images/8c6a1df5.favicon_128.png">
-        <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-        <link rel="stylesheet" href="styles/5be3e966.hoodie.css">
-        <!-- <script src="scripts/vendor/modernizr.min.js"></script> -->
-        <style type="text/css">
-
-
-
-        </style>
-    </head>
-    <body data-spy="scroll" data-target="#mainNav">
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hoodie - Very fast web app development</title>
+    <meta name="description" content="Hoodie - Very fast web app development">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="images/8c6a1df5.favicon_128.png">
+    <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
+    <link rel="stylesheet" href="styles/ccc763c8.hoodie.min.css"/>
+  </head>
+  <body data-spy="scroll" data-target="#mainNav">
     <div id="mainNav" class="fixedNav">
       <ul class="nav nav-pills nav-stacked">
         <li><a href="#intro">Introduction</a></li>
@@ -293,34 +287,10 @@
       </section>
       <section id="installation">
 
-        <h2 id="installinghoodie">Installing Hoodie</h2>
+        <h1 id="installinghoodie">Installing Hoodie</h1>
 
-        <p>We put extra emphasis to make the Hoodie <strong>first run experience</strong> especially nice. We focus on Mac OS X here, but we already have contributions to bring it to Linux. Windows is not supported at the moment, but all of that only affects the installation routines. Hoodie’s architecture is generally platform agnostic.</p>
-
-        <p>To get started we use install Hoodie via <a href="http://mxcl.github.com/homebrew">Homebrew</a>:</p>
-
-        <p>(If you don’t have them already, install Node.js and CouchDB: <code>brew update; brew install node couchdb</code>.)</p>
-
-<pre><code>$ brew tap hoodiehq/homebrew-hoodie
-$ brew install hoodie</code></pre>
-
-        <p>This gives us a new command line utility, conveniently called <code>hoodie</code>. We’ll use it to create a new application:</p>
-
-<pre><code>$ hoodie new myapp</code></pre>
-
-        <p>creates an application of the name <code>myapp</code>. This takes a few seconds, depending on your internet connection. The <code>hoodie new</code> command clones an example application from GitHub and installs all the required dependencies via NPM. If you are not used to NPM, don’t worry about the long list of dependencies, other systems tend to hide that from you :)</p>
-
-<pre><code>$ cd myapp
-$ hoodie start</code></pre>
-
-        <p>starts our application. You’ll see some debug output, but after a second or two, Hoodie should open your default browser and display your new app. With a few commands only you get the full Hoodie application setup, including CouchDB, workers a file server and everything working on your system. </p>
-
-        <p>Finally, in order to be able to publish your app to a live website, we support easy publishing to Nodejitsu.</p>
-
-        <p>Get started at <a href="https://github.com/hoodiehq/my-first-hoodie">https://github.com/hoodiehq/my-first-hoodie</a>.</p>
-
-        <p>You can also just install Hoodie on your own servers, if you so fancy.</p>
-
+        <p id="installinghoodie">Check out our <a href="index#installation">Getting Started guide</a> for the most up to date information on installing Hoodie.</p>
+        
       </section>
       <section id="design">
 
@@ -395,31 +365,29 @@ $ hoodie start</code></pre>
 
         <p>PS: Despite the fact that Hoodie is not 100% ready yet, we have a few people looking into developing commerical apps with it. We gladly help along the way, if you need any Hoodie training, support or consulting, please get in touch at <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#116;&#x65;&#x61;&#109;&#x40;&#116;&#104;&#x65;&#x68;&#x6f;&#x6f;&#100;&#105;&#x65;&#x66;&#x69;&#x72;&#109;&#x2e;&#x63;&#111;&#109;&#x3f;&#x73;&#117;&#98;&#x6a;&#101;&#x63;&#x74;&#x3d;&#x4c;&#x6f;&#x6f;&#107;&#x25;&#50;&#x30;&#x4d;&#97;&#x25;&#50;&#x30;&#x4e;&#x6f;&#37;&#50;&#48;&#66;&#97;&#99;&#107;&#x65;&#110;&#100;">&#x74;&#101;&#x61;&#x6d;&#x40;&#116;&#104;&#x65;&#104;&#x6f;&#x6f;&#x64;&#x69;&#101;&#x66;&#105;&#x72;&#x6d;&#x2e;&#99;&#x6f;&#x6d;</a>.</p>
     </section></div>
-  
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
 
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
-        <script>
-          // Smooth Scrolling
-          $('#mainNav a').click(function(){
-            var anchor = $(this);
-            $('html, body').stop().animate({
-                    scrollTop: $(anchor.attr('href')).offset().top
-                }, 'slow');
-            return false;
-          });
-        </script>
-        <script>
-            var _gaq=[['_setAccount','UA-39229415-1'],['_gat._anonymizeIp'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    <script src="scripts/33fc2e37.plugins.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+    <script>
+      // Smooth Scrolling
+      $('#mainNav a').click(function(){
+        var anchor = $(this);
+        $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 'slow');
+        return false;
+      });
+    </script>
+    <script>
+      var _gaq=[['_setAccount','UA-39229415-1'],['_gat._anonymizeIp'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+    <script src="scripts/ec9a951c.hoodie.min.js"></script>
     <script type="text/javascript">
       var _gauges = _gauges || [];
       (function() {
@@ -432,20 +400,6 @@ $ hoodie start</code></pre>
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(t, s);
       })();
-    </script>
-        <!--
-      <script src="scripts/vendor/bootstrap/bootstrap-transition.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-affix.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-alert.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-tooltip.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-modal.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-button.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-popover.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-typeahead.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-carousel.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
-      <script src="scripts/vendor/bootstrap/bootstrap-tab.js"></script>
-    -->
-</body>
+    </script>        
+  </body>
 </html>
