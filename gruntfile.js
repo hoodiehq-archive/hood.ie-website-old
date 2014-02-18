@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    /** 
+    /**
      *  shell commands to clean and build
      *  removes build and .tmp folder then copies src folder contents to build
      */
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         command: 'rm -rf build .tmp'
       },
       build: {
-        command: 'cp -r src build'
+        command: 'cp -r src build && cp CNAME build'
       }
     },
 
