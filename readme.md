@@ -12,7 +12,7 @@ Install the development node modules:
 
     $ npm install
     
-Once you've made the required changes you can run `grunt build` to test the changes, the build site will be available in the build folder.
+Once you've made the required changes you can run `grunt build` to test the changes, the built site will be available in the build folder.
 
 To deploy the project run:
 
