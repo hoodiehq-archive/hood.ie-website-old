@@ -103,6 +103,7 @@
           <li class="soon">Receive payments from your users</li>
           <li class="soon">Authenticate with other services (Twitter, GitHub, etc.)</li>
           <li class="soon">Hoodie hosting for even simpler deployment</li>
+          <li class="soon">Remove jQuery dependency</li>
         </ul>
         <h1 class="inline-block">Who is it for?</h1>
         <div class="progressLegend">
@@ -145,7 +146,7 @@ hoodie.store.add(type, attributes)
 
           <h2>4. Event listeners</h2>
           <p>The view should update whenever a task is added, so let's listen to the data store directly for when that happens:</p>
-          <pre><code class="language-javascript">hoodie.store.on('add:task', function (event, changedObject) {
+          <pre><code class="language-javascript">hoodie.store.on('add:task', function (newObject) {
   // Update the view with the changedObject
 });</code></pre>
           <p>This way, you have nicely reactive views. Users can now add tasks on one device, and the new task will automatically appear on the running page on any other device they may be using simultaneously.</p>
@@ -368,19 +369,19 @@ hoodie.store.on('update', function (updatedObject) {});
 hoodie.store.on('remove', function (removedObject) {});
 
 // any of the events above
-hoodie.store.on('change', function (event, changedObject) {});
+hoodie.store.on('change', function (eventName, changedObject) {});
 
 // all listeners can be filtered by type
 hoodie.store.on('add:note',    function (newObject) {});
 hoodie.store.on('update:note', function (updatedObject) {});
 hoodie.store.on('remove:note', function (removedObject) {});
-hoodie.store.on('change:note', function (event, changedObject) {});
+hoodie.store.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
 hoodie.store.on('add:note:uuid123',    function (newObject) {});
 hoodie.store.on('update:note:uuid123', function (updatedObject) {});
 hoodie.store.on('remove:note:uuid123', function (removedObject) {});
-hoodie.store.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
+hoodie.store.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
         <h2>Synchronization</h2>
         <p>When signed in, local changes do get synced automatically. You can explicitly subscribe to remote updates.</p>
         <pre><code class="language-javascript">// new doc created
@@ -393,19 +394,19 @@ hoodie.remote.on('update', function (updatedObject) {});
 hoodie.remote.on('remove', function (removedObject) {});
 
 // any of the events above
-hoodie.remote.on('change', function (event, changedObject) {});
+hoodie.remote.on('change', function (eventName, changedObject) {});
 
 // all listeners can be filtered by type
 hoodie.remote.on('add:note',    function (newObject) {});
 hoodie.remote.on('update:note', function (updatedObject)  {});
 hoodie.remote.on('remove:note', function (removedObject) {});
-hoodie.remote.on('change:note', function (event, changedObject) {});
+hoodie.remote.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
 hoodie.remote.on('add:note:uuid123',    function (newObject) {});
 hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
 hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
-hoodie.remote.on('change:note:uuid123', function (event, changedObject) {});</code></pre>
+hoodie.remote.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
         <h2 id="publicShares">Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
