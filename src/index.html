@@ -466,6 +466,72 @@ hoodie.share('shareIdHere').findAll()
 // subscribe / unsubscribe
 hoodie.share('shareId').subscribe();
 hoodie.share('shareId').unsubscribe();</code></pre>
+        <h2>Tasks</h2>
+        <p>Tasks get picked up by backend workers in the background. You can think of them as a special kind of objects that describe specific tasks that you want backend logic for.</p>
+        <p>If a task has been completed successfully, it gets removed. If there is an error, it stays in the task store to be handled or removed.</p>
+        <pre><code class="language-javascript">// start a new task
+hoodie.task.start('message', {to: 'joe', text: 'Do you want to party?'})
+  .then( showMessageSent, showMessageError )
+
+// abort a pending task
+hoodie.task.abort('message', '123')
+
+// restart a pending or aborted task
+hoodie.task.restart('message', '123', { extraProperty: 'value' })
+
+// aborted all pending tasks
+hoodie.task.restartAll()
+
+// restart all pending or aborted tasks
+hoodie.task.restartAll()
+</code></pre>
+        <h2>Task Subscription</h2>
+        <p class="alert"><strong>Important:</strong> If change event is "error", the error message gets passed as options.error</p>
+        <pre><code class="language-javascript">// listen to new tasks
+hoodie.task.on('start', function (newTask) {});
+
+// task aborted
+hoodie.task.on('abort', function (abortedTask) {});
+
+// task could not be completed
+hoodie.task.on('error', function (errorMessage, task) {});
+
+// task completed successfully
+hoodie.task.on('success', function (completedTask) {});
+
+// all listeners can be filtered by type
+hoodie.task.on('message:start',   function (newMessageTask, options) {});
+hoodie.task.on('message:abort',  function (abortedMessageTask, options) {});
+hoodie.task.on('message:error',   function (errorMessage, messageTask, options) {});
+hoodie.task.on('message:success', function (completedMessageTask, options) {});
+hoodie.task.on('message:change',  function (eventName, messageTask, options) {});
+
+// ... and by type and id
+hoodie.task.on('message:start:123',   function (newMessageTask, options) {});
+hoodie.task.on('message:abort:123',  function (abortedMessageTask, options) {});
+hoodie.task.on('message:error:123',   function (errorMessage, messageTask, options) {});
+hoodie.task.on('message:success:123', function (completedMessageTask, options) {});
+hoodie.task.on('message:change:123',  function (eventName, messageTask, options) {});</code></pre>
+    <h2 id="userShares">Email</h2>
+        <p>The hoodie.email plugin allows the user to send emails from their app.</p>
+        <p class="alert"><strong>Important:</strong> The email plugin still a work in progress. This is how things
+        are likely going to look soon.</p>
+        <pre><code class="language-javascript">// define an email object
+var magic = hoodie.email.send({
+  to      : ['susan@example.com'],
+  cc      : ['bill@example.com'],
+  subject : 'rule the world',
+  body    : 'we can do it!\nSigned, Joe'
+});
+
+magic.done(function(mail) {
+  alert('Mail has been sent to ' + mail.to);
+});
+
+magic.fail(function(eror) {
+  alert('Sorry, but something went wrong: ' + error.reason);
+});
+</code></pre>
       </section>
       <section id="plugins">
         <h1>Plugins</h1>
@@ -480,7 +546,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
 
         <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
 
-        <p>Hoodie already ships with two core modules: Users and Email. And we are working ona few more, like Shares, Payments and the like. We are encouraging anyone though, to build Plugins and publish them to NPM so everyone can benefit from them.</p>
+        <p>Hoodie already ships with two core modules: Users and Email. And we are working on a few more, like Shares, Payments and the like. We are encouraging anyone though, to build Plugins and publish them to NPM so everyone can benefit from them.</p>
 
         <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
       </section>
