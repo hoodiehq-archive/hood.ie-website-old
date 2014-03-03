@@ -467,7 +467,7 @@ hoodie.share('shareIdHere').findAll()
 hoodie.share('shareId').subscribe();
 hoodie.share('shareId').unsubscribe();</code></pre>
         <h2>Tasks</h2>
-        <p>Tasks get picked up by backend workers in the background. You can think of them as a special kind of objects that describe specific tasks that you want backend logic for.</p>
+        <p>Tasks get picked up by backend workers in the background. Tasks get picked up by backend workers in the background. You can think of them as special objects that describe specific tasks, for which you want backend logic..</p>
         <p>If a task has been completed successfully, it gets removed. If there is an error, it stays in the task store to be handled or removed.</p>
         <pre><code class="language-javascript">// start a new task
 hoodie.task.start('message', {to: 'joe', text: 'Do you want to party?'})
