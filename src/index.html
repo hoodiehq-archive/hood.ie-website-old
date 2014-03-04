@@ -415,7 +415,7 @@ hoodie.remote.on('change:uuid123:note', function (eventName, changedObject) {});
         <pre><code class="language-javascript">// make note object with id 'abc4567' public
 hoodie.store.find('note', 'abc4567').publish()
 
-// make note with id 'abc4567' public, but do only show the color, hide
+// make note with id 'abc4567' public, but only show the color, hide
 // all other attributes
 hoodie.store.find('note', 'abc4567').publish(['color']);
 
