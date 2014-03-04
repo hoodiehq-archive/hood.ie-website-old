@@ -380,10 +380,10 @@ hoodie.store.on('remove:note', function (removedObject) {});
 hoodie.store.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
-hoodie.store.on('add:note:uuid123',    function (newObject) {});
-hoodie.store.on('update:note:uuid123', function (updatedObject) {});
-hoodie.store.on('remove:note:uuid123', function (removedObject) {});
-hoodie.store.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
+hoodie.store.on('add:uuid123:note',    function (newObject) {});
+hoodie.store.on('update:uuid123:note', function (updatedObject) {});
+hoodie.store.on('remove:uuid123:note', function (removedObject) {});
+hoodie.store.on('change:uuid123:note', function (eventName, changedObject) {});</code></pre>
         <h2>Synchronization</h2>
         <p>When signed in, local changes do get synced automatically. You can explicitly subscribe to remote updates.</p>
         <pre><code class="language-javascript">// new doc created
@@ -405,10 +405,10 @@ hoodie.remote.on('remove:note', function (removedObject) {});
 hoodie.remote.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
-hoodie.remote.on('add:note:uuid123',    function (newObject) {});
-hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
-hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
-hoodie.remote.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
+hoodie.remote.on('add:uuid123:note',    function (newObject) {});
+hoodie.remote.on('update:uuid123:note', function (updatedObject)  {});
+hoodie.remote.on('remove:uuid123:note', function (removedObject) {});
+hoodie.remote.on('change:uuid123:note', function (eventName, changedObject) {});</code></pre>
         <h2 id="publicShares">Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
@@ -507,11 +507,11 @@ hoodie.task.on('message:success', function (completedMessageTask, options) {});
 hoodie.task.on('message:change',  function (eventName, messageTask, options) {});
 
 // ... and by type and id
-hoodie.task.on('message:start:123',   function (newMessageTask, options) {});
-hoodie.task.on('message:abort:123',  function (abortedMessageTask, options) {});
-hoodie.task.on('message:error:123',   function (errorMessage, messageTask, options) {});
-hoodie.task.on('message:success:123', function (completedMessageTask, options) {});
-hoodie.task.on('message:change:123',  function (eventName, messageTask, options) {});</code></pre>
+hoodie.task.on('message:123:start',   function (newMessageTask, options) {});
+hoodie.task.on('message:123:abort',  function (abortedMessageTask, options) {});
+hoodie.task.on('message:123:error',   function (errorMessage, messageTask, options) {});
+hoodie.task.on('message:123:success', function (completedMessageTask, options) {});
+hoodie.task.on('message:123:change',  function (eventName, messageTask, options) {});</code></pre>
     <h2 id="userShares">Email</h2>
         <p>The hoodie.email plugin allows the user to send emails from their app.</p>
         <p class="alert"><strong>Important:</strong> The email plugin still a work in progress. This is how things
