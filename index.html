@@ -238,7 +238,7 @@ $ sudo apt-get install nodejs</code></pre>
 $ hoodie start</code></pre>
         <p>Your browser should now automatically open and show you Hoodie's default app. If you don't want that, start the app with</p>
         <pre><code class="language-none">$ hoodie start -n</code></pre>
-        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. </p>
+        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. And if you need to change the port numbers in any URL, they are definded in "~/.ports.json".</p>
         <!--
         <h2>Local-TLD</h2>
         <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
@@ -378,10 +378,10 @@ hoodie.store.on('remove:note', function (removedObject) {});
 hoodie.store.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
-hoodie.store.on('add:note:uuid123',    function (newObject) {});
-hoodie.store.on('update:note:uuid123', function (updatedObject) {});
-hoodie.store.on('remove:note:uuid123', function (removedObject) {});
-hoodie.store.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
+hoodie.store.on('add:uuid123:note',    function (newObject) {});
+hoodie.store.on('update:uuid123:note', function (updatedObject) {});
+hoodie.store.on('remove:uuid123:note', function (removedObject) {});
+hoodie.store.on('change:uuid123:note', function (eventName, changedObject) {});</code></pre>
         <h2>Synchronization</h2>
         <p>When signed in, local changes do get synced automatically. You can explicitly subscribe to remote updates.</p>
         <pre><code class="language-javascript">// new doc created
@@ -403,17 +403,17 @@ hoodie.remote.on('remove:note', function (removedObject) {});
 hoodie.remote.on('change:note', function (eventName, changedObject) {});
 
 // ... and by type and id
-hoodie.remote.on('add:note:uuid123',    function (newObject) {});
-hoodie.remote.on('update:note:uuid123', function (updatedObject)  {});
-hoodie.remote.on('remove:note:uuid123', function (removedObject) {});
-hoodie.remote.on('change:note:uuid123', function (eventName, changedObject) {});</code></pre>
+hoodie.remote.on('add:uuid123:note',    function (newObject) {});
+hoodie.remote.on('update:uuid123:note', function (updatedObject)  {});
+hoodie.remote.on('remove:uuid123:note', function (removedObject) {});
+hoodie.remote.on('change:uuid123:note', function (eventName, changedObject) {});</code></pre>
         <h2 id="publicShares">Public Shares (Public User Stores)</h2>
         <p class="alert alert-error">Public shares are currently non-functional, sorry. We're on it!</p>
         <p>Select data you want to share with others and control exactly what will be shared</p>
         <pre><code class="language-javascript">// make note object with id 'abc4567' public
 hoodie.store.find('note', 'abc4567').publish()
 
-// make note with id 'abc4567' public, but do only show the color, hide
+// make note with id 'abc4567' public, but only show the color, hide
 // all other attributes
 hoodie.store.find('note', 'abc4567').publish(['color']);
 
@@ -464,6 +464,72 @@ hoodie.share('shareIdHere').findAll()
 // subscribe / unsubscribe
 hoodie.share('shareId').subscribe();
 hoodie.share('shareId').unsubscribe();</code></pre>
+        <h2>Tasks</h2>
+        <p>Tasks get picked up by backend workers in the background. You can think of them as special objects that describe specific tasks, for which you want backend logic.</p>
+        <p>If a task has been completed successfully, it gets removed. If there is an error, it stays in the task store to be handled or removed.</p>
+        <pre><code class="language-javascript">// start a new task
+hoodie.task.start('message', {to: 'joe', text: 'Do you want to party?'})
+  .then( showMessageSent, showMessageError )
+
+// abort a pending task
+hoodie.task.abort('message', '123')
+
+// restart a pending or aborted task
+hoodie.task.restart('message', '123', { extraProperty: 'value' })
+
+// aborted all pending tasks
+hoodie.task.restartAll()
+
+// restart all pending or aborted tasks
+hoodie.task.restartAll()
+</code></pre>
+        <h2>Task Subscription</h2>
+        <p class="alert"><strong>Important:</strong> If change event is "error", the error message gets passed as options.error</p>
+        <pre><code class="language-javascript">// listen to new tasks
+hoodie.task.on('start', function (newTask) {});
+
+// task aborted
+hoodie.task.on('abort', function (abortedTask) {});
+
+// task could not be completed
+hoodie.task.on('error', function (errorMessage, task) {});
+
+// task completed successfully
+hoodie.task.on('success', function (completedTask) {});
+
+// all listeners can be filtered by type
+hoodie.task.on('message:start',   function (newMessageTask, options) {});
+hoodie.task.on('message:abort',  function (abortedMessageTask, options) {});
+hoodie.task.on('message:error',   function (errorMessage, messageTask, options) {});
+hoodie.task.on('message:success', function (completedMessageTask, options) {});
+hoodie.task.on('message:change',  function (eventName, messageTask, options) {});
+
+// ... and by type and id
+hoodie.task.on('message:123:start',   function (newMessageTask, options) {});
+hoodie.task.on('message:123:abort',  function (abortedMessageTask, options) {});
+hoodie.task.on('message:123:error',   function (errorMessage, messageTask, options) {});
+hoodie.task.on('message:123:success', function (completedMessageTask, options) {});
+hoodie.task.on('message:123:change',  function (eventName, messageTask, options) {});</code></pre>
+    <h2 id="userShares">Email</h2>
+        <p>The hoodie.email plugin allows the user to send emails from their app.</p>
+        <p class="alert"><strong>Important:</strong> The email plugin still a work in progress. This is how things
+        are likely going to look soon.</p>
+        <pre><code class="language-javascript">// define an email object
+var magic = hoodie.email.send({
+  to      : ['susan@example.com'],
+  cc      : ['bill@example.com'],
+  subject : 'rule the world',
+  body    : 'we can do it!\nSigned, Joe'
+});
+
+magic.done(function(mail) {
+  alert('Mail has been sent to ' + mail.to);
+});
+
+magic.fail(function(eror) {
+  alert('Sorry, but something went wrong: ' + error.reason);
+});
+</code></pre>
       </section>
       <section id="plugins">
         <h1>Plugins</h1>
@@ -478,7 +544,7 @@ hoodie.share('shareId').unsubscribe();</code></pre>
 
         <p><a href="https://github.com/espy/hoodie-plugin-tutorial">This guide explains how to build Plugins for Hoodie</a></p>
 
-        <p>Hoodie already ships with two core modules: Users and Email. And we are working ona few more, like Shares, Payments and the like. We are encouraging anyone though, to build Plugins and publish them to NPM so everyone can benefit from them.</p>
+        <p>Hoodie already ships with two core modules: Users and Email. And we are working on a few more, like Shares, Payments and the like. We are encouraging anyone though, to build Plugins and publish them to NPM so everyone can benefit from them.</p>
 
         <p>Follow us on Twitter if you want to stay informed about our progress: <a href="https://twitter.com/hoodiehq">@hoodiehq</a>, or check our <a href="http://weekly.hood.ie/">Hoodie Weeklies</a>.</p>
       </section>
