@@ -2,6 +2,13 @@
 
 module.exports = function(grunt) {
 
+  var html_files = [
+    'build/index.html',
+    'build/intro.html',
+    'build/sponsoring.html',
+    'build/code-of-conduct.html'
+  ];
+
   grunt.initConfig({
 
     /**
@@ -28,14 +35,14 @@ module.exports = function(grunt) {
       options: {
         dest: 'build'
       },
-      html: ['build/index.html', 'build/intro.html', 'build/sponsoring.html']
+      html: html_files
     },
 
     /**
      *  runs concat, uglify and cssmin on resources in referenced files
      */
     usemin: {
-      html: ['build/index.html', 'build/intro.html', 'build/sponsoring.html']
+      html: html_files
     },
 
     /**
