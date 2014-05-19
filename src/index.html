@@ -144,7 +144,7 @@
           <pre><code class="language-javascript">var type = 'task';
 var attributes = {title: 'Try out hoodie today'};
 hoodie.store.add(type, attributes)
-  .done(function (newObject) {
+  .then(function (newObject) {
     // Data was saved!
   });</code></pre>
           <p>As you can see, the documents you store need a type and some JSON data. Both are arbitrary and don't need to be set up anywhere previously. Just pass Hoodie an object for your data, it will eat anything and save it as JSON.</p>
@@ -160,7 +160,7 @@ hoodie.store.add(type, attributes)
           <p>Let's load all of the user's 'task' documents:</p>
           <pre><code class="language-javascript">var type = 'task';
 hoodie.store.findAll(type)
-  .done(function (tasks) {
+  .then(function (tasks) {
     // Do something with the tasks
   });</code></pre>
 
@@ -314,54 +314,54 @@ hoodie.account.on('unauthenticated', function (user) {});</code></pre>
 var type = 'task';
 var attributes = {status: 'open'};
 hoodie.store.add(type, attributes)
-  .done(function (newObject) {});
+  .then(function (newObject) {});
 
 // update an existing object
 var type = 'task';
 var id = 'abc4567';
 var update = {starred: true};
 hoodie.store.update(type, id, update)
-  .done(function (updatedObject) {});
+  .then(function (updatedObject) {});
 
 // find one object
 var type = 'task';
 var id = 'abc4567';
 hoodie.store.find(type, id)
-  .done(function (object) {});
+  .then(function (object) {});
 
 // Load all objects that belong to the current user
 hoodie.store.findAll()
-  .done(function (objects) {});
+  .then(function (objects) {});
 
 // Load all objects of one type, also belonging to the current user
 var type = 'task';
 hoodie.store.findAll(type)
-  .done(function (objects) {});
+  .then(function (objects) {});
 
 // findAll also accepts a function as an argument. If that function returns true for an object in the store, it will be returned. This effectively lets you write complex queries for the store. In this simple example, assume all of our todo tasks have a key "status", and we want to find all unfinished tasks:
 hoodie.store.findAll(function(object){
   if(object.type === "task" && object.status === "open"){
     return true;
   }
-}).done(function (objects) {});
+}).then(function (objects) {});
 
 // remove an existing object belonging to the current user
 var type = 'task';
 var id = 'abc4567';
 hoodie.store.remove(type, id)
-  .done(function (removedObject) {});
+  .then(function (removedObject) {});
 
 // Remove all objects of one type, also belonging to the current user
 var type = 'task';
 hoodie.store.removeAll(type)
-  .done(function (objects) {});
+  .then(function (objects) {});
 
 // removeAll, like findAll, also accepts a function as an argument. If that function returns true for an object in the store, it will be removed. Assuming all of our todo tasks have a key "status", and we want to remove all completed tasks:
 hoodie.store.removeAll(function(object){
   if(object.type === "task" && object.status === "completed"){
     return true;
   }
-}).done(function (objects) {});</code></pre>
+}).then(function (objects) {});</code></pre>
         <h2>Store events</h2>
         <pre><code class="language-javascript">// listen for store events
 // new doc created
@@ -426,17 +426,17 @@ hoodie.store.find('note', 'abc4567').publish(['color']);
 hoodie.store.find('note', 'abc4567').unpublish();
 
 // find all note objects from user 'joe'
-hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
+hoodie.user('joe').findAll('note').then(function (notes) { ... });</code></pre>
         <h2>Global Public Store</h2>
         <p>When enabled, all publicly shared objects by all users will be available through the hoodie.global API.</p>
         <pre><code class="language-javascript">// find all public songs from all users
-hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
+hoodie.global.findAll('song').then(function (songs) { ... });</code></pre>
         <h2 id="userShares">Sharing</h2>
         <p>The hoodie.share plugin allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
         <p class="alert"><strong>Important:</strong> The shares plugin still a work in progress. This is how things
         are likely going to look soon.</p>
         <pre><code class="language-javascript">// add a new share
-hoodie.share.add().done(function (share) {});
+hoodie.share.add().then(function (share) {});
 
 // grant / revoke access
 share.grantReadAccess();
@@ -454,7 +454,7 @@ hoodie.store.find('todo', '123').unshareAt(share.id);
 
 // add a new share and add some of my objects to it in one step
 hoodie.store.findAll('todo').share()
-  .done(function (todos, share) { alert('shared at ' + share.id); } );
+  .then(function (todos, share) { alert('shared at ' + share.id); } );
 
 // remove objects from all shares
 hoodie.store.findAll('todo').unshare();
@@ -464,7 +464,7 @@ hoodie.share.remove(share.id);
 
 // open a share and load all its objects
 hoodie.share('shareIdHere').findAll()
-  .done(function (objects) {});
+  .then(function (objects) {});
 
 // subscribe / unsubscribe
 hoodie.share('shareId').subscribe();
@@ -527,7 +527,7 @@ var magic = hoodie.email.send({
   body    : 'we can do it!\nSigned, Joe'
 });
 
-magic.done(function(mail) {
+magic.then(function(mail) {
   alert('Mail has been sent to ' + mail.to);
 });
 
