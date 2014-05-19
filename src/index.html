@@ -148,7 +148,7 @@ hoodie.store.add(type, attributes)
     // Data was saved!
   });</code></pre>
           <p>As you can see, the documents you store need a type and some JSON data. Both are arbitrary and don't need to be set up anywhere previously. Just pass Hoodie an object for your data, it will eat anything and save it as JSON.</p>
-          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retreived is best dealt with in a more decoupled manner, with database events: </p>
+          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retrieved is best dealt with in a more decoupled manner, with database events: </p>
 
           <h2>4. Event listeners</h2>
           <p>The view should update whenever a task is added, so let's listen to the data store directly for when that happens:</p>
