@@ -16,7 +16,7 @@
   </head>
   <body data-spy="scroll" data-target="#mainNav" class="">
     <div class="sponsoringTeaser">
-        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/decentcamp">Decentralize Camp</a>
+        <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/indietech-summit">The Indie Tech Summit</a>
           – <a href="/sponsoring" class="CTA">Sponsor us!</a>
         </span>
         <!-- <span class="leadIn">This week of Hoodie development is sponsored by <a href="http://go.hood.ie/thehoodiefirm">The Hoodie Firm</a>
@@ -146,7 +146,7 @@ hoodie.store.add(type, attributes)
     // Data was saved!
   });</code></pre>
           <p>As you can see, the documents you store need a type and some JSON data. Both are arbitrary and don't need to be set up anywhere previously. Just pass Hoodie an object for your data, it will eat anything and save it as JSON.</p>
-          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retreived is best dealt with in a more decoupled manner, with database events: </p>
+          <p>The promises returned by Hoodie are a good place to deal with the UI immediately related to the action, such as disabling a submit button while data is sent, showing and hiding a loading spinner, displaying success and error messages and all that. However, the actual data that you've sent or retrieved is best dealt with in a more decoupled manner, with database events: </p>
 
           <h2>4. Event listeners</h2>
           <p>The view should update whenever a task is added, so let's listen to the data store directly for when that happens:</p>
@@ -191,7 +191,7 @@ hoodie.store.findAll(type)
     $ brew install couchdb</code></pre>
             <p>Now, install Hoodie using Node's package manager:</p>
             <pre><code class="language-none">$ npm install -g hoodie-cli</code></pre>
-            <p>Mac users can also optionally install <code>local-tld</code> to automatically get pretty <code>*.dev</code> domains everytime you start a Hoodie app.</p>
+            <p>Mac users can also optionally install <code>local-tld</code> to automatically get pretty <code>*.dev</code> domains every time you start a Hoodie app.</p>
             <pre><code class="language-none">$ npm install -g local-tld</code></pre>
             <p>Installation done! Time to build apps.</p>
           </div>
@@ -241,7 +241,7 @@ $ sudo apt-get install nodejs</code></pre>
 $ hoodie start</code></pre>
         <p>Your browser should now automatically open and show you Hoodie's default app. If you don't want that, start the app with</p>
         <pre><code class="language-none">$ hoodie start -n</code></pre>
-        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. And if you need to change the port numbers in any URL, they are definded in "~/.ports.json".</p>
+        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. And if you need to change the port numbers in any URL, they are defined in "~/.ports.json".</p>
         <!--
         <h2>Local-TLD</h2>
         <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
@@ -430,7 +430,7 @@ hoodie.user('joe').findAll('note').done(function (notes) { ... });</code></pre>
         <pre><code class="language-javascript">// find all public songs from all users
 hoodie.global.findAll('song').done(function (songs) { ... });</code></pre>
         <h2 id="userShares">Sharing</h2>
-        <p>The hoodie.share plugin allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differenciated between read and write.</p>
+        <p>The hoodie.share plugin allows to share objects with other users. A share can be public, which means everybody knowing its id can access it. Or the access can be limited to specific users. Optionally, a password can be set for additional security. Access can be differentiated between read and write.</p>
         <p class="alert"><strong>Important:</strong> The shares plugin still a work in progress. This is how things
         are likely going to look soon.</p>
         <pre><code class="language-javascript">// add a new share
@@ -529,7 +529,7 @@ magic.done(function(mail) {
   alert('Mail has been sent to ' + mail.to);
 });
 
-magic.fail(function(eror) {
+magic.fail(function(error) {
   alert('Sorry, but something went wrong: ' + error.reason);
 });
 </code></pre>
