@@ -43,7 +43,7 @@
     <div class="header">
       <img class="logo" src="images/f5af4e56.hoodie_logo.png" alt="">
       <h1>Welcome to #hoodie!</h1>
-      <p>We're a small team and can't always be here, but we'd still like to make it easy to get in touch with us. We're usually here between <strong>10:00 CET</strong> and <strong>18:00 CET</strong>.<span class="offsetMessage"></span></p>
+      <p>We're a small team and can't always be here, but we'd still like to make it easy to get in touch with us. We're usually here on weekdays between <strong>10:00 CET</strong> and <strong>18:00 CET</strong>.<span class="offsetMessage"></span></p>
 
       <p>We also have an <a href="https://github.com/hoodiehq/documentation/wiki/The-Hoodie-FAQ-%E2%80%93%C2%A0Work-in-Progress">FAQ</a> for the most common questions.</p>
 
@@ -114,7 +114,13 @@
           }
 
           if(nd.getHours() >= 18){
-            message += " so we should be back in roughly "+getHourString( 10 - nd.getHours() + 24)+ ".";
+            // Sunday to Thursday, there's a one-day wait
+            var daysTilNextWorkdayStartTime = 1;
+            if (nd.getDay() === 5 || nd.getDay() === 6){
+              message = " That means we'll be back after the weekend.";
+            } else {
+              message += " so we should be back in roughly "+getHourString( 10 - nd.getHours() + 24)+ ".";
+            }
           }
         } else {
           message = " It's a weekend though, so we're probably not in right now.";
@@ -131,15 +137,6 @@
       .done(function( data ) {
         calculateWait(data.dst);
       });
-
-      /*
-
-      http://api.timezonedb.com/?zone=Europe/Berlin&format=json&key=ARQ25LY95DS0
-
-      52.499504,13.4191
-
-
-       */
     })(window);
   </script>
 </body>
