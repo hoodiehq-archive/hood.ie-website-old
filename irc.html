@@ -105,7 +105,7 @@
           message = " It's "+getHourString(absoluteOffset*-1)+" earlier here, ";
         }
         if(nd.getDay() < 6){
-          if(nd.getHours() <= 10){
+          if(nd.getHours() < 10){
             message += " so we'll be here in about "+getHourString( 10 - nd.getHours())+ ".";
           }
 
