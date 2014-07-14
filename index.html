@@ -238,10 +238,10 @@ $ sudo apt-get install nodejs</code></pre>
 $ hoodie start</code></pre>
         <p>Your browser should now automatically open and show you Hoodie's default app. If you don't want that, start the app with</p>
         <pre><code class="language-none">$ hoodie start -n</code></pre>
-        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Pocket (the Hoodie app's admin panel) and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. And if you need to change the port numbers in any URL, they are defined in "~/.ports.json".</p>
+        <p>Hoodie will let you know about all local URLs you might need, including the app itself, Admin Dashboard and the app's CouchDB. If you need to access Futon, CouchDB's web-based administration tool, just append "/_utils" to the CouchDB URL. And if you need to change the port numbers in any URL, they are defined in "~/.ports.json".</p>
         <!--
         <h2>Local-TLD</h2>
-        <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Pocket.</p>
+        <p>Local-TLD is an optional add-on for OS X that gives you nicer local development domains, like <code>appname.dev</code>. Again, the Hoodie CLI will tell you what the respective domains are for CouchDB, Futon and Admin Dashboard.</p>
         <p class="alert"><strong>Important:</strong> local-tld currently blocks any vhosts you may have set up (localhost works fine though). There is a simple workaround for the time being: </p>
         <h2>Disable local-tld</h2>
         <pre><code class="language-markup">$ sudo ipfw flush</code></pre>
