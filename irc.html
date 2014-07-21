@@ -43,7 +43,7 @@
     <div class="header">
       <img class="logo" src="images/f5af4e56.hoodie_logo.png" alt="">
       <h1>Welcome to #hoodie!</h1>
-      <p>We're a small team and can't always be here, but we'd still like to make it easy to get in touch with us. We're usually here on weekdays between <strong>10:00 CET</strong> and <strong>18:00 CET</strong>.<span class="offsetMessage"></span></p>
+      <p>We're a small team and can't always be here, but we'd still like to make it easy to get in touch with us. We're usually here on weekdays between <strong>14:00 CET</strong> and <strong>18:00 CET</strong>.<span class="offsetMessage"></span></p>
 
       <p>We also have an <a href="https://github.com/hoodiehq/documentation/wiki/The-Hoodie-FAQ-%E2%80%93%C2%A0Work-in-Progress">FAQ</a> for the most common questions.</p>
 
@@ -81,7 +81,7 @@
         var berlin = utc + (3600000*offset);
 
         var nd = new Date(berlin);
-        var startTime = 10;
+        var startTime = 14;
         var endTime = 18;
         var message = "";
         var getHourString = function(hours, prefix){
@@ -105,11 +105,11 @@
           message = " It's "+getHourString(absoluteOffset*-1)+" earlier here, ";
         }
         if(nd.getDay() < 6){
-          if(nd.getHours() < 10){
-            message += " so we'll be here in about "+getHourString( 10 - nd.getHours())+ ".";
+          if(nd.getHours() < startTime){
+            message += " so we'll be here in about "+getHourString( startTime - nd.getHours())+ ".";
           }
 
-          if(nd.getHours() >= 10 && nd.getHours() <= 18){
+          if(nd.getHours() >= startTime && nd.getHours() <= 18){
             message += " so we'll be around for about "+getHourString( 18 - nd.getHours(), " more ")+".";
           }
 
@@ -119,7 +119,7 @@
             if (nd.getDay() === 5 || nd.getDay() === 6){
               message = " That means we'll be back after the weekend.";
             } else {
-              message += " so we should be back in roughly "+getHourString( 10 - nd.getHours() + 24)+ ".";
+              message += " so we should be back in roughly "+getHourString( startTime - nd.getHours() + 24)+ ".";
             }
           }
         } else {
