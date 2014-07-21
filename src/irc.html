@@ -81,7 +81,7 @@
         var berlin = utc + (3600000*offset);
 
         var nd = new Date(berlin);
-        var startTime = 10;
+        var startTime = 14;
         var endTime = 18;
         var message = "";
         var getHourString = function(hours, prefix){
@@ -105,11 +105,11 @@
           message = " It's "+getHourString(absoluteOffset*-1)+" earlier here, ";
         }
         if(nd.getDay() < 6){
-          if(nd.getHours() < 10){
-            message += " so we'll be here in about "+getHourString( 10 - nd.getHours())+ ".";
+          if(nd.getHours() < startTime){
+            message += " so we'll be here in about "+getHourString( startTime - nd.getHours())+ ".";
           }
 
-          if(nd.getHours() >= 10 && nd.getHours() <= 18){
+          if(nd.getHours() >= startTime && nd.getHours() <= 18){
             message += " so we'll be around for about "+getHourString( 18 - nd.getHours(), " more ")+".";
           }
 
@@ -119,7 +119,7 @@
             if (nd.getDay() === 5 || nd.getDay() === 6){
               message = " That means we'll be back after the weekend.";
             } else {
-              message += " so we should be back in roughly "+getHourString( 10 - nd.getHours() + 24)+ ".";
+              message += " so we should be back in roughly "+getHourString( startTime - nd.getHours() + 24)+ ".";
             }
           }
         } else {
