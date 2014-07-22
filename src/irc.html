@@ -109,11 +109,11 @@
             message += " so we'll be here in about "+getHourString( startTime - nd.getHours())+ ".";
           }
 
-          if(nd.getHours() >= startTime && nd.getHours() <= 18){
-            message += " so we'll be around for about "+getHourString( 18 - nd.getHours(), " more ")+".";
+          if(nd.getHours() >= startTime && nd.getHours() < endTime){
+            message += " so we'll be around for about "+getHourString( endTime - nd.getHours(), " more ")+".";
           }
 
-          if(nd.getHours() >= 18){
+          if(nd.getHours() >= endTime){
             // Sunday to Thursday, there's a one-day wait
             var daysTilNextWorkdayStartTime = 1;
             if (nd.getDay() === 5 || nd.getDay() === 6){
