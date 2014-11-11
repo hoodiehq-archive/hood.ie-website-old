@@ -1,6 +1,6 @@
 # hood.ie
 
-#### This is the [Hoodie](http://hood.ie) website.
+#### This was the first Website [Hoodie](http://hood.ie) ever had. It's now been replaced with [our new one](https://github.com/hoodiehq/hood.ie). Thank you for the music, good ol' friend!
 
 ### Workflow
 
